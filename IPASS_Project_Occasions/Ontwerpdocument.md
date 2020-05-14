@@ -33,6 +33,7 @@ Huibers auto’s komt aan klanten door mond tot mond reclame en een Facebookpagi
 Waarop ze zelf de auto’s kan plaatsen met daarvan alle gegevens, zodat toekomstige klanten meer informatie kunnen vinden van de auto’s  en de kwaliteit van de relaties met de klanten zullen stijgen. 
 
 ## §1 Doelgroep (optioneel)
+De doelgroep is bedoeld vo
 
 ## §2 Leeswijzer (optioneel)
 
@@ -64,12 +65,17 @@ Aandachtspunten:
 -	Neem bij elke associatie de multipliciteiten en de rolnamen op. 
 -	Maak gebruik van de juiste notatie. Zie de cursus OODC
 
-Neem het diagram op met daarbij een korte beschrijving van alle entiteiten. Zie bij de cursus modelling hoe je dit model maakt.
+
+![Class diagram Ocassions](IPASS_Project_Occasions/Images/ClassDiagramOcassions.jpg)
+
 
 | Entiteit | Beschrijving |
 |----------|--------------|
-|   ...    |     ...      |
-|   ...    |     ...      |
+|  Cars    |     ...      |
+| Account  |     ...      |
+|  Message  |     ...      |
+|           |     ...      |
+
 
 ---
 

@@ -8,6 +8,9 @@ public class Account {
    private String password;
    private int accountId;
 
+   //admin heeft meer rechten
+   private UserType accountType = null;
+
    //deze velden zijn niet verplicht.
    private String firstname;
    private String surname;
@@ -18,18 +21,10 @@ public class Account {
    private static Account loggedInAccount = null;
    private static int ammountAccounts = 0; // zorgt voor account ID verhoging
 
-   //admin heeft meer rechten
-   public enum Type {
-      normalUser,
-      superUser
-   }
-
-   private Type accountType = null;
-
 
 
    //must have
-   public Account(String em, String pw,Type type) {
+   public Account(String em, String pw,UserType type) {
       this.email = em;
       this.password = pw;
       this.accountId = ammountAccounts;
@@ -40,12 +35,12 @@ public class Account {
    }
 
    // niet noodzakelijk, maar zorgt voor een betere klantrelatie later in het proces
-   public Account(String em, String pw, String nm, String surn, String birthday, Type type) {
-      this.email = em;
-      this.password = pw;
+   public Account(String email, String password, String firstname, String surname, String birthday, UserType type) {
+      this.email = email;
+      this.password = password;
       this.accountId = ammountAccounts;
-      this.firstname = nm;
-      this.surname = surn;
+      this.firstname = firstname;
+      this.surname = surname;
       this.birthday = birthday;
       allAccounts.add(this);
       accountType = type;
@@ -57,7 +52,7 @@ public class Account {
 
    // functies
 
-   public Type getAccountType() {
+   public UserType getAccountType() {
       return accountType;
    }
 
@@ -111,14 +106,14 @@ public class Account {
    // bericht verstuurd door bezoeker zonder account naar alle admins
    public static void messageToAllAdmins(String tp, String qn, String nm, String em) {
       for (Account acc : getAll()) {
-         if (acc.getAccountType() == Type.superUser) {
+         if (acc.getAccountType() == UserType.superUser) {
             new Message(tp, qn, nm, em);
          }
       }
    }
 
 
-      public void setType (Type type){
+      public void setType (UserType type){
          accountType = type;
       }
    }
