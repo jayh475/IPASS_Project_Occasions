@@ -6,7 +6,7 @@ IPASS – Ontwerpdocument
 | Datum      | 05-05-2020 |
 |------------|------------|
 | __Versie__ | __0__      |
-| __Auteur__ | __naam__   |
+| __Auteur__ | __Jayh de Cuba__   |
 
 ---
 
@@ -32,10 +32,6 @@ In de eerste periode van het 1e leerjaar ICT had ik een gesprek met mijn nicht. 
 Huibers auto’s komt aan klanten door mond tot mond reclame en een Facebookpagina dat contactgegevens bevat. Helaas bevat het nog geen aanbod van de auto’s die zich daar actueel bevinden. Daarom vroeg mijn nicht mij om voor haar ooit een website te maken. 
 Waarop ze zelf de auto’s kan plaatsen met daarvan alle gegevens, zodat toekomstige klanten meer informatie kunnen vinden van de auto’s  en de kwaliteit van de relaties met de klanten zullen stijgen. 
 
-## §1 Doelgroep (optioneel)
-De doelgroep is bedoeld vo
-
-## §2 Leeswijzer (optioneel)
 
 ---
 
@@ -45,13 +41,54 @@ Korte beschrijving wat het systeem geacht wordt te doen. Eventueel indeling in s
 ---
 
 # 3 Use Cases
-Use case diagram met een korte toelichting. Zie bij de cursus modelling hoe je dit model maakt.
+
+Hieronder wordt een toelichting gegeven op de use case diagram die te vinden is in directory Images "Ocassions-diagram.jpg". 
+
+•	1. De admin kan een auto toevoegen. 
+De admin voert een naam in, een afbeelding, km-stand, bouwjaar, prijs, en brandstof type. 
+
+•	2. De admin kan  wijzingen aanbrengen aan de gegevens van de auto.
+De admin kan bij de auto’s in het hoofdscherm op wijzigen klikken, dan kan ze alle gegevens wijzingen die genoemd worden in use case 1. 
+
+•	3. De admin kan auto’s verwijderen.
+De admin kan auto’s verwijderen door naast het knopje wijzigen op het knopje verwijderen te klikken, hierna komt er een pop-upvenster met de tekst: “weet u het zeker?”. 
+
+•	4. De admin kan berichten ontvangen van gebruikers  met en zonder account.
+Er bestaat een tab met bericht sturen en die is ook aanwezig voor gebruikers die geen account hebben. 
+
+•	5. Zowel de admins als gebruikers kunnen inloggen. 
+Het inloggen wordt gedaan met een emailadres en de daarbij horende wachtwoord. Als één van beiden niet werken dan zal er in het scherm een zin staan met: “wachtwoord en of emailadres kloppen niet. 
+
+•	6. Zowel de admins als gebruikers kunnen uitloggen. 
+Om uit te loggen kunnen zowel de gebruiker als de admin bovenin het hoofdscherm een knop vinden met uitloggen en daarop klikken. Daarna worden ze uitgelogd. 
+
+•	7. De gebruiker kan zowel ingelogd als niet ingelogd  een bericht sturen naar een admin. 
+De gebruikers drukken op het tabje bericht en dan worden ze gevraagd om hun email adres (optioneel), naam, vraag/opmerking, onderwerp. 
+
+•	8. De gebruiker kan auto’s in zijn/haar favorieten-lijst zetten. 
+De gebruiker drukt op de button voeg toe als favoriet, dan wordt er een lijst gemaakt met favoriete auto’s die de gebruiker altijd kan bekijken.
+
+•	9. De gebruiker kan notificaties ontvangen van nieuwe auto’s in zijn email inbox. 
+De gebruiker kan er voor kiezen om mail te ontvangen in zijn of haar inbox, met daarin auto’s die net binnen zijn gekomen. 
+
+•	10. Zowel voor de admins als de gebruikers moet er ook gefiltert kunnen worden op de verschillende aspecten die benoemt worden in use case 1. 
+
+•	11 Registratie gebruikers. 
+De gebruikers kunnen een account aanmaken met hun emailadres en zelfgekozen wachtwoord. 
+
+•	12. Registratie admins(optioneel)  
+Met een button registreren voor admins, kan alleen een admin een andere admin maken. 
+
+•	13. Admins berichten naar gebruikers
+De admins kunnen ook berichten sturen naar gebruikers die een account hebben aangemaakt op de website. 
+
+
 
 ## §1 Actoren
 Actor templates, per actor met de template 
 
 ## §2 Use Case Templates
-Use case templates, per use case een paragraaf met de template beschrijving en het wireframe of schermontwerp behorende bij het template.
+
 
 ## §3 Wireframes
 Een wireframe voor elke use case.
@@ -59,22 +96,15 @@ Een wireframe voor elke use case.
 ---
 
 # 4 Domeinmodel
-De meeste entiteiten uit het conceptueel datamodel hebben een tegenhanger in de vorm van een JAVA domeinklasse. Van de student wordt verwacht dat er een UML klassen diagram wordt opgeleverd voor de domeinklassen. Zorg dat je UML klassendiagram volledig is.  
-Aandachtspunten:
--	Neem alle attributen op met bijbehorende types 
--	Neem bij elke associatie de multipliciteiten en de rolnamen op. 
--	Maak gebruik van de juiste notatie. Zie de cursus OODC
-
-
-![Class diagram Ocassions](IPASS_Project_Occasions/Images/ClassDiagramOcassions.jpg)
+Hieronder wordt er een beschrijving gegeven van het klassediagram dat te vinden is in de image directory onder de naam "Ocassions-diagram.jpg"
 
 
 | Entiteit | Beschrijving |
 |----------|--------------|
-|  Cars    |     ...      |
-| Account  |     ...      |
-|  Message  |     ...      |
-|           |     ...      |
+|  Car    |    De entiteit Car heeft de attributen: name, image, kilometre,yearOfManufacture, price en fuelType. |
+| Account  |     De entiteit Account heeft de attributen: email, password, accountId,birthday, accounttype en een refferentie naar Car door de arraylist favorite cars. Ook heeft Account een referentie met Message door de arraylist myMessages.     |
+|  Message  |    De eniteit Message heeft de attributen: topic, question, name, email, dateOfSend (daarin wordt de lokale tijd in opgeslagen).      |
+|           |         |
 
 
 ---

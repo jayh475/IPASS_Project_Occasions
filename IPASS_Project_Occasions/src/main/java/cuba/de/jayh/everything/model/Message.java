@@ -15,15 +15,16 @@ public class Message {
         READ,
         UNREAD
     }
+
     private Status status;
 
 
 
     //naar een direct persoon (is voor admins)
-    public Message(String tp, String qn, String nm, String em, Account to){
+    public Message(String tp, String qn, String name, String em, Account to){
         this.topic =tp;
         this.question =qn;
-        this.name = nm;
+        this.name = name;
         this.email = em;
         this.dateOfSend =  LocalDateTime.now();
         this.status = Status.UNREAD;

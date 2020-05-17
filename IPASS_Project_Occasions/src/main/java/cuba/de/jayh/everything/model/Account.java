@@ -22,11 +22,10 @@ public class Account {
    private static int ammountAccounts = 0; // zorgt voor account ID verhoging
 
 
-
    //must have
-   public Account(String em, String pw,UserType type) {
-      this.email = em;
-      this.password = pw;
+   public Account(String email, String password, UserType type) {
+      this.email = email;
+      this.password = password;
       this.accountId = ammountAccounts;
       allAccounts.add(this);
       accountType = type;
@@ -50,13 +49,12 @@ public class Account {
    }
 
 
-   // functies
-
+   //getters account
    public UserType getAccountType() {
       return accountType;
    }
 
-   public static ArrayList<Account> getAll() {
+   public static ArrayList<Account> getAllAccounts() {
       return allAccounts;
    }
 
@@ -64,6 +62,21 @@ public class Account {
       return new String[]{email, password};
    }
 
+   public static Account getLoggedInAccount() {
+      return loggedInAccount;
+   }
+
+   public int getAccountId() {
+      return accountId;
+   }
+
+   //setters account
+   public void setType(UserType type) {
+      accountType = type;
+   }
+
+
+   //functions account
    public static Account tryLogin(String email, String password) throws Exception {
       for (Account acc : allAccounts) {
          if (Arrays.equals(acc.getAccountInfo(), new String[]{email, password})) {
@@ -73,21 +86,12 @@ public class Account {
       throw new Exception("Wrong login details");
    }
 
-
-   public static Account getLoggedInAccount(){
-      return loggedInAccount;
-   }
-
    public static void logoff() {
       loggedInAccount = null;
    }
 
-   public static void loggedInAs(Account account) {
+   public static void logInAs(Account account) {
       loggedInAccount = account;
-   }
-
-   public int getAccountId() {
-      return accountId;
    }
 
    public static boolean loginStatus() {
@@ -95,17 +99,18 @@ public class Account {
    }
 
 
+   // functions messages
    public void addMessage(Message message) {
       myMessages.add(message);
    }
 
-   public ArrayList<Message> giveMyMessages() {
+   public ArrayList<Message> getMyMessages() {
       return myMessages;
    }
 
    // bericht verstuurd door bezoeker zonder account naar alle admins
    public static void messageToAllAdmins(String tp, String qn, String nm, String em) {
-      for (Account acc : getAll()) {
+      for (Account acc : getAllAccounts()) {
          if (acc.getAccountType() == UserType.superUser) {
             new Message(tp, qn, nm, em);
          }
@@ -113,10 +118,7 @@ public class Account {
    }
 
 
-      public void setType (UserType type){
-         accountType = type;
-      }
-   }
+}
 
 
 

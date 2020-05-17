@@ -2,12 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad8709e1-1b8d-4d63-b6cd-39ee79cee1f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Images/ClassDiagramOcassions.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/model/UserType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/Class Diagram Ocassions.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/Ocassions-diagram.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/Index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cuba/de/jayh/everything/model/AccountTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cuba/de/jayh/everything/model/CarTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/ClassDiagramOcassions.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Ontwerpdocument.md" beforeDir="false" afterPath="$PROJECT_DIR$/Ontwerpdocument.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/model/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/model/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/model/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/model/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/model/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/setup/jerseyConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/setup/jerseyConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/webservices/AccountResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/webservices/AccountResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +52,7 @@
         <option value="HTML File" />
         <option value="Class" />
         <option value="Enum" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -30,6 +63,7 @@
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
       </MavenImportingSettings>
     </option>
   </component>
@@ -53,27 +87,123 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Images" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="android.dex.compiler" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ghaso\IdeaProjects\IPASS_Project_Occasions\IPASS_Project_Occasions" />
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="cuba.de.jayh.everything.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ghaso\IdeaProjects\IPASS_Project_Occasions\IPASS_Project_Occasions\src\main\webapp" />
       <recent name="C:\Users\ghaso\IdeaProjects\IPASS_Project_Occasions\IPASS_Project_Occasions\Images" />
       <recent name="C:\Users\ghaso\IdeaProjects\IPASS_Project_Occasions\IPASS_Project_Occasions" />
       <recent name="C:\Users\ghaso\IdeaProjects\IPASS_Project_Occasions\IPASS_Project_Occasions\src\main\java\cuba\de\jayh\model" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ghaso\IdeaProjects\IPASS_Project_Occasions\IPASS_Project_Occasions\Images" />
+      <recent name="C:\Users\ghaso\IdeaProjects\IPASS_Project_Occasions\IPASS_Project_Occasions" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.34" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.34" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="IPASS_Project_Occasions:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_IPASS_Project_Occasions_4" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="58115" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="IPASS_Project_Occasions:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -99,7 +229,26 @@
       <workItem from="1589365482669" duration="90000" />
       <workItem from="1589365750970" duration="4570000" />
       <workItem from="1589448987390" duration="243000" />
-      <workItem from="1589449496416" duration="1229000" />
+      <workItem from="1589449496416" duration="3341000" />
+      <workItem from="1589456355009" duration="1956000" />
+      <workItem from="1589534092220" duration="2805000" />
+      <workItem from="1589536987350" duration="157000" />
+      <workItem from="1589537154641" duration="352000" />
+      <workItem from="1589537588945" duration="2083000" />
+      <workItem from="1589539709787" duration="1695000" />
+      <workItem from="1589542055830" duration="448000" />
+      <workItem from="1589542542995" duration="357000" />
+      <workItem from="1589542949673" duration="816000" />
+      <workItem from="1589543806016" duration="30000" />
+      <workItem from="1589543862195" duration="60000" />
+      <workItem from="1589543933993" duration="1170000" />
+      <workItem from="1589545139128" duration="95000" />
+      <workItem from="1589545346354" duration="87000" />
+      <workItem from="1589545458225" duration="29000" />
+      <workItem from="1589545500677" duration="8000" />
+      <workItem from="1589545520351" duration="31000" />
+      <workItem from="1589545565189" duration="13000" />
+      <workItem from="1589545587328" duration="662000" />
     </task>
     <task id="LOCAL-00001" summary="maven project itteratie 1">
       <created>1589287712316</created>
@@ -115,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589366288625</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="maven project itteratie 1 = domein model omzetten naar code">
+      <created>1589450737108</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1589450737108</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,22 +284,31 @@
     <option name="LAST_COMMIT_MESSAGE" value="maven project itteratie 1 = domein model omzetten naar code" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2334" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589363830082">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="282" y="100" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589545046819">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="282" y="100" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1589545046819" />
     <state x="2334" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589363830082" />
+    <state x="468" y="140" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1589543088509">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="468" y="140" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1589543088509" />
     <state x="499" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589286840473">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1589286840473" />
-    <state x="219" y="8" key="CommitChangelistDialog2" timestamp="1589366287263">
+    <state x="219" y="8" key="CommitChangelistDialog2" timestamp="1589450735993">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="219" y="8" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1589366287263" />
+    <state x="219" y="8" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1589450735993" />
     <state x="147" y="71" key="DiffContextDialog" timestamp="1589287681603">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="147" y="71" key="DiffContextDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1589287681603" />
+    <state x="607" y="200" key="FileChooserDialogImpl" timestamp="1589543629390">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="607" y="200" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1589543629390" />
     <state width="1493" height="333" key="GridCell.Tab.0.bottom" timestamp="1589286993238">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -160,23 +325,31 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="333" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1589286993237" />
-    <state x="369" y="112" key="SettingsEditor" timestamp="1589365509600">
+    <state x="299" y="68" key="Maven.ArtifactSearchDialog" timestamp="1589543911861">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="369" y="112" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1589365509600" />
+    <state x="299" y="68" key="Maven.ArtifactSearchDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1589543911861" />
+    <state x="369" y="0" key="SettingsEditor" timestamp="1589545009876">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="369" y="0" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1589545009876" />
     <state x="2381" y="163" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589364190227" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1589366298053">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1589450740251">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1589366298053" />
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1589287617869">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1589450740251" />
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1589738846322">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1589287617869" />
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1589738846322" />
     <state x="2605" y="482" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1589363057243">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2605" y="482" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589363057243" />
+    <state x="533" y="132" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1589540976139">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="533" y="132" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1589540976139" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1589286976859">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
