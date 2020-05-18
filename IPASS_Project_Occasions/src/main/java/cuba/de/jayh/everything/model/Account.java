@@ -1,9 +1,11 @@
 package cuba.de.jayh.everything.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Account {
+
+public class Account implements Serializable {
    private String email;
    private String password;
    private int accountId;
