@@ -1,10 +1,11 @@
 package cuba.de.jayh.everything.model;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Car {
+public class Car implements Serializable {
     private String name;
     private String imageUrl;
     private double kilometre;
@@ -65,7 +66,7 @@ public class Car {
         this.name = name;
     }
     public void setImage(String image) {
-        this.image = image;
+        this.imageUrl = image;
     }
     public void setKilometre(double kilometre) {
         this.kilometre = kilometre;

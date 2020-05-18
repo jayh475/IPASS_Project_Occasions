@@ -1,4 +1,4 @@
-package cuba.de.jayh.everything.setup;
+package setup;
 
 import org.glassfish.jersey.server.ResourceConfig;
 
