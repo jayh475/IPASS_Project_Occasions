@@ -9,7 +9,7 @@ public class Car implements Serializable {
     private String name;
     private String imageUrl;
     private double kilometre;
-    private String  yearOfManufacture;
+    private int  yearOfManufacture;
     private double price;
     private String fuelType;
     private String licensePlate;
@@ -18,7 +18,7 @@ public class Car implements Serializable {
     static ArrayList<Car> cars = new ArrayList<Car>();
 
     //constructor
-    public Car(String name, String imageUrl, double kilometre,String yearOfManufacture,double price, String fuelType, String licensePlate, String brand, String model) {
+    public Car(String name, String imageUrl, double kilometre,int yearOfManufacture,double price, String fuelType, String licensePlate, String brand, String model) {
         this.name = name;
         this.imageUrl = imageUrl;
         this.kilometre = kilometre;
@@ -42,7 +42,7 @@ public class Car implements Serializable {
     public double getKilometre() {
         return kilometre;
     }
-    public String getYearOfManufacture() {
+    public int getYearOfManufacture() {
         return yearOfManufacture;
     }
     public double getPrice() {
@@ -71,7 +71,7 @@ public class Car implements Serializable {
     public void setKilometre(double kilometre) {
         this.kilometre = kilometre;
     }
-    public void setYearOfManufacture(String yearOfManufacture) {
+    public void setYearOfManufacture(int yearOfManufacture) {
         this.yearOfManufacture = yearOfManufacture;
     }
     public void setPrice(double price) {

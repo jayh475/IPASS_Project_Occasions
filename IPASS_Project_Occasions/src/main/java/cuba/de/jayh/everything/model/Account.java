@@ -113,7 +113,7 @@ public class Account implements Serializable {
    // bericht verstuurd door bezoeker zonder account naar alle admins
    public static void messageToAllAdmins(String tp, String qn, String nm, String em) {
       for (Account acc : getAllAccounts()) {
-         if (acc.getAccountType() == UserType.superUser) {
+         if (acc.getAccountType() == UserType.SUPERUSER) {
             new Message(tp, qn, nm, em);
          }
       }
