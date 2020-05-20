@@ -1,0 +1,6 @@
+-verbruik erin betrekken
+- attribuut transmissie er misschien bij betrekken
+-brandstof types = benzine, diesel, hybride, elektriciteit, gas
+-https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_class_more2
+
+

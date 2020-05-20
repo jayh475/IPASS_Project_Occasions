@@ -42,7 +42,7 @@ Korte beschrijving wat het systeem geacht wordt te doen. Eventueel indeling in s
 
 # 3 Use Cases
 
-Hieronder wordt een toelichting gegeven op de use case diagram die te vinden is in directory Images "Ocassions-diagram.jpg". 
+![GitHub Logo](https://raw.githubusercontent.com/jayh475/IPASS_Project_Occasions/master/IPASS_Project_Occasions/Images/Class%20Diagram%20Ocassions.jpg?token=ANT36TVKY45UMXERKYTLVOC6YT7IY)
 
 •	1. De admin kan een auto toevoegen. 
 De admin voert een naam in, een afbeelding, km-stand, bouwjaar, prijs, en brandstof type. 

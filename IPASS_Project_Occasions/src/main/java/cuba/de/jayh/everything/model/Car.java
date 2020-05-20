@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Car implements Serializable {
+public class Car implements Serializable  {
     private String name;
     private String imageUrl;
     private double kilometre;

@@ -6,7 +6,7 @@
 	<groupId>cuba.de.jayh</groupId>
 	<artifactId>IPASS_Project_Occasions</artifactId>
 	<packaging>war</packaging>
-	<version>1.0</version>
+	<version>1</version>
 	<!-- TODO project name  -->
 	<name>Huibers Auto's</name>
 	<description></description>
@@ -27,73 +27,73 @@
 	</licenses>
 
 	<dependencies>
-		<!--  WICKET DEPENDENCIES -->
 
 		<dependency>
 			<groupId>org.apache.wicket</groupId>
 			<artifactId>wicket</artifactId>
 			<version>${wicket.version}</version>
 		</dependency>
-		<!-- OPTIONAL 
+
+		<dependency><!-- for unit testing -->
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<version>5.6.0</version>
+			<scope>test</scope>
+		</dependency>
+
+
+			<!--  JUNIT DEPENDENCY FOR TESTING -->
 			<dependency>
-			<groupId>org.apache.wicket</groupId>
-			<artifactId>wicket-extensions</artifactId>
-			<version>${wicket.version}</version>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>3.8.2</version>
+				<scope>test</scope>
 			</dependency>
-		-->
 
-		<!-- LOGGING DEPENDENCIES - LOG4J -->
 
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.4.2</version>
-		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.14</version>
-		</dependency>
-
-		<!--  JUNIT DEPENDENCY FOR TESTING -->
-		 <dependency>
-				 <groupId>junit</groupId>
-				 <artifactId>junit</artifactId>
-				 <version>3.8.2</version>
-				 <scope>test</scope>
-		 </dependency>
-
-		<!--  JETTY DEPENDENCIES FOR TESTING  -->
-
-		<dependency>
-			<groupId>org.mortbay.jetty</groupId>
-			<artifactId>jetty</artifactId>
-			<version>${jetty.version}</version>
+		<dependency> <!-- running on tomcat -->
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.mortbay.jetty</groupId>
-			<artifactId>jetty-util</artifactId>
-			<version>${jetty.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.mortbay.jetty</groupId>
-			<artifactId>jetty-management</artifactId>
-			<version>${jetty.version}</version>
+		<dependency> <!-- specifying we actually use catalina as well -->
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-catalina</artifactId>
+			<version>9.0.31</version>
 			<scope>provided</scope>
 		</dependency>
 
-
-
+		<dependency><!-- for handling json -->
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.json</artifactId>
+			<version>1.1.4</version>
+		</dependency>
 		<dependency>
+			<groupId>javax.activation</groupId>
+			<artifactId>activation</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<dependency><!-- for runnning webservice api with jax-rs-->
 			<groupId>org.glassfish.jersey.containers</groupId>
 			<artifactId>jersey-container-servlet</artifactId>
 			<version>2.30.1</version>
 		</dependency>
-		<dependency>
+		<dependency><!-- for injection purposes with jax-rs-->
 			<groupId>org.glassfish.jersey.inject</groupId>
 			<artifactId>jersey-hk2</artifactId>
+			<version>2.30.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-json-jackson</artifactId>
+			<version>2.30.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-json-jackson</artifactId>
 			<version>2.30.1</version>
 		</dependency>
 
@@ -102,20 +102,9 @@
 			<artifactId>azure-storage-blob</artifactId>
 			<version>12.6.0</version>
 		</dependency>
-
-		<dependency>
-			<groupId>org.glassfish</groupId>
-			<artifactId>javax.json</artifactId>
-			<version>1.0.4</version>
-		</dependency>
-
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>4.0.1</version>
-		</dependency>
-
 	</dependencies>
+
+
 
 	<build>
 		<resources>
