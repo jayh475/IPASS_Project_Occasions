@@ -7,22 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad8709e1-1b8d-4d63-b6cd-39ee79cee1f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/model/Company.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/persistence/DecodedBase64.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/persistence/EncodedBase64.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/persistence/UploadsManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/webservices/AccountsResources.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images/ClassDiagramOcassions.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ontwerpdocument.md" beforeDir="false" afterPath="$PROJECT_DIR$/Ontwerpdocument.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/model/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/model/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/model/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/model/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/model/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/persistence/PersistenceManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/webservices/AccountResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cuba/de/jayh/everything/webservices/AccountResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/stylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cuba/de/jayh/everything/model/AccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cuba/de/jayh/everything/model/AccountTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cuba/de/jayh/everything/model/CarTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cuba/de/jayh/everything/model/CarTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +83,14 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="cuba.de.jayh.everything.model" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ghaso\IdeaProjects\IPASS_Project_Occasions\IPASS_Project_Occasions\Images" />
+      <recent name="C:\Users\ghaso\IdeaProjects\IPASS_Project_Occasions\IPASS_Project_Occasions" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -105,13 +98,6 @@
       <recent name="C:\Users\ghaso\IdeaProjects\IPASS_Project_Occasions\IPASS_Project_Occasions\Images" />
       <recent name="C:\Users\ghaso\IdeaProjects\IPASS_Project_Occasions\IPASS_Project_Occasions" />
       <recent name="C:\Users\ghaso\IdeaProjects\IPASS_Project_Occasions\IPASS_Project_Occasions\src\main\java\cuba\de\jayh\model" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ghaso\IdeaProjects\IPASS_Project_Occasions\IPASS_Project_Occasions\Images" />
-      <recent name="C:\Users\ghaso\IdeaProjects\IPASS_Project_Occasions\IPASS_Project_Occasions" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.34">
@@ -357,6 +343,7 @@
       <workItem from="1590391435372" duration="139000" />
       <workItem from="1590391612355" duration="78000" />
       <workItem from="1590391712632" duration="829000" />
+      <workItem from="1590392638697" duration="186000" />
     </task>
     <task id="LOCAL-00001" summary="maven project itteratie 1">
       <created>1589287712316</created>
@@ -428,7 +415,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589968909799</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="project structuur helemaal omgegooid">
+      <created>1590392804286</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1590392804286</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -441,7 +435,8 @@
     <MESSAGE value="maven project itteratie 1 = domein model omzetten naar code (2)" />
     <MESSAGE value="Test schrijven (pas in itteratie twee aan begonnen)" />
     <MESSAGE value="fotos" />
-    <option name="LAST_COMMIT_MESSAGE" value="fotos" />
+    <MESSAGE value="project structuur helemaal omgegooid" />
+    <option name="LAST_COMMIT_MESSAGE" value="project structuur helemaal omgegooid" />
   </component>
   <component name="WindowStateProjectService">
     <state x="607" y="250" key="#BuildArtifactsBeforeRunChooser" timestamp="1589959468475">
@@ -485,10 +480,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1589286840473" />
-    <state x="219" y="8" key="CommitChangelistDialog2" timestamp="1589968907946">
+    <state x="219" y="8" key="CommitChangelistDialog2" timestamp="1590392800150">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="219" y="8" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1589968907946" />
+    <state x="219" y="8" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590392800150" />
     <state x="147" y="71" key="DiffContextDialog" timestamp="1589287681603">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -566,10 +561,10 @@
     </state>
     <state x="369" y="0" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1589961066722" />
     <state x="2381" y="163" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589364190227" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1589968913429">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1590392814733">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1589968913429" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590392814733" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1590391031008">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
