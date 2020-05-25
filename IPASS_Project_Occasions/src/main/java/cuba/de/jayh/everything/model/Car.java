@@ -60,6 +60,7 @@ public class Car implements Serializable  {
     public String getBrand() {
         return brand;
     }
+    public String getModel(){return model;}
 
     //setters
     public void setName(String name) {
@@ -86,6 +87,7 @@ public class Car implements Serializable  {
     public void setBrand(String brand) {
         this.brand = brand;
     }
+    public void setModel(String model){this.model = model;}
 
     //equals
     public boolean equals(Object obj) {
@@ -99,10 +101,6 @@ public class Car implements Serializable  {
         }
         return sameObject;
     }
-
-
-
-
 
 }
 

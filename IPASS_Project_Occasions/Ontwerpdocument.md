@@ -42,7 +42,7 @@ Korte beschrijving wat het systeem geacht wordt te doen. Eventueel indeling in s
 
 # 3 Use Cases
 
-![GitHub Logo](https://raw.githubusercontent.com/jayh475/IPASS_Project_Occasions/master/IPASS_Project_Occasions/Images/Class%20Diagram%20Ocassions.jpg?token=ANT36TQKUGC4QY5PEFFRAOC6YT7SY)
+![GitHub Logo](https://raw.githubusercontent.com/jayh475/IPASS_Project_Occasions/master/IPASS_Project_Occasions/Images/ClassDiagramOcassions.jpg?token=ANT36TQKUGC4QY5PEFFRAOC6YT7SY)
 [[Images/ClassDiagramOcassions.jpg]]
 
 

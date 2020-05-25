@@ -34,11 +34,11 @@ public class Message {
 
 
     // als de persoon geen account heeft (wordt verzonden naar alle super-users)
-    public Message(String tp,String qn, String nm, String em){
-        this.topic =tp;
-        this.question =qn;
-        this.name = nm;
-        this.email = em;
+    public Message(String topic,String question, String name, String email){
+        this.topic =topic;
+        this.question =question;
+        this.name = name;
+        this.email = email;
         this.dateOfSend = LocalDateTime.now();
         this.status = Status.UNREAD;
     }

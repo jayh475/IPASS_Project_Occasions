@@ -3,125 +3,80 @@ package cuba.de.jayh.everything.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
-
-public class Account implements Serializable {
+public class Account implements Serializable{
+   private String username;
+   private String fullname;
+   private String address;
+   private String avatarBase64;
+   private String avatarUploadId;
    private String email;
    private String password;
-   private int accountId;
 
+   private ArrayList<Message> myMessages = new ArrayList<Message>();
+   private static Account loggedInAccount = null;
    //admin heeft meer rechten
    private UserType accountType = null;
 
-   //deze velden zijn niet verplicht.
-   private String firstname;
-   private String surname;
-   private String birthday;
+   public Account() {}
 
-   private static ArrayList<Account> allAccounts = new ArrayList<Account>();
-   private ArrayList<Message> myMessages = new ArrayList<Message>();
-   private static Account loggedInAccount = null;
-   private static int ammountAccounts = 0; // zorgt voor account ID verhoging
-
-
-   //must have
-   public Account(String email, String password, UserType type) {
-      this.email = email;
+   public Account(String username, String fullname,String password,  String address, String avatarBase64,UserType type) {
+      this.username = username;
+      this.fullname = fullname;
+      this.address = address;
       this.password = password;
-      this.accountId = ammountAccounts;
-      allAccounts.add(this);
+      this.avatarBase64 = avatarBase64;
       accountType = type;
-      ammountAccounts++;
 
    }
 
-   // niet noodzakelijk, maar zorgt voor een betere klantrelatie later in het proces
-   public Account(String email, String password, String firstname, String surname, String birthday, UserType type) {
-      this.email = email;
-      this.password = password;
-      this.accountId = ammountAccounts;
-      this.firstname = firstname;
-      this.surname = surname;
-      this.birthday = birthday;
-      allAccounts.add(this);
-      accountType = type;
-      ammountAccounts++;
+   public String getUsername() { return username; }
+   public String getFullname() { return fullname; }
+   public String getAddress() { return address; }
+   public String getAvatarBase64() { return avatarBase64; }
+   public String getAvatarUploadId() { return avatarUploadId; }
+   public UserType getAccountType() { return accountType; }
+   public void setUsername(String username) { this.username = username; }
+   public void setFullname(String fullname) { this.fullname = fullname; }
+   public void setAddress(String address) { this.address = address; }
+   public void setAvatarBase64(String avatarBase64) { this.avatarBase64 = avatarBase64; }
+   public void setAvatarUploadId(String avatarUploadId) { this.avatarUploadId = avatarUploadId; }
+   public void setType(UserType type) { accountType = type; }
 
 
+   public ArrayList<Message> getMyMessages() {
+      return myMessages;
+   }
+   public void addMessage(Message message) {
+      myMessages.add(message);
    }
 
-
-   //getters account
-   public UserType getAccountType() {
-      return accountType;
-   }
-
-   public static ArrayList<Account> getAllAccounts() {
-      return allAccounts;
-   }
-
-   public String[] getAccountInfo() {
-      return new String[]{email, password};
-   }
 
    public static Account getLoggedInAccount() {
       return loggedInAccount;
    }
 
-   public int getAccountId() {
-      return accountId;
-   }
-
-   //setters account
-   public void setType(UserType type) {
-      accountType = type;
-   }
 
 
-   //functions account
-   public static Account tryLogin(String email, String password) throws Exception {
-      for (Account acc : allAccounts) {
-         if (Arrays.equals(acc.getAccountInfo(), new String[]{email, password})) {
-            return acc;
+
+   // bericht verstuurd door bezoeker zonder account naar alle admins
+   public static void messageToAllAdmins(String topic, String question,String name,  String email) {
+      for(Account acc: Company.getCompany().getAccounts()){
+         if(acc.getAccountType() == UserType.SUPERUSER){
+            new Message(topic, question,name, email);
          }
       }
-      throw new Exception("Wrong login details");
    }
 
-   public static void logoff() {
-      loggedInAccount = null;
-   }
 
    public static void logInAs(Account account) {
       loggedInAccount = account;
    }
 
-   public static boolean loginStatus() {
-      return (loggedInAccount != null);
-   }
-
-
-   // functions messages
-   public void addMessage(Message message) {
-      myMessages.add(message);
-   }
-
-   public ArrayList<Message> getMyMessages() {
-      return myMessages;
-   }
-
-   // bericht verstuurd door bezoeker zonder account naar alle admins
-   public static void messageToAllAdmins(String tp, String qn, String nm, String em) {
-      for (Account acc : getAllAccounts()) {
-         if (acc.getAccountType() == UserType.SUPERUSER) {
-            new Message(tp, qn, nm, em);
-         }
-      }
-   }
-
 
 }
-
 
 
 
