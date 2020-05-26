@@ -1,11 +1,77 @@
 package cuba.de.jayh.everything.webservices;
 
 
+import cuba.de.jayh.everything.model.Car;
 
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@Path("cars")
 public class CarResource {
 
 
- // put post delete patch
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAllCars(){
+        return Response.ok( Car.getAllCars()).build();
+    }
+
+    }
 
 
-}
+
+
+
+
+
+//        @GET
+//        @Produces(MediaType.APPLICATION_JSON)
+//        @Path("{name}")
+//        public Response getShoppingListByName(@PathParam("name") String name) {
+//            Shop shop = Shop.getShop();
+//            ShoppingList list = shop.getShoppingListByName(name);
+//
+//            if (list == null){
+//                Map<String,String> messages = new HashMap();
+//                messages.put("error","deze lijst bestaat niet");
+//                return Response.status(Response.Status.CONFLICT).entity(messages).build();
+//            }
+//            return Response.ok(list).status(Response.Status.OK).build();
+//
+//        }
+//
+//        @POST
+//        @Path("create")
+//        @Produces(MediaType.APPLICATION_JSON)
+//        public Response createShoppingList(@FormParam("name") String naam){
+//            ShoppingList shoppingList = new ShoppingList(naam,new Shopper(naam));
+//            if (shoppingList == null){
+//                Response.status(Response.Status.CONFLICT).build();
+//            }
+//            return Response.ok(shoppingList).build();
+//        }
+//        @POST
+//        @Produces(MediaType.APPLICATION_JSON)
+//        @Path("AddProduct")
+//        public Response AddProduct(@FormParam("product") String product, @FormParam("amount") int amount){
+//            ShoppingList al = new ShoppingList("anotherList",new Shopper("temp") );
+//            al.addItem(new Product(product), amount);
+//
+//            return Response.ok(al).build();
+//
+//
+//
+//
+//        }
+//
+
+
+
+
+
+
+

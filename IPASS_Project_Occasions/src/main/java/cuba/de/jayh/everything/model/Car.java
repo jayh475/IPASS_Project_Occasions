@@ -1,9 +1,13 @@
 package cuba.de.jayh.everything.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class Car implements Serializable  {
     private String name;
@@ -15,7 +19,9 @@ public class Car implements Serializable  {
     private String licensePlate;
     private String brand;
     private String model;
-    static ArrayList<Car> cars = new ArrayList<Car>();
+
+    @JsonIgnore
+    static ArrayList<Car> allCars = new ArrayList<Car>();
 
     //constructor
     public Car(String name, String imageUrl, double kilometre,int yearOfManufacture,double price, String fuelType, String licensePlate, String brand, String model) {
@@ -28,8 +34,19 @@ public class Car implements Serializable  {
         this.licensePlate = licensePlate;
         this.brand =brand;
         this.model =model;
-        cars.add(this);
+        allCars.add(this);
     }
+
+    public static Car createCar(String name, String imageUrl, double kilometre,int yearOfManufacture,double price, String fuelType, String licensePlate, String brand, String model) {
+        for (Car cars : allCars) {
+            if (cars.name.equals(name) && cars.imageUrl.equals(imageUrl) && cars.kilometre == kilometre && cars.yearOfManufacture == yearOfManufacture && cars.price == price && cars.fuelType.equals(fuelType) && cars.licensePlate.equals(licensePlate) && cars.brand.equals(brand) && cars.model.equals(model)) {
+                return null;
+            }
+
+        }
+        return new Car(name, imageUrl, kilometre, yearOfManufacture, price, fuelType, licensePlate, brand, model);
+    }
+
 
 
     // getters
@@ -51,8 +68,8 @@ public class Car implements Serializable  {
     public String getFuelType() {
         return fuelType;
     }
-    public  ArrayList<Car> getCars() {
-        return cars;
+    public static List<Car> getAllCars() {
+        return Collections.unmodifiableList(allCars);
     }
     public String getLicensePlate() {
         return licensePlate;
@@ -89,18 +106,9 @@ public class Car implements Serializable  {
     }
     public void setModel(String model){this.model = model;}
 
-    //equals
-    public boolean equals(Object obj) {
-        boolean sameObject = false;
 
-        if (obj instanceof Car) {
-            Car otherCar = (Car) obj; //cast
-            if (this.licensePlate.equals(otherCar.licensePlate) ){
-                sameObject = true;
-            }
-        }
-        return sameObject;
-    }
+
+
 
 }
 

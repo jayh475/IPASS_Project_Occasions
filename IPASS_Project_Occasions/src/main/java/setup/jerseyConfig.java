@@ -5,14 +5,14 @@ import org.glassfish.jersey.server.ResourceConfig;
 
 import javax.ws.rs.ApplicationPath;
 
-public class jerseyConfig {
 
-    @ApplicationPath("restservices")
-    public class JerseyConfig extends ResourceConfig {
-        public JerseyConfig() {
-            packages("cuba.de.jayh.everything.webservices");
-            register(JacksonFeature.class);
-        }
+@ApplicationPath("restservices")
+class JerseyConfig extends ResourceConfig {
+
+    public JerseyConfig() {
+        packages("cuba.de.jayh.everything.webservices");
+        register(JacksonFeature.class);
     }
-
 }
+
+
