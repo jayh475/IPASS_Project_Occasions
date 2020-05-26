@@ -17,10 +17,14 @@ public class CarResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllCars(){
-        return Response.ok( Car.getAllCars()).build();
-    }
+        return Response.ok( Car.getAllCars()).status(Response.Status.OK).build();
+
+        }
+
 
     }
+
+
 
 
 

@@ -21,8 +21,8 @@ public class MyContextListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        Car.createCar("Volkswagen Polo 1.6 AUTOMAAT ( schade )", "https://learnwebcode.github.io/json-example/images/dog-1.jpg", 2000, 2016, 1800, "diesel", "73-MG-HJ", "Volkswagen", "Polo 1.6");
-        Car.createCar("Fiat punto", "https://learnwebcode.github.io/json-example/images/cat-2.jpg", 30000, 2010,8000,  "diesel","18-ZH-JP","Fiat", "punto" );
+        Car.createCar("Volkswagen Polo 1.6 AUTOMAAT", "https://media.autoweek.nl/m/pyryc27bzexp_800.jpg", 2000, 2016, 1800, "diesel", "73-MG-HJ", "Volkswagen", "Polo 1.6");
+        Car.createCar("Fiat punto", "https://cdn.autowereld.nl/I392904122/1280x0/fiat-punto-evo-1-3-m-jet-street-airco-cruise-lm-velgen-pdc-plaatje.jpg", 30000, 2010,8000,  "diesel","18-ZH-JP","Fiat", "punto" );
 
 
 

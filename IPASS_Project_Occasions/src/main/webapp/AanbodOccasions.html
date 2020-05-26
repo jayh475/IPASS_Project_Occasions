@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aanbod Ocassions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stylesheet.css" type="text/css"/>
+</head>
+<body>
+
+
+    <header>
+        <h1>Huibers Auto's </h1>
+        <nav>
+            <ul class="boxing">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="AanbodOccasions.html"> Aanbod occasions</a></li>
+                <li><a href="#">Hoe werkt het</a></li>
+                <li><a href="#">Over ons</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="Inloggen.html">Inloggen</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <div id="placeholder"></div>
+
+
+<script>
+let carData;
+fetch("restservices/cars", {method: 'GET'})
+.then(response => response.json())
+.then(function (myJson) {
+carData = myJson;
+console.log(myJson);
+
+function carTemplate(car) {
+return `
+<div class="car">
+    <img class="car-photo" src="${car.imageUrl}" alt="Auto foto's">
+    <h4 class="car-name">${car.name}   </h4>
+</div>
+`
+}
+document.getElementById("placeholder").innerHTML = `
+
+
+<H2 class="app-title"> Cars (${carData.length} results) </H2>
+${carData.map(carTemplate).join('')}
+<p class="footer">These ${carData.length} Cars were added recently. Check back soon for updates  </p>
+`})
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

@@ -53,7 +53,7 @@ public class Car implements Serializable  {
     public String getName() {
         return name;
     }
-    public String getImage() {
+    public String getImageUrl() {
         return imageUrl;
     }
     public double getKilometre() {
