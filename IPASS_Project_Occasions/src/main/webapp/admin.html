@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+
+<h2>POST</h2>
+
+<h3>Create new Car</h3>
+<form id="POSTcar">
+    <label for="name">naam:<input type="text" id="name" name="name"/></label>
+    <label for="brand">merk:<input type="text" id="brand" name="brand"/></label>
+    <label for="model">model:<input type="text" id="model" name="model"/></label>
+    <label for="kilometre">km-stand:<input type="number" id="kilometre" name="kilometre" /> </label>
+    <label for="yearOfManufacture">bouwjaar:<input type="number" id="yearOfManufacture" name="kilometre"/></label> <br>
+    <label for="price">prijs:<input type="number" id="price" name="price"/></label>
+    <label for="licencePlate">kenteken:<input type="text" id="licencePlate" name="licencePlate"/></label>
+    <input type="button" id="postcars" value="Create!"/>
+</form>
+
+<h3>Delete Car</h3>
+<form>
+
+
+</form>
+
+
+<script type="text/javascript">
+    document.querySelector("#postcars").addEventListener("click", function () {
+        var formData = new FormData(document.querySelector("#POSTcar"));
+        var encData = new URLSearchParams(formData.entries());
+        var fetchOptions = {
+            method: "POST",
+            headers : {
+                "Authorization": "Bearer " + window.sessionStorage.getItem("myJWT")
+            },
+            body: encData
+        }
+        fetch("restservices/cars/createCar",fetchOptions)
+            .then(response => response.json())
+            .then(function (myJson) {
+                console.log(myJson); })})
+
+
+            //     document.getElementById("placeholder").innerHTML = `
+            // ${carData.map().join('')}
+
+
+
+</script>
+
+
+
+
+</body>
+</html>>

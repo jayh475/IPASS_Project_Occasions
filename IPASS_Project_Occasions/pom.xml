@@ -57,12 +57,14 @@
 			</dependency>
 
 
+
 		<dependency> <!-- running on tomcat -->
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>4.0.1</version>
 			<scope>provided</scope>
 		</dependency>
+
 		<dependency> <!-- specifying we actually use catalina as well -->
 			<groupId>org.apache.tomcat</groupId>
 			<artifactId>tomcat-catalina</artifactId>

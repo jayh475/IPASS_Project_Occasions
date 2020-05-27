@@ -6,7 +6,6 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.JwtParser;
 import io.jsonwebtoken.Jwts;
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
@@ -24,7 +23,7 @@ public class AuthenticationFilter implements ContainerRequestFilter {
         String authHeader = requestCtx.getHeaderString(HttpHeaders.AUTHORIZATION);
         if(authHeader != null && authHeader.startsWith("Bearer ")){
 
-            String token = authHeader.substring("Bearer".length()).trim());
+            String token = authHeader.substring("Bearer".length()).trim();
 
             try{
 

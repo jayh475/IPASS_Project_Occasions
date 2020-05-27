@@ -8,37 +8,62 @@
 
 </head>
 <body>
-<div id="main">
-    <form id="postaccount">
-        <label for="username">Username:</label><input type="text" id="username" name="username" /><br>
-        <label for="fullname">Fullname:</label><input type="text" id="fullname" name="fullname" /><br>
-        <label for="address">Address:</label><input type="text" id="address" name="address" /><br>
-        <label for="fileupload">Avatar:</label><input type="file" id="fileupload" /><br><br>
 
-        <input type="button" id="send_json" value="send json" onclick="sendJsonData()"/>
-        <input type="button" id="send_formdata" value="send formdata" onclick="sendFormData()" />
-        <span id="postresponse"></span>
+
+<div id="main">
+    <h2>login</h2>
+    <form id="loginform">
+        <label for="username">Username:</label><input type="text" id="username" name="username" /><br>
+      <label for="password" >Wachtwoord:</label><input type="text" id="password" name="password"/><br>
     </form>
+
+    <button type="button" name="profile" id="profile"> profile!</button>
+    <button type="button" name=login" id="login"> login</button>
+    <p> </p>
+    <a href="admin.html">functies admin</a>
+
 
     <br><hr><br>
-
-    <form id="showaccount">
-        <input type="text" placeholder="username" id="usertoload"/>
-        <input type="button" onclick="loadAccount()" value="show account"/>
-        <span id="getresponse"></span>
-    </form>
-
-    <template id="accounttemplate">
-        <div>
-            <label>Username:</label><label class="a_un"></label><br>
-            <label>Fullname:</label><label class="a_fn"></label><br>
-            <label>Address:</label><label class="a_ad"></label><br>
-            <label>Avatar:</label><img class="a_av" src="" height="50px"/><br>
-            <label>Avatar-link:</label><a class="a_al" href="" target="_blank">click</a>
-        </div>
-    </template>
-
-    <div id="accountview"></div>
 </div>
+
+
+<script type="text/javascript">
+
+    function login(event){
+        var formData= new FormData(document.querySelector("#loginform"));
+        var encData = new URLSearchParams(formData.entries());
+
+        fetch("restservices/authentication", { method: "POST", body: encData})
+            .then(function(response){
+            if(response.ok) return response.json();
+            else throw "wrong username/password";
+        })
+        .then(myJson => window.sessionStorage.setItem("myJWT",myJson.JWT)
+        .catch(error=> console.log(error)));
+    }
+    document.querySelector("#login").addEventListener("click",login);
+
+    document.querySelector("#profile").addEventListener("click", function(){
+        var fetchoptions= {
+            method: 'GET',
+            headers: {
+                'Authorization': 'bearer'+ window.sessionStorage.getItem("myJWT")
+            }
+
+
+        }
+        fetch("restservices/account/profile", fetchoptions)
+        .then(response => response.json())
+        .then(function (myJson) {
+            console.log(myJson);
+
+        });
+    });
+
+
+</script>
+
+
+
 </body>
 </html>

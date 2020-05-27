@@ -24,7 +24,7 @@ public class Car implements Serializable  {
     static ArrayList<Car> allCars = new ArrayList<Car>();
 
     //constructor
-    public Car(String name, String imageUrl, double kilometre,int yearOfManufacture,double price, String fuelType, String licensePlate, String brand, String model) {
+    private Car(String name, String imageUrl, double kilometre,int yearOfManufacture,double price, String fuelType, String licensePlate, String brand, String model) {
         this.name = name;
         this.imageUrl = imageUrl;
         this.kilometre = kilometre;

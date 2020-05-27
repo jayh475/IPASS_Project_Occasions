@@ -19,6 +19,7 @@ import java.util.Map;
 public class AccountResource {
 
 
+
     @GET
     @Path("{username}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -33,15 +34,6 @@ public class AccountResource {
             return Response.ok(account).build();
         }
 
-//    @PUT
-//    @RolesAllowed("user")
-//    @Path("{username}")
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public Response updateAccount(@PathParam("username") String name ){
-//        Account replaced =Accoun
-//
-//    }
-//
 
 
 

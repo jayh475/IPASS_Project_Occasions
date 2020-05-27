@@ -15,11 +15,7 @@ public class Account implements Serializable, Principal {
 
 
 
-
-
-   public Account() {}
-
-   public Account(String username,String password) {
+   private Account(String username,String password) {
       this.username = username;
       this.password = password;
       this.role ="user";
@@ -27,6 +23,15 @@ public class Account implements Serializable, Principal {
 
    }
 
+   public static  Account createAccount(String username, String password) {
+      for(Account account : allAccounts){
+         if( (account.username.equals(username) || account.password.equals(password))   && (account.username.equals(username) | account.password.equals(password) )  ) {
+            return null;
+         }
+
+      }
+      return new Account(username,password);
+   }
 
 
    public String getUsername() { return username; }
@@ -53,12 +58,24 @@ public class Account implements Serializable, Principal {
    }
 
 
+
    public ArrayList<Message> getMyMessages() {
       return myMessages;
    }
 
 
+   @Override
+   public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+      Account account = (Account) o;
+      return username.equals(account.username);
+   }
 
+   @Override
+   public int hashCode() {
+      return Objects.hash(username);
+   }
 
    @Override
    public String getName() {

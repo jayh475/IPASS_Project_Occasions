@@ -14,7 +14,7 @@ class CarTest {
 
     @BeforeEach
     void test() {
-        c1 = new Car("Volkswagen Polo 1.6 AUTOMAAT ( schade )", "", 2000, 2016, 1800, "diesel", "73-MG-HJ", "Volkswagen", "Polo 1.6");
+         Car.createCar("Volkswagen Polo 1.6 AUTOMAAT ( schade )", "", 2000, 2016, 1800, "diesel", "73-MG-HJ", "Volkswagen", "Polo 1.6");
 
     }
 

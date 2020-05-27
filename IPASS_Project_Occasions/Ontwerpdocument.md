@@ -124,3 +124,7 @@ Hier wordt een installatiehandleiding en een sumiere gebruikershandleiding besch
 
 # 7 Verwijzingen
 Geef hier de bronnenlijst. Gebruik de APA stijl om de bronnen te vermelden.
+
+https://www.youtube.com/watch?v=DG4obitDvUA
+
+https://css-tricks.com/quick-css-trick-how-to-center-an-object-exactly-in-the-center/
