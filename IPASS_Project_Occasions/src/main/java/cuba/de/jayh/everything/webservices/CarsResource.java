@@ -20,6 +20,32 @@ public class CarsResource {
         return Response.ok(Car.getAllCars()).status(Response.Status.OK).build();
     }
 
+
+
+//    @GET
+//    @Path("carByBrand")
+//    public Response getCarByBrand(@FormParam("brand") String brand){
+//        Car b= Car.getCarByBrand(brand);
+//        if(b ==null) {
+//            return Response.status(404).build();
+//        }
+//        return
+//    }
+
+//    @GET
+//    @Path("carByModel")
+//    public Response getCarByModel(@FormParam("model") String model){
+//        Car m= Car.getCarsByModel(model);
+//        if(m ==null) {
+//            return Response.status(404).build();
+//        }
+//        return Respomse
+//
+//
+//    }
+
+
+
     @POST
 //    @RolesAllowed("user")
     @Path("createCar")
@@ -37,11 +63,10 @@ public class CarsResource {
             return Response.status(404).build();
         }
         return Response.ok(c).build();
-
-
-
-
     }
+
+
+
 
 
 

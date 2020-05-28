@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -105,6 +104,24 @@ public class Car implements Serializable  {
         this.brand = brand;
     }
     public void setModel(String model){this.model = model;}
+
+
+
+
+    public static ArrayList<Car> getCarsByBrand(String brand) {
+        ArrayList<Car> theBrandList = new ArrayList<>();
+        for (Car car : allCars) {
+            if (car.brand.equals(brand)) {
+                theBrandList.add(car);
+            }
+        }
+        return theBrandList;
+    }
+
+//
+//    public static Car getCarsByModel(String model){
+//
+//    }
 
 
 

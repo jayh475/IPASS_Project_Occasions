@@ -16,9 +16,9 @@
     <label for="brand">merk:<input type="text" id="brand" name="brand"/></label>
     <label for="model">model:<input type="text" id="model" name="model"/></label>
     <label for="kilometre">km-stand:<input type="number" id="kilometre" name="kilometre"/></label>
-    <label for="yearOfManufacture">bouwjaar:<input type="number" id="yearOfManufacture"
-                                                   name="yearOfManufacture"/></label> <br>
+    <label for="yearOfManufacture">bouwjaar:<input type="number" id="yearOfManufacture" name="yearOfManufacture"/></label> <br>
     <label for="price">prijs:<input type="number" id="price" name="price"/></label>
+    <label for="fuelType">brandstof:<input type="text" id="fuelType" name="fuelType"/></label>
     <label for="licencePlate">kenteken:<input type="text" id="licencePlate" name="licencePlate"/></label>
     <label for="imageUrl">foto:<input type="text" id="imageUrl"/></label> <br><br>
 
@@ -59,8 +59,9 @@
                 formdataToPage = formData;
                 console.log(myJson);
 
-                document.getElementById("placeholder").innerHTML = `
-    ${formdataToPage.map(carTemplate).join('')}`
+    //
+    //             document.getElementById("placeholder").innerHTML = `
+    // ${formdataToPage.map(carTemplate).join('')}`
 
             })})
 

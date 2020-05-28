@@ -92,6 +92,8 @@ Actor templates, per actor met de template
 ## §2 Use Case Templates
 
 
+
+
 ## §3 Wireframes
 Een wireframe voor elke use case.
 
