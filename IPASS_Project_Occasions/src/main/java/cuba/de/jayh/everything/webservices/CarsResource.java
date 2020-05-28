@@ -21,7 +21,7 @@ public class CarsResource {
     }
 
     @POST
-    @RolesAllowed("admin")
+//    @RolesAllowed("user")
     @Path("createCar")
     @Produces(MediaType.APPLICATION_JSON)
     public Response createCar(@FormParam("name")String name,@FormParam("kilometre") Double kilometre,
