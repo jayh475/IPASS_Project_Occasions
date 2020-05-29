@@ -15,7 +15,7 @@ public class Car implements Serializable  {
     private int  yearOfManufacture;
     private double price;
     private String fuelType;
-    private String licensePlate;
+    private String licencePlate;
     private String brand;
     private String model;
 
@@ -23,27 +23,26 @@ public class Car implements Serializable  {
     static ArrayList<Car> allCars = new ArrayList<Car>();
 
     //constructor
-    private Car(String name, String imageUrl, double kilometre,int yearOfManufacture,double price, String fuelType, String licensePlate, String brand, String model) {
+    private Car(String name, String imageUrl, double kilometre,int yearOfManufacture,double price, String fuelType, String licencePlate, String brand, String model) {
         this.name = name;
         this.imageUrl = imageUrl;
         this.kilometre = kilometre;
         this.yearOfManufacture = yearOfManufacture;
         this.price = price;
         this.fuelType = fuelType;
-        this.licensePlate = licensePlate;
+        this.licencePlate = licencePlate;
         this.brand =brand;
         this.model =model;
         allCars.add(this);
     }
 
-    public static Car createCar(String name, String imageUrl, double kilometre,int yearOfManufacture,double price, String fuelType, String licensePlate, String brand, String model) {
+    public static Car createCar(String name, String imageUrl, double kilometre,int yearOfManufacture,double price, String fuelType, String licencePlate, String brand, String model) {
         for (Car cars : allCars) {
-            if (cars.name.equals(name) && cars.imageUrl.equals(imageUrl) && cars.kilometre == kilometre && cars.yearOfManufacture == yearOfManufacture && cars.price == price && cars.fuelType.equals(fuelType) && cars.licensePlate.equals(licensePlate) && cars.brand.equals(brand) && cars.model.equals(model)) {
+            if (cars.name.equals(name) && cars.imageUrl.equals(imageUrl) && cars.kilometre == kilometre && cars.yearOfManufacture == yearOfManufacture && cars.price == price && cars.fuelType.equals(fuelType) && cars.licencePlate.equals(licencePlate) && cars.brand.equals(brand) && cars.model.equals(model)) {
                 return null;
             }
-
         }
-        return new Car(name, imageUrl, kilometre, yearOfManufacture, price, fuelType, licensePlate, brand, model);
+        return new Car(name, imageUrl, kilometre, yearOfManufacture, price, fuelType, licencePlate, brand, model);
     }
 
 
@@ -70,8 +69,8 @@ public class Car implements Serializable  {
     public static List<Car> getAllCars() {
         return Collections.unmodifiableList(allCars);
     }
-    public String getLicensePlate() {
-        return licensePlate;
+    public String getLicencePlate() {
+        return licencePlate;
     }
     public String getBrand() {
         return brand;
@@ -97,8 +96,8 @@ public class Car implements Serializable  {
     public void setFuelType(String fuelType) {
         this.fuelType = fuelType;
     }
-    public void setLicensePlate(String licensePlate) {
-        this.licensePlate = licensePlate;
+    public void setLicencePlate(String licencePlate) {
+        this.licencePlate = licencePlate;
     }
     public void setBrand(String brand) {
         this.brand = brand;
