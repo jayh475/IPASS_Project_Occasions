@@ -6,6 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/stylesheet.css" type="text/css"/>
 </head>
+
+<style>
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333333;
+    }
+
+    li a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 16px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background-color: firebrick;
+    }
+</style>
 <body>
 
 <header>
@@ -24,14 +47,17 @@
 </header>
 
 
-<form class="car">
-    <label for="brand"></label><select id="brand" name="merk">
+<form class="homepage">
+    <label for="brand"></label><select id="brand" name="merk" >
         <option value="volvo">Volvo</option>
         <option value="saab">Saab</option>
         <option value="fiat">Fiat</option>
         <option value="audi">Audi</option>
         <option value="peugeot">peugeot</option>
+        <option value="volkswagen">peugeot</option>
     </select>
+
+
 
     <label for=name="brandstof"></label><select id=name="brandstof">
         <option value="benzine">benzine</option>
@@ -40,6 +66,15 @@
         <option value="elektriciteit">elektriciteit</option>
         <option value="gas">gas</option>
     </select>
+
+    <label for=name="model"></label><select id=name="model">
+    <option value="x">x</option>
+    <option value="x">x</option>
+    <option value="x">x</option>
+    <option value="x">x</option>
+    <option value="x">x</option>
+</select>
+
 
     <input type="submit">
 

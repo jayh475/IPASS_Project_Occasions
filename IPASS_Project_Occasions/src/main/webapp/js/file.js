@@ -10,5 +10,7 @@ function carTemplate(car) {
   
 
 </div> `
-        }
+}
+
+
 

@@ -22,24 +22,23 @@ public class CarsResource {
 
 
 
-//    @GET
-//    @Path("carByBrand")
-//    public Response getCarByBrand(@FormParam("brand") String brand){
-//        Car b= Car.getCarByBrand(brand);
-//        if(b ==null) {
-//            return Response.status(404).build();
-//        }
-//        return
-//    }
+    @GET
+    @Path("{carsByBrand}")
+    public Response getCarsByBrand(@PathParam("carsByBrand") String brand){
+        if(Car.getCarsByBrand(brand).isEmpty()) {
+            return Response.status(404).build();
+        }
+        return Response.ok(Car.getCarsByBrand(brand)).build();
+    }
 
 //    @GET
 //    @Path("carByModel")
-//    public Response getCarByModel(@FormParam("model") String model){
+//    public Response getCarByModel(@PathParam("carsBymodel") String model){
 //        Car m= Car.getCarsByModel(model);
 //        if(m ==null) {
 //            return Response.status(404).build();
 //        }
-//        return Respomse
+//        return Response
 //
 //
 //    }
@@ -64,9 +63,6 @@ public class CarsResource {
         }
         return Response.ok(c).build();
     }
-
-
-
 
 
 

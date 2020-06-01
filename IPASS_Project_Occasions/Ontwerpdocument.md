@@ -5,7 +5,7 @@ IPASS – Ontwerpdocument
 
 | Datum      | 05-05-2020 |
 |------------|------------|
-| __Versie__ | __0__      |
+| __Versie__ | _0_.2     |
 | __Auteur__ | __Jayh de Cuba__   |
 
 ---
@@ -87,15 +87,60 @@ De admins kunnen ook berichten sturen naar gebruikers die een account hebben aan
 
 
 ## §1 Actoren
-Actor templates, per actor met de template 
+|  Use Case : Auto toevoegen |   uitwerking  |
+|----------|--------------|
+| Rolnaam:        | eigenaar(admin)     |
+|  Functienaam:        | De functienamen van de eigenaar zijn auto's toevoegen   |
+| Omschrijving van de rol: | De rol van de eigenaar(admin) is om auto's toe te voegen aan het scherm.De auto's kunnen dan gezien worden door zowel gebruikers met account en gebruikers zonder account.       |
+|  Uitoefenaren:  |  In de organisatie mogen alleen eigenaren auto's toevoegen aan de lijst met auto's.        |
+
+
+
+
 
 ## §2 Use Case Templates
+
+|  Use Case : Auto toevoegen |   uitwerking  |
+|----------|--------------|
+| id:        | UC01 v0.1   |
+|naam:        |Auto toevoegen    |
+|actoren:        | eigenaar   |
+
+
+#####beschrijving
+De eigenaar kan een auto toevoegen bestaande uit merk(i), model(i), kenteken(i), kentekenplaat(i), bouwjaar(i),prijs(i), kilometerstand(i)
+,brandstof type(i) en een afbeelding Url van de auto(i). Het systeem controleert of de auto al in het systeem staat door het controleren van alle gegegens en daarna van het kentekenplaat. Als de auto nog niet in het systeem staat, worden de gegevens opgeslagen en staat er een nieuwe auto in de lijst. 
+
+#####Scenario
+|  nummer |   uitwerking  |
+|----------|--------------|
+|  1      |  Systeem vraagt om de volgende gegevens: merk(i), model(i), kenteken(i), kentekenplaat(i), bouwjaar(i),prijs(i), kilometerstand(i),brandstof type(i) en een afbeelding Url van de auto(i).|
+|   2     | Eigenaar verstrekt deze gegevens.  |
+|    3    | Systeem valideert de ingevoerde klantcode  |
+|    4    | Als auto  bestaat in de list)  | 
+|   5     | Systeem geeft foutmelding     |
+|  6   |Systeem gaat verder met stap 1     |
+|  7   |  Doe zolang er een auto toegevoegd wordt dat nog niet bestaat   |
+|  8   |  als de auto nog niet bestaat wordt die toegevoegd aan de lijst met autos op aanbod occasions  |
+|     |    |
+|     |    |
+|     |    |
+|     |    |
+|     |    |
+
+
+
+
+
+
+
 
 
 
 
 ## §3 Wireframes
 Een wireframe voor elke use case.
+
 
 ---
 
@@ -130,3 +175,7 @@ Geef hier de bronnenlijst. Gebruik de APA stijl om de bronnen te vermelden.
 https://www.youtube.com/watch?v=DG4obitDvUA
 
 https://css-tricks.com/quick-css-trick-how-to-center-an-object-exactly-in-the-center/
+
+https://stackoverflow.com/questions/14976495/get-selected-option-text-with-javascript
+
+https://stackoverflow.com/questions/7421612/slf4j-failed-to-load-class-org-slf4j-impl-staticloggerbinder

@@ -34,9 +34,13 @@ public class AuthenticationResource {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    public Response authenticateUserByPassword(@FormParam("username") String username, @FormParam("password") String password){
+    public Response authenticateUserByPassword(@FormParam("username") String username,
+                                               @FormParam("password") String password){
+        System.out.println("triggered");
         try{
             String role = Account.validateLogin(username, password);
+            if(role==null) throw new IllegalArgumentException("no user found");
+
             String token = createToken(username, role);
 
             SimpleEntry<String , String> JWT = new SimpleEntry<>("JWT", token);

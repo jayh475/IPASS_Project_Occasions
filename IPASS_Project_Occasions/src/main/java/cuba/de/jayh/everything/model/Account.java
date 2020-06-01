@@ -23,14 +23,14 @@ public class Account implements Serializable, Principal {
 
    }
 
-   public static  Account createAccount(String username, String password) {
+   public static void createAccount(String username, String password) {
       for(Account account : allAccounts){
-         if( (account.username.equals(username) || account.password.equals(password))   && (account.username.equals(username) | account.password.equals(password) )  ) {
-            return null;
+         if( (account.username.equals(username)  && account.password.equals(password)  ) | account.username.equals(username) ){
+            return;
          }
 
       }
-      return new Account(username,password);
+      new Account(username, password);
    }
 
 

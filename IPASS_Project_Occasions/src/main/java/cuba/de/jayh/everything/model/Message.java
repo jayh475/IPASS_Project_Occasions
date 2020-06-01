@@ -1,10 +1,11 @@
 package cuba.de.jayh.everything.model;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Objects;
 
-public class Message {
+public class Message implements Serializable {
     private String topic;
     private String question;
     private String name;
@@ -56,6 +57,7 @@ public class Message {
     }
 
 }
+
 
 
 

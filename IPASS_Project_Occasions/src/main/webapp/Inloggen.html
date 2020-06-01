@@ -12,14 +12,18 @@
 <div id="main">
     <h2>login</h2>
     <form id="loginform">
-        <label for="username">Username:</label><input type="text" id="username" name="username"/><br>
-        <label for="password">Wachtwoord:</label><input type="text" id="password" name="password"/><br>
-    </form>
+        <label for="username"><b>Username:</b></label> <br>
+        <input type="text" placeholder="Enter Username" id="username" name="username"/><br>
+        <label for="password"><b>Wachtwoord:</b></label> <br>
+        <input type="text"  placeholder="Enter password" id="password" name="password"/><br>
 
-    <button type="button" name="profile" id="profile"> profile!</button>
+    </form>
+    <br>
     <button type="button" name=login" id="login"> login</button>
-    <p></p>
+    <br><br>
     <a href="admin.html">functies admin</a>
+    <p></p>
+
 
 
     <br>
@@ -41,26 +45,14 @@
             })
             .then(myJson => window.sessionStorage.setItem("myJWT", myJson.JWT)
                 .catch(error => console.log(error)));
-    }
 
+
+    }
     document.querySelector("#login").addEventListener("click", login);
 
-    document.querySelector("#profile").addEventListener("click", function () {
-        var fetchoptions = {
-            method: 'GET',
-            headers: {
-                'Authorization': 'bearer' + window.sessionStorage.getItem("myJWT")
-            }
 
 
-        };
-        fetch("restservices/account/profile", fetchoptions)
-            .then(response => response.json())
-            .then(function (myJson) {
-                console.log(myJson);
 
-            });
-    });
 
 
 </script>

@@ -9,6 +9,11 @@ import java.util.Collections;
 import java.util.List;
 
 public class Car implements Serializable  {
+    private static Car my_inventory = new Car();
+    public static Car getMy_inventory() {return my_inventory;}
+    public static void setInventory(Car car){my_inventory= car;}
+
+
     private String name;
     private String imageUrl;
     private double kilometre;
@@ -20,7 +25,15 @@ public class Car implements Serializable  {
     private String model;
 
     @JsonIgnore
+//    private static List<Car> allCars = new ArrayList<>();
     static ArrayList<Car> allCars = new ArrayList<Car>();
+
+
+
+    private Car(){
+
+
+    }
 
     //constructor
     private Car(String name, String imageUrl, double kilometre,int yearOfManufacture,double price, String fuelType, String licencePlate, String brand, String model) {
@@ -39,6 +52,11 @@ public class Car implements Serializable  {
     public static Car createCar(String name, String imageUrl, double kilometre,int yearOfManufacture,double price, String fuelType, String licencePlate, String brand, String model) {
         for (Car cars : allCars) {
             if (cars.name.equals(name) && cars.imageUrl.equals(imageUrl) && cars.kilometre == kilometre && cars.yearOfManufacture == yearOfManufacture && cars.price == price && cars.fuelType.equals(fuelType) && cars.licencePlate.equals(licencePlate) && cars.brand.equals(brand) && cars.model.equals(model)) {
+                System.out.println("auto bestaat al");
+                return null;
+
+            }
+            if(cars.licencePlate.equals(licencePlate)){
                 return null;
             }
         }
@@ -106,7 +124,7 @@ public class Car implements Serializable  {
 
 
 
-
+@JsonIgnore
     public static ArrayList<Car> getCarsByBrand(String brand) {
         ArrayList<Car> theBrandList = new ArrayList<>();
         for (Car car : allCars) {
