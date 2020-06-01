@@ -139,7 +139,9 @@ De eigenaar kan een auto toevoegen bestaande uit merk(i), model(i), kenteken(i),
 
 
 ## §3 Wireframes
-Een wireframe voor elke use case.
+use case: Auto toevoegen:
+![Drag Racing]()
+
 
 
 ---
