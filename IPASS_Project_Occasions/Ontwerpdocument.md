@@ -41,10 +41,7 @@ Korte beschrijving wat het systeem geacht wordt te doen. Eventueel indeling in s
 ---
 
 # 3 Use Cases
-
-![GitHub Logo](https://raw.githubusercontent.com/jayh475/IPASS_Project_Occasions/master/IPASS_Project_Occasions/Images/ClassDiagramOcassions.jpg?token=ANT36TQKUGC4QY5PEFFRAOC6YT7SY)
-[[Images/ClassDiagramOcassions.jpg]]
-
+![use case diagram](https://raw.githubusercontent.com/jayh475/IPASS_Project_Occasions/master/IPASS_Project_Occasions/Images/UseCase-diagram.jpg?token=ANT36TW4YGMUYOSAIY5SILS62VBHQ)
 
 •	1. De admin kan een auto toevoegen. 
 De admin voert een naam in, een afbeelding, km-stand, bouwjaar, prijs, en brandstof type. 
@@ -140,14 +137,17 @@ De eigenaar kan een auto toevoegen bestaande uit merk(i), model(i), kenteken(i),
 
 ## §3 Wireframes
 use case: Auto toevoegen:
-![Drag Racing]()
+![aanmaken auto](https://raw.githubusercontent.com/jayh475/IPASS_Project_Occasions/master/IPASS_Project_Occasions/Images/moqupAanmakenCar.png?token=ANT36TRVGVPWUWL6G3ECNCK62VBBU)
+
+![toegevoegde auto](https://raw.githubusercontent.com/jayh475/IPASS_Project_Occasions/master/IPASS_Project_Occasions/Images/aanbodOcassionsmoqup.png?token=ANT36TUDCSTEC4CH5B63NA262VA6K)
 
 
 
 ---
 
 # 4 Domeinmodel
-Hieronder wordt er een beschrijving gegeven van het klassediagram dat te vinden is in de image directory onder de naam "Ocassions-diagram.jpg"
+Hieronder wordt er een afbeelding en een beschrijving gegeven van het klassediagram.
+![klasse diagram](https://raw.githubusercontent.com/jayh475/IPASS_Project_Occasions/master/IPASS_Project_Occasions/Images/Class%20Diagram%20Ocassions.jpg?token=ANT36TVFLCXBM5ANCSIV4HC62VBMC)
 
 
 | Entiteit | Beschrijving |

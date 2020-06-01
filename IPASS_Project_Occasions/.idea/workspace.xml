@@ -6,11 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad8709e1-1b8d-4d63-b6cd-39ee79cee1f4" name="Default Changelist" comment="naar azure schrijven is gelukt. Het laden van azure lukt nog niet. Put is te doen met login en daar zit dan een button met functiesAdmin en kunnen er auto's toegevoegd worden. De rest van de functies werken nog niet. De aangemaakte auto is terug te zien in AanbodOccasions.html">
-      <change afterPath="$PROJECT_DIR$/Images/moqupAanmakenCar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="ad8709e1-1b8d-4d63-b6cd-39ee79cee1f4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/Ontwerpdocument.md" beforeDir="false" afterPath="$PROJECT_DIR$/Ontwerpdocument.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/file.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +264,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -583,7 +580,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591028491097</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="wireframes toevoegen">
+      <created>1591034206874</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1591034206874</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,7 +607,8 @@
     <MESSAGE value="inloggen nog niet helemaal gelukt, post methode nog afmaken" />
     <MESSAGE value="auto's posten is mogelijk alleen plaatjes worden nog niet goed geladen" />
     <MESSAGE value="naar azure schrijven is gelukt. Het laden van azure lukt nog niet. Put is te doen met login en daar zit dan een button met functiesAdmin en kunnen er auto's toegevoegd worden. De rest van de functies werken nog niet. De aangemaakte auto is terug te zien in AanbodOccasions.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="naar azure schrijven is gelukt. Het laden van azure lukt nog niet. Put is te doen met login en daar zit dan een button met functiesAdmin en kunnen er auto's toegevoegd worden. De rest van de functies werken nog niet. De aangemaakte auto is terug te zien in AanbodOccasions.html" />
+    <MESSAGE value="wireframes toevoegen" />
+    <option name="LAST_COMMIT_MESSAGE" value="wireframes toevoegen" />
   </component>
   <component name="WindowStateProjectService">
     <state x="607" y="250" key="#BuildArtifactsBeforeRunChooser" timestamp="1589959468475">
@@ -655,10 +660,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="516" y="260" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590835597396" />
-    <state x="0" y="8" key="CommitChangelistDialog2" timestamp="1591028497403">
+    <state x="0" y="8" key="CommitChangelistDialog2" timestamp="1591034205904">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="0" y="8" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1591028497403" />
+    <state x="0" y="8" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1591034205904" />
     <state x="219" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590593467335" />
     <state x="147" y="71" key="DiffContextDialog" timestamp="1589287681603">
       <screen x="0" y="0" width="1536" height="824" />
@@ -753,10 +758,10 @@
     </state>
     <state x="369" y="0" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1589961066722" />
     <state x="2381" y="163" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589364190227" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1591028502297">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1591034212531">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1591028502297" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1591034212531" />
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590593472802" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1590391031008">
       <screen x="0" y="0" width="1536" height="824" />
