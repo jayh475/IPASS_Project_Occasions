@@ -8,7 +8,6 @@ public class Account implements Serializable, Principal {
    private String username,email, password,role;
 
 
-
    private ArrayList<Message> myMessages = new ArrayList<Message>();
    private static Account loggedInAccount = null;
    private static List<Account> allAccounts = new ArrayList<>();
@@ -57,7 +56,12 @@ public class Account implements Serializable, Principal {
       }
    }
 
-
+   public static boolean setAllAccounts(List<Account> loadedAccounts){
+      return allAccounts.addAll(loadedAccounts);
+   }
+   public static List<Account> getAllAccounts() {
+      return Collections.unmodifiableList(allAccounts);
+   }
 
    public ArrayList<Message> getMyMessages() {
       return myMessages;
@@ -94,6 +98,9 @@ public class Account implements Serializable, Principal {
       if(found!=null) return pwd.equals(found.password) ? found.getRole(): null;
       return null;
    }
+
+
+
 
 }
 
