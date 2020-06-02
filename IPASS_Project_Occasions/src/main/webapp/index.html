@@ -5,6 +5,7 @@
     <title>Huibers Auto's</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/stylesheet.css" type="text/css"/>
+    <link rel="stylesheet" href="css/index.css" type="text/css"/>
 </head>
 
 <style>
@@ -47,38 +48,41 @@
 </header>
 
 
-<form class="homepage">
-    <label for="brand"></label><select id="brand" name="merk" >
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="fiat">Fiat</option>
-        <option value="audi">Audi</option>
-        <option value="peugeot">peugeot</option>
-        <option value="volkswagen">peugeot</option>
-    </select>
 
 
+<div class="parent">
+    <div class="child">
+        <div class="grandchild">
+            <label for="brand"></label><select id="brand" name="merk" >
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+            <option value="peugeot">peugeot</option>
+            <option value="volkswagen">Volkswagen</option>
+        </select>
 
-    <label for=name="brandstof"></label><select id=name="brandstof">
-        <option value="benzine">benzine</option>
-        <option value="diesel">diesel</option>
-        <option value="hybride">hybride</option>
-        <option value="elektriciteit">elektriciteit</option>
-        <option value="gas">gas</option>
-    </select>
+            <label for=name="brandstof"></label><select id=name="brandstof">
+            <option value="benzine">benzine</option>
+            <option value="diesel">diesel</option>
+            <option value="hybride">hybride</option>
+            <option value="elektriciteit">elektriciteit</option>
+            <option value="gas">gas</option>
+        </select>
 
-    <label for=name="model"></label><select id=name="model">
-    <option value="x">x</option>
-    <option value="x">x</option>
-    <option value="x">x</option>
-    <option value="x">x</option>
-    <option value="x">x</option>
-</select>
+            <label for=name="model"></label><select id=name="model">
+            <option value="x">x</option>
+            <option value="x">x</option>
+            <option value="x">x</option>
+            <option value="x">x</option>
+            <option value="x">x</option>
+        </select>
 
+            <input type="submit">
+        </div>
 
-    <input type="submit">
-
-</form>
+    </div>
+</div>
 
 
 </body>

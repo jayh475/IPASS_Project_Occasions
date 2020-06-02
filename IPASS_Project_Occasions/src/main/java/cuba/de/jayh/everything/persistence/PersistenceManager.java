@@ -20,7 +20,7 @@ import java.util.List;
 public class PersistenceManager  implements ServletContextListener {
 
         private final static String ENDPOINT = "https://jayhsopslag.blob.core.windows.net/";
-        private final static String SASTOKEN = "?sv=2019-10-10&ss=b&srt=co&sp=rwdlacx&se=2020-06-01T20:44:08Z&st=2020-06-01T12:44:08Z&spr=https&sig=JF7GLmUWpMrryuE0g8tuyJd%2FVYGcNs%2FwKAcbtvN4vBA%3D";
+        private final static String SASTOKEN = "?sv=2019-10-10&ss=b&srt=co&sp=rwdlacx&se=2020-06-20T17:00:46Z&st=2020-06-02T09:00:46Z&spr=https&sig=cjwS7sebjhSBQLuNJcD8qZBkm2%2BoYgTnoq1KWfZ%2BUrc%3D";
         private final static String CONTAINER = "jayhsopslag";
 
         private static BlobContainerClient blobContainer = new BlobContainerClientBuilder()
