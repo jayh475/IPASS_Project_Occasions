@@ -39,7 +39,7 @@ public class PersistenceManager  implements ServletContextListener {
         // voor auto's
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ObjectOutputStream oos = new ObjectOutputStream(baos);
-        oos.writeObject(Car.getMy_inventory());  // gaat dit goed ?
+        oos.writeObject(Car.getAllCars());  //
 
         byte[] bytez = baos.toByteArray();
 
@@ -61,8 +61,18 @@ public class PersistenceManager  implements ServletContextListener {
                 ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
                 ObjectInputStream ois = new ObjectInputStream(bais);
 
-                Car loadedCar = (Car) ois.readObject();
-                Car.setInventory(loadedCar);
+                Object ob = ois.readObject();
+                if(ob instanceof List && !((List)ob).isEmpty()) {
+                    Car.setAllCars((List) ob);
+                    System.out.println("list found");
+                }
+//                }else{
+////                    Car.createCar("Volkswagen Polo 1.6", "https://media.autoweek.nl/m/pyryc27bzexp_800.jpg", 2000, 2016, 1800, "diesel", "73-MG-HJ", "Volkswagen", "Polo 1.6");
+////                    System.out.println("Car created");
+//                }
+
+
+
 
                 baos.close();
                 ois.close();
@@ -81,6 +91,7 @@ public class PersistenceManager  implements ServletContextListener {
             System.out.println("Cars loaded");
         } catch (IOException | ClassNotFoundException ioe) {
             System.out.println("cannot load cars");
+//            Car.createCar("Volkswagen Polo 1.6", "https://media.autoweek.nl/m/pyryc27bzexp_800.jpg", 2000, 2016, 1800, "diesel", "73-MG-HJ", "Volkswagen", "Polo 1.6");
             ioe.printStackTrace();
 
         }
@@ -91,6 +102,7 @@ public class PersistenceManager  implements ServletContextListener {
         try{
             PersistenceManager.saveCarsToAzure();
             System.out.println("Cars saved! ");
+
         }catch(IOException ioe){
             System.out.println("Failed to save Cars");
 

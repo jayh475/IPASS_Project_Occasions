@@ -9,11 +9,6 @@ import java.util.Collections;
 import java.util.List;
 
 public class Car implements Serializable  {
-    private static Car my_inventory = new Car();
-    public static Car getMy_inventory() {return my_inventory;}
-    public static void setInventory(Car car){my_inventory= car;}
-
-
     private String name;
     private String imageUrl;
     private double kilometre;
@@ -31,8 +26,6 @@ public class Car implements Serializable  {
 
 
     private Car(){
-
-
     }
 
     //constructor
@@ -87,6 +80,10 @@ public class Car implements Serializable  {
     public static List<Car> getAllCars() {
         return Collections.unmodifiableList(allCars);
     }
+    public static boolean setAllCars(List<Car> loadedCars){
+        return allCars.addAll(loadedCars);
+    }
+
     public String getLicencePlate() {
         return licencePlate;
     }
