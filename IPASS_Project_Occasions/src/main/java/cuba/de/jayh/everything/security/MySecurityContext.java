@@ -1,4 +1,4 @@
-package security;
+package cuba.de.jayh.everything.security;
 
 import cuba.de.jayh.everything.model.Account;
 

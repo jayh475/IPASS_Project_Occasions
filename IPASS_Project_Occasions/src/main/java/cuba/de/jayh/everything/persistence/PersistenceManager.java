@@ -18,7 +18,7 @@ import java.util.List;
 
 
 @WebListener
-public class PersistenceManager  implements ServletContextListener {
+public class PersistenceManager implements ServletContextListener {
 
     private final static String ENDPOINT = "https://jayhsopslag.blob.core.windows.net/";
     private final static String SASTOKEN = "?sv=2019-10-10&ss=b&srt=co&sp=rwdlacx&se=2020-06-20T17:00:46Z&st=2020-06-02T09:00:46Z&spr=https&sig=cjwS7sebjhSBQLuNJcD8qZBkm2%2BoYgTnoq1KWfZ%2BUrc%3D";
@@ -66,7 +66,7 @@ public class PersistenceManager  implements ServletContextListener {
                 Object ob = ois.readObject();
                 if (ob instanceof List && !((List) ob).isEmpty()) {
                     Car.setAllCars((List) ob);
-                    System.out.println("list found");
+                    System.out.println(Car.getAllCars().size() + " cars found in loaded list");
                 }
 //                }else{
 //                    Car.createCar("Volkswagen Polo 1.6", "https://media.autoweek.nl/m/pyryc27bzexp_800.jpg", 2000, 2016, 1800, "diesel", "73-MG-HJ", "Volkswagen", "Polo 1.6");
@@ -78,94 +78,86 @@ public class PersistenceManager  implements ServletContextListener {
         }
     }
 
-//    public static void saveAccountsToAzure() throws IOException {
-//        if (!blobContainer.exists()) {
-//            blobContainer.create();
-//        }
-//        BlobClient blob = blobContainer.getBlobClient("Account");
-//
-//
-//        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-//        ObjectOutputStream oos = new ObjectOutputStream(baos);
-//        oos.writeObject(Account.getAllAccounts());
-//
-//        byte[] bytez = baos.toByteArray();
-//
-//        ByteArrayInputStream bais = new ByteArrayInputStream(bytez);
-//        blob.upload(bais, bytez.length, true);
-//
-//        oos.close();
-//        baos.close();
-//
-//    }
+    public static void saveAccountsToAzure() throws IOException {
+        if (!blobContainer.exists()) {
+            blobContainer.create();
+        }
+        BlobClient blob = blobContainer.getBlobClient("Account");
 
-//            public static void loadAccountFromAzure() throws IOException, ClassNotFoundException{
-//            if (blobContainer.exists()) {
-//                BlobClient blob = blobContainer.getBlobClient("Accounts");
-//
-//                if (blob.exists()) {
-//                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-//                    blob.download(baos);
-//
-//                    ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
-//                    ObjectInputStream ois = new ObjectInputStream(bais);
-//
-//                    Object ob = ois.readObject();
-//                    if (ob instanceof List && !((List) ob).isEmpty()) {
-//                        Account.setAllAccounts((List) ob);
-//                        System.out.println("list found");
-//
-//                        baos.close();
-//                        ois.close();
-//                    }
-//                }
-//            }
-//        }
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(baos);
+        oos.writeObject(Account.getAllAccounts());
+
+        byte[] bytez = baos.toByteArray();
+
+        ByteArrayInputStream bais = new ByteArrayInputStream(bytez);
+        blob.upload(bais, bytez.length, true);
+
+        oos.close();
+        baos.close();
+
+    }
+
+
+    public static void loadAccountFromAzure() throws IOException, ClassNotFoundException {
+        if (blobContainer.exists()) {
+            BlobClient blob = blobContainer.getBlobClient("Account");
+
+            if (blob.exists()) {
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                blob.download(baos);
+
+                ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
+                ObjectInputStream ois = new ObjectInputStream(bais);
+
+                Object ob = ois.readObject();
+                if (ob instanceof List && !((List) ob).isEmpty()) {
+                    Account.setAllAccounts((List) ob);
+
+                    System.out.println(Account.getAllAccounts().size() + " accounts found in loaded list");
+
+                    baos.close();
+                    ois.close();
+                }
+            }
+        }
+    }
 
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         try {
             PersistenceManager.loadCarsFromAzure();
-//
-            System.out.println("Cars loaded");
+            PersistenceManager.loadAccountFromAzure();
+
+
         } catch (IOException | ClassNotFoundException ioe) {
             System.out.println("cannot load cars");
 //            Car.createCar("Volkswagen Polo 1.6", "https://media.autoweek.nl/m/pyryc27bzexp_800.jpg", 2000, 2016, 1800, "diesel", "73-MG-HJ", "Volkswagen", "Polo 1.6");
+            System.out.println("cannot load accounts");
             ioe.printStackTrace();
-
         }
-//
-//        try{
-//            PersistenceManager.loadAccountFromAzure();
-//        }catch(IOException | ClassNotFoundException ioe) {
-//            System.out.println("cannot load Accounts");
-//            ioe.printStackTrace();
-//            }
-    }
 
+    }
 
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
-        try{
+        try {
             PersistenceManager.saveCarsToAzure();
             System.out.println("Cars saved! ");
+            PersistenceManager.saveAccountsToAzure();
+            System.out.println("Accounts saved");
 
-        }catch(IOException ioe){
+        } catch (IOException ioe) {
             System.out.println("Failed to save Cars");
+            System.out.println("failed to save Accounts");
 
         }
+
         Schedulers.shutdownNow();
         HttpResources.disposeLoopsAndConnectionsLater(Duration.ZERO, Duration.ZERO).block();
-
-//        try{
-//            PersistenceManager.saveAccountsToAzure()
-//            System.out.println("Accounts saved");
-//        }catch(IOException  ioe) {
-//            System.out.println("failed to save Accounts");
-//            ioe.printStackTrace();
-//            }
 
     }
 }

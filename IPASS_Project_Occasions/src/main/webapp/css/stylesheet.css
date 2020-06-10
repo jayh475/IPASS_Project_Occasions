@@ -82,6 +82,13 @@ li a {
     text-decoration: none;
 }
 
+#inloggen{
+    position: relative;
+    float: right;
+}
+
+
+
 li a:hover {
     background-color: firebrick;
 }

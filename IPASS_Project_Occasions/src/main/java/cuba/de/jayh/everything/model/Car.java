@@ -56,11 +56,28 @@ public class Car implements Serializable  {
         return new Car(name, imageUrl, kilometre, yearOfManufacture, price, fuelType, licencePlate, brand, model);
     }
 
+    @JsonIgnore
+    public static ArrayList<Car> getCarsByBrand(String brand) {
+        ArrayList<Car> theBrandList = new ArrayList<>();
+        for (Car car : allCars) {
+            if (car.brand.equals(brand)) {
+                theBrandList.add(car);
+            }
+        }
+        return theBrandList;
+    }
 
 
     // getters
     public String getName() {
         return name;
+    }
+
+    public static List<Car> getAllCars() {
+        return Collections.unmodifiableList(allCars);
+    }
+    public static boolean setAllCars(List<Car> loadedCars){
+        return allCars.addAll(loadedCars);
     }
     public String getImageUrl() {
         return imageUrl;
@@ -76,12 +93,6 @@ public class Car implements Serializable  {
     }
     public String getFuelType() {
         return fuelType;
-    }
-    public static List<Car> getAllCars() {
-        return Collections.unmodifiableList(allCars);
-    }
-    public static boolean setAllCars(List<Car> loadedCars){
-        return allCars.addAll(loadedCars);
     }
 
     public String getLicencePlate() {
@@ -119,23 +130,6 @@ public class Car implements Serializable  {
     }
     public void setModel(String model){this.model = model;}
 
-
-
-@JsonIgnore
-    public static ArrayList<Car> getCarsByBrand(String brand) {
-        ArrayList<Car> theBrandList = new ArrayList<>();
-        for (Car car : allCars) {
-            if (car.brand.equals(brand)) {
-                theBrandList.add(car);
-            }
-        }
-        return theBrandList;
-    }
-
-//
-//    public static Car getCarsByModel(String model){
-//
-//    }
 
 
 

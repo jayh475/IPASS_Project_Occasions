@@ -174,10 +174,32 @@ Hier wordt een installatiehandleiding en een sumiere gebruikershandleiding besch
 # 7 Verwijzingen
 Geef hier de bronnenlijst. Gebruik de APA stijl om de bronnen te vermelden.
 
+getting json and putting it in html. 
 https://www.youtube.com/watch?v=DG4obitDvUA
 
+how to center an object 
 https://css-tricks.com/quick-css-trick-how-to-center-an-object-exactly-in-the-center/
+
 
 https://stackoverflow.com/questions/14976495/get-selected-option-text-with-javascript
 
+static logbinder voor tomcat errors
 https://stackoverflow.com/questions/7421612/slf4j-failed-to-load-class-org-slf4j-impl-staticloggerbinder
+
+login page
+https://medium.com/swlh/how-to-create-your-first-login-page-with-html-css-and-javascript-602dd71144f1
+
+replace object 
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_redirect_webpage
+
+register form 
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_register_form
+
+session storage 
+https://www.youtube.com/watch?v=RxUc6ZWwgfw&t=192s
+
+filteren met selectbox
+https://codereview.stackexchange.com/questions/140420/filter-options-of-select-box-using-input-box-value
+
+
+

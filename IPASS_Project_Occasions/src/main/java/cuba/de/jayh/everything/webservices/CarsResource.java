@@ -3,18 +3,21 @@ package cuba.de.jayh.everything.webservices;
 
 import cuba.de.jayh.everything.model.Car;
 
+import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.AbstractMap;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Path("cars")
+@Path("/cars")
 public class CarsResource {
 
     @GET
+    @PermitAll
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllCars() {
         return Response.ok(Car.getAllCars()).status(Response.Status.OK).build();
@@ -23,10 +26,12 @@ public class CarsResource {
 
 
     @GET
+    @PermitAll
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("{carsByBrand}")
     public Response getCarsByBrand(@PathParam("carsByBrand") String brand){
         if(Car.getCarsByBrand(brand).isEmpty()) {
-            return Response.status(404).build();
+            return Response.status(Response.Status.CONFLICT).entity(new AbstractMap.SimpleEntry<>("result", "auto bestaat nog niet")).build();
         }
         return Response.ok(Car.getCarsByBrand(brand)).build();
     }
@@ -44,9 +49,8 @@ public class CarsResource {
 //    }
 
 
-
     @POST
-//    @RolesAllowed("user")
+    @PermitAll
     @Path("createCar")
     @Produces(MediaType.APPLICATION_JSON)
     public Response createCar(@FormParam("name")String name,@FormParam("kilometre") Double kilometre,

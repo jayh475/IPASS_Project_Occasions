@@ -33,13 +33,8 @@ public class AccountResource {
         }
             return Response.ok(account).build();
         }
-
-
-
-
-
-
 }
+
 
 
 //        @GET

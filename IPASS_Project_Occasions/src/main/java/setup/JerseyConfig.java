@@ -10,9 +10,8 @@ import javax.ws.rs.ApplicationPath;
 
 @ApplicationPath("restservices")
 class JerseyConfig extends ResourceConfig {
-
     public JerseyConfig() {
-        packages("cuba.de.jayh.everything.webservices");
+        packages("cuba.de.jayh.everything.webservices", "cuba.de.jayh.everything.security");
         register(RolesAllowedDynamicFeature.class);
     }
 }
