@@ -12,7 +12,7 @@ public class Account implements Serializable, Principal {
     private static Account loggedInAccount = null;
     private static List<Account> allAccounts = new ArrayList<>();
 
-    public Account(){};
+    public Account(){}
 
 
     public Account(String username, String password) {

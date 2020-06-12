@@ -13,24 +13,144 @@ function carTemplate(car) {
 </div> `
 }
 
-function getCarsByValue(){
+function getCarsByValue() {
     let carData;
     console.log("getcarsbyvalue");
-    fetch("restservices/cars/"+document.getElementById("brand").value)
+    fetch("restservices/cars/" + document.getElementById("brand").value)
         .then(response => Promise.all([response.status, response.json()]))
-        .then(function([status, myJson]){
-            if(status >400){
+        .then(function ([status, myJson]) {
+            if (status > 400) {
                 alert("geen resultaten gevonden")
-            }else{
+            } else {
 
-            console.log(myJson);
-            carData = myJson;
-            document.getElementById("gesorteerdeAutos").innerHTML = `
+                console.log(myJson);
+                carData = myJson;
+                document.getElementById("gesorteerdeAutos").innerHTML = `
 ${carData.map(carTemplate).join('')}
 `
-        }})
+            }
+        })
 
 }
+
+
+function createCar() {
+    var formData = new FormData(document.querySelector("#POSTcar"));
+    var encData = new URLSearchParams(formData.entries());
+    var fetchOptions = {
+        method: "POST",
+        headers: {"Authorization": "Bearer " + window.sessionStorage.getItem("myJWT")},
+        body: encData
+    };
+
+    fetch("restservices/cars/createCar", fetchOptions)
+        .then(function (response) {
+            if (response.ok) {
+                alert("Auto is aangemaakt!");
+                window.location.reload();
+                console.log(response);
+            } else if (response.status === 404) {
+                alert("auto bestaat al/ voer alle velden in");
+            } else
+                alert("Niet ingelogd als admin");
+            console.log("er is iets anders miss gegaan");
+
+        })
+}
+
+
+function deleteCar() {
+    const licencePlate = document.querySelector("#kenteken").value;
+    console.log(licencePlate);
+    let fetchOptions = {
+        method: "DELETE",
+        headers: {
+            "Authorization": "Bearer " + window.sessionStorage.getItem("myJWT")
+        },
+    };
+
+    fetch("restservices/cars/" + licencePlate, fetchOptions)
+        .then(function (response) {
+            if (response.ok) {
+                alert("auto is verwijderd!");
+                window.location.reload();
+                return response.json();
+            } else if (response.status === 404) {
+                alert("auto niet gevonden!");
+            } else
+                console.log(response.json());
+                alert("Niet ingelogd als admin");
+            console.log("er is iets anders miss gegaan");
+
+        })
+
+}
+function updateCar() {
+    let carLicencePlate = document.querySelector("licencePlateFound").value;
+    let formData = new FormData(document.querySelector("#PATCHCars"));
+    let encData = new URLSearchParams(formData.entries());
+    let fetchOptions = {
+        method: "PATCH",
+        headers: {
+            "Authorization": "Bearer " + window.sessionStorage.getItem("myJWT")
+        },
+        body: encData
+    };
+
+    fetch("restservices/cars/editCar/" + carLicencePlate, fetchOptions)
+        .then(function (response) {
+            if (response.ok) {
+                alert("auto is geupdate!");
+                window.location.reload();
+                return response.json();
+            } else if (response.status === 404) {
+                alert("auto niet gevonden of je hebt niet alles in gevuld!");
+            } else
+                console.log(response.json());
+            alert("Niet ingelogd als admin");
+            console.log("er is iets anders miss gegaan");
+
+
+        })
+}
+
+
+
+
+
+
+
+
+// open forms
+function openFormCreateCar() {
+    document.getElementById("createCar").style.display = "block";
+}
+function openFormDeleteCar() {
+    document.getElementById("deleteCar").style.display = "block";
+}
+function openFormEditCar(){
+    document.getElementById("editCar").style.display = "block";
+}
+
+//close forms
+function closeCreateCar() {
+    document.getElementById("createCar").style.display = "none";
+}
+
+function closeDeleteCar() {
+    document.getElementById("deleteCar").style.display = "none";
+}
+function closeEditCar(){
+    document.getElementById("editCar").style.display = "none";
+}
+
+
+
+
+
+
+
+
 
 
 

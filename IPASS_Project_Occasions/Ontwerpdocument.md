@@ -201,5 +201,7 @@ https://www.youtube.com/watch?v=RxUc6ZWwgfw&t=192s
 filteren met selectbox
 https://codereview.stackexchange.com/questions/140420/filter-options-of-select-box-using-input-box-value
 
+popup login 
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_popup_form
 
 

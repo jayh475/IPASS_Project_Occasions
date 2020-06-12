@@ -2,17 +2,18 @@ package cuba.de.jayh.everything.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.glassfish.json.JsonUtil;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Car implements Serializable  {
+public class Car implements Serializable {
     private String name;
     private String imageUrl;
     private double kilometre;
-    private int  yearOfManufacture;
+    private int yearOfManufacture;
     private double price;
     private String fuelType;
     private String licencePlate;
@@ -20,16 +21,14 @@ public class Car implements Serializable  {
     private String model;
 
     @JsonIgnore
-//    private static List<Car> allCars = new ArrayList<>();
-    static ArrayList<Car> allCars = new ArrayList<Car>();
+    private static ArrayList<Car> allCars = new ArrayList<Car>();
 
 
-
-    private Car(){
+    private Car() {
     }
 
     //constructor
-    private Car(String name, String imageUrl, double kilometre,int yearOfManufacture,double price, String fuelType, String licencePlate, String brand, String model) {
+    private Car(String name, String imageUrl, double kilometre, int yearOfManufacture, double price, String fuelType, String licencePlate, String brand, String model) {
         this.name = name;
         this.imageUrl = imageUrl;
         this.kilometre = kilometre;
@@ -37,19 +36,19 @@ public class Car implements Serializable  {
         this.price = price;
         this.fuelType = fuelType;
         this.licencePlate = licencePlate;
-        this.brand =brand;
-        this.model =model;
+        this.brand = brand;
+        this.model = model;
         allCars.add(this);
     }
 
-    public static Car createCar(String name, String imageUrl, double kilometre,int yearOfManufacture,double price, String fuelType, String licencePlate, String brand, String model) {
+    public static Car createCar(String name, String imageUrl, double kilometre, int yearOfManufacture, double price, String fuelType, String licencePlate, String brand, String model) {
         for (Car cars : allCars) {
             if (cars.name.equals(name) && cars.imageUrl.equals(imageUrl) && cars.kilometre == kilometre && cars.yearOfManufacture == yearOfManufacture && cars.price == price && cars.fuelType.equals(fuelType) && cars.licencePlate.equals(licencePlate) && cars.brand.equals(brand) && cars.model.equals(model)) {
                 System.out.println("auto bestaat al");
                 return null;
 
             }
-            if(cars.licencePlate.equals(licencePlate)){
+            if (cars.licencePlate.equals(licencePlate) || cars.imageUrl.equals(imageUrl)) {
                 return null;
             }
         }
@@ -67,8 +66,6 @@ public class Car implements Serializable  {
         return theBrandList;
     }
 
-
-    // getters
     public String getName() {
         return name;
     }
@@ -76,9 +73,61 @@ public class Car implements Serializable  {
     public static List<Car> getAllCars() {
         return Collections.unmodifiableList(allCars);
     }
-    public static boolean setAllCars(List<Car> loadedCars){
+
+    public static boolean setAllCars(List<Car> loadedCars) {
         return allCars.addAll(loadedCars);
     }
+
+
+    public static boolean deleteCar(String licencePlate) {
+        for (Car car : allCars) {
+            if (car.getLicencePlate().equals(licencePlate)) {
+                return allCars.remove(car);
+            }
+        }
+        return false;
+    }
+
+    public static Car getCarByLicencePlate(String licencePlate) {
+        return allCars.stream().filter(e -> e.getLicencePlate().equals(licencePlate)).findFirst().orElse(null);
+    }
+
+
+
+    public Car updateCar(String name, String imageUrl, double kilometre, int yearOfManufacture, double price, String fuelType, String licencePlatechange, String brand, String model) {
+        for (Car cars : allCars) {
+            if (cars.name.equals(name) && cars.imageUrl.equals(imageUrl) && cars.kilometre == kilometre && cars.yearOfManufacture == yearOfManufacture && cars.price == price && cars.fuelType.equals(fuelType) && cars.licencePlate.equals(licencePlatechange) && cars.brand.equals(brand) && cars.model.equals(model)) {
+                System.out.println("object already exists");
+                return null;
+            }
+            if (cars.licencePlate.equals(licencePlatechange) || cars.imageUrl.equals(imageUrl)) {
+                System.out.println("can't update Car because licenceplate or imageUrl already exists in the list");
+                return null;
+            }
+        }
+
+
+        this.imageUrl = imageUrl;
+        this.licencePlate = licencePlatechange;   // eventueel ?
+        this.name = name;
+        this.kilometre = kilometre;
+        this.yearOfManufacture = yearOfManufacture;
+        this.price = price;
+        this.fuelType = fuelType;
+        this.brand = brand;
+        this.model = model;
+        return(this);
+
+
+    }
+
+
+
+
+
+
+
+
     public String getImageUrl() {
         return imageUrl;
     }

@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <title>Aanbod Ocassions</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/stylesheet.css" type="text/css"/>
+    <link rel="stylesheet" href="css/car.css" type="text/css"/>
     <script src="js/cars.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="css/index.css" type="text/css"/>
+    <script src="js/login.js" type="text/javascript"></script>
 
 </head>
 
@@ -19,16 +22,122 @@
         <ul class="boxing">
             <li><a href="index.html">Home</a></li>
             <li><a href="AanbodOccasions.html"> Aanbod occasions</a></li>
-            <li><a href="#">Hoe werkt het</a></li>
-            <li><a href="#">Over ons</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="login.html">Inloggen</a></li>
+
+            <li class="dropdown">
+                <button class="dropbtn">Auto functies</button>
+                <div class="dropdown-content">
+                    <button type="button" onclick="openFormCreateCar()"> Auto aanmaken</button>
+                    <button type="button" onclick="openFormDeleteCar()"> Auto Verwijderen</button>
+                    <button type="button" onclick="openFormEditCar()"> Auto Bewerken</button>
+                    <button type="button" onclick=""> Auto verwijderen</button>
+                </div>
+            </li>
+
         </ul>
     </nav>
 </header>
 
 
+<!-- voor alle auto's -->
 <div id="placeholder"></div>
+
+
+<!--voor het aanmaken van een nieuwe auto popup scherm-->
+<div class="form-popup" id="createCar">
+    <form class="homepage" id="POSTcar">
+        <h2>POST</h2>
+        <h3>Create new Car:</h3>
+        <label for="name">naam:</label> <br>
+        <input type="text" id="name" name="name" required/> <br>
+
+        <label for="brand">merk:</label> <br>
+        <input type="text" id="brand" name="brand" required/> <br>
+
+        <label for="model">model:</label> <br>
+        <input type="text" id="model" name="model" required/> <br>
+
+        <label for="kilometre">km-stand:</label><br>
+        <input type="number" id="kilometre" name="kilometre" required/> <br>
+
+        <label for="yearOfManufacture">bouwjaar:</label> <br>
+        <input type="number" id="yearOfManufacture" name="yearOfManufacture" required/> <br>
+
+        <label for="price">prijs:</label> <br>
+        <input class="input" type="number" id="price" name="price" required/> <br>
+
+        <label for="fuelType">brandstof:</label> <br>
+        <input type="text" id="fuelType" name="fuelType" required/> <br>
+
+        <label for="licencePlate">kenteken:</label> <br>
+        <input type="text" id="licencePlate" name="licencePlate" required/> <br>
+
+        <label for="imageUrl">foto:</label> <br>
+        <input type="text" id="imageUrl" name="imageUrl" required/> <br><br>
+
+        <input type="submit" onclick="createCar()" value="maak aan"/>
+        <input type="button" onclick="closeCreateCar()" value="sluit"/>
+
+    </form>
+</div>
+
+
+<!--het verwijderen van een auto-->
+<div class="form-popup" id="deleteCar">
+    <form class="homepage">
+        <h3>Delete Car:</h3>
+        <label for="kenteken">kenteken:</label> <br>
+        <input type="text" id="kenteken" name="licencePlate" required/> <br><br>
+        <input type="button" id="verwerk" onclick="deleteCar()" value="verwijder"/>
+        <input type="button" onclick="closeDeleteCar()" value="sluit"/>
+    </form>
+</div>
+
+<!-- editten van een auto-->
+<div class="form-popup" id="editCar">
+<form  class="homepage" id="PATCHCars">
+    <h3>edit Car:</h3>
+    <label for="licencePlateFound">Bestaand kenteken:</label> <br>
+    <input type="text" id="licencePlateFound"  name="licencePlate"/> <br><br>
+
+    <label for="licencePlateChange">Bewerk kenteken:</label> <br>
+    <input type="text" id="licencePlateChange"  name="licencePlate"/> <br>
+
+    <label  for="nameEdit">naam:</label> <br>
+    <input type="text" id="nameEdit" name="name"/> <br>
+
+    <label for="brandEdit">merk:</label> <br>
+    <input type="text" id="brandEdit" name="brand"/> <br>
+
+    <label for="modelEdit">model:</label> <br>
+    <input type="text" id="modelEdit" name="model"/> <br>
+
+    <label for="kilometreEdit">km-stand:</label><br>
+    <input type="number" id="kilometreEdit" name="kilometre"/> <br>
+
+    <label for="yearOfManufactureEdit">bouwjaar:</label> <br>
+    <input type="number" id="yearOfManufactureEdit" name="yearOfManufacture"/> <br>
+
+    <label for="priceEdit">prijs:</label> <br>
+    <input class="input" type="number" id="priceEdit" name="price"/> <br>
+
+    <label for="fuelTypeEdit">brandstof:</label> <br>
+    <input type="text" id="fuelTypeEdit" name="fuelType"/> <br>
+
+    <label for="imageUrlEdit">foto:</label> <br>
+    <input type="text" id="imageUrlEdit" name="imageUrl"/> <br><br>
+
+    <input type="button" onclick="updateCar()" value="edit"/>
+    <input type="button" onclick="closeEditCar()" value="sluit"/>
+
+</form>
+</div>
+
+
+
+
+
+
+
 
 
 <script>
@@ -45,7 +154,7 @@
 ${carData.map(carTemplate).join('')}
 <p class="footer">These ${carData.length} Cars were added recently. Check back soon for updates  </p>
 `
-        })
+        });
 
 
 </script>

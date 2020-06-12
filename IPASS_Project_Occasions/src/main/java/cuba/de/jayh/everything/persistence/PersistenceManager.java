@@ -21,7 +21,7 @@ import java.util.List;
 public class PersistenceManager implements ServletContextListener {
 
     private final static String ENDPOINT = "https://jayhsopslag.blob.core.windows.net/";
-    private final static String SASTOKEN = "?sv=2019-10-10&ss=b&srt=co&sp=rwdlacx&se=2020-06-20T17:00:46Z&st=2020-06-02T09:00:46Z&spr=https&sig=cjwS7sebjhSBQLuNJcD8qZBkm2%2BoYgTnoq1KWfZ%2BUrc%3D";
+    private final static String SASTOKEN = "?sv=2019-10-10&ss=b&srt=sco&sp=rwdlacx&se=2020-06-29T17:22:20Z&st=2020-06-11T09:22:20Z&spr=https&sig=xnsb9SMxBlvBNUjY61C2TOLwB9sTPr%2F7ijTwTKTt68U%3D";
     private final static String CONTAINER = "jayhsopslag";
 
     private static BlobContainerClient blobContainer = new BlobContainerClientBuilder()
@@ -76,6 +76,7 @@ public class PersistenceManager implements ServletContextListener {
                 ois.close();
             }
         }
+
     }
 
     public static void saveAccountsToAzure() throws IOException {
@@ -100,7 +101,7 @@ public class PersistenceManager implements ServletContextListener {
     }
 
 
-    public static void loadAccountFromAzure() throws IOException, ClassNotFoundException {
+    public static boolean loadAccountFromAzure() throws IOException, ClassNotFoundException {
         if (blobContainer.exists()) {
             BlobClient blob = blobContainer.getBlobClient("Account");
 
@@ -119,17 +120,25 @@ public class PersistenceManager implements ServletContextListener {
 
                     baos.close();
                     ois.close();
+                    return true;
                 }
+
             }
         }
+        return false;
     }
 
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         try {
+            if(!PersistenceManager.loadAccountFromAzure()){
+                System.out.println("Er zijn geen accounts, standaard account wordt geplaats");
+              Account a1=   new Account("jayh475", "123");
+              a1.setAdmin();
+            }
             PersistenceManager.loadCarsFromAzure();
-            PersistenceManager.loadAccountFromAzure();
+
 
 
         } catch (IOException | ClassNotFoundException ioe) {
