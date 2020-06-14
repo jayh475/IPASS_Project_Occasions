@@ -44,11 +44,14 @@ public class Car implements Serializable {
     public static Car createCar(String name, String imageUrl, double kilometre, int yearOfManufacture, double price, String fuelType, String licencePlate, String brand, String model) {
         for (Car cars : allCars) {
             if (cars.name.equals(name) && cars.imageUrl.equals(imageUrl) && cars.kilometre == kilometre && cars.yearOfManufacture == yearOfManufacture && cars.price == price && cars.fuelType.equals(fuelType) && cars.licencePlate.equals(licencePlate) && cars.brand.equals(brand) && cars.model.equals(model)) {
-                System.out.println("auto bestaat al");
+                System.out.println("auto bestaat al (geheel object)");
+
                 return null;
+
 
             }
             if (cars.licencePlate.equals(licencePlate) || cars.imageUrl.equals(imageUrl)) {
+                System.out.println("licencePlate already exist in list or image Url already exist in list");
                 return null;
             }
         }
@@ -82,9 +85,11 @@ public class Car implements Serializable {
     public static boolean deleteCar(String licencePlate) {
         for (Car car : allCars) {
             if (car.getLicencePlate().equals(licencePlate)) {
+                System.out.println("in klasse Car is de auto verwijderd");
                 return allCars.remove(car);
             }
         }
+        System.out.println("auto in klasse Car kon niet verwijderd worden");
         return false;
     }
 
@@ -93,20 +98,13 @@ public class Car implements Serializable {
     }
 
 
-
     public Car updateCar(String name, String imageUrl, double kilometre, int yearOfManufacture, double price, String fuelType, String licencePlatechange, String brand, String model) {
         for (Car cars : allCars) {
             if (cars.name.equals(name) && cars.imageUrl.equals(imageUrl) && cars.kilometre == kilometre && cars.yearOfManufacture == yearOfManufacture && cars.price == price && cars.fuelType.equals(fuelType) && cars.licencePlate.equals(licencePlatechange) && cars.brand.equals(brand) && cars.model.equals(model)) {
-                System.out.println("object already exists");
-                return null;
-            }
-            if (cars.licencePlate.equals(licencePlatechange) || cars.imageUrl.equals(imageUrl)) {
-                System.out.println("can't update Car because licenceplate or imageUrl already exists in the list");
+                System.out.println("object still the same nothing has changed");
                 return null;
             }
         }
-
-
         this.imageUrl = imageUrl;
         this.licencePlate = licencePlatechange;   // eventueel ?
         this.name = name;
@@ -116,72 +114,80 @@ public class Car implements Serializable {
         this.fuelType = fuelType;
         this.brand = brand;
         this.model = model;
-        return(this);
-
-
+        return (this);
     }
-
-
-
-
-
-
+    public String getLicencePlate() {
+        return licencePlate;
+    }
+    public String getModel() {
+        return model;
+    }
 
 
     public String getImageUrl() {
         return imageUrl;
     }
+
     public double getKilometre() {
         return kilometre;
     }
+
     public int getYearOfManufacture() {
         return yearOfManufacture;
     }
+
     public double getPrice() {
         return price;
     }
+
     public String getFuelType() {
         return fuelType;
     }
 
-    public String getLicencePlate() {
-        return licencePlate;
-    }
+
+
     public String getBrand() {
         return brand;
     }
-    public String getModel(){return model;}
+
+
 
     //setters
     public void setName(String name) {
         this.name = name;
     }
+
     public void setImage(String image) {
         this.imageUrl = image;
     }
+
     public void setKilometre(double kilometre) {
         this.kilometre = kilometre;
     }
+
     public void setYearOfManufacture(int yearOfManufacture) {
         this.yearOfManufacture = yearOfManufacture;
     }
+
     public void setPrice(double price) {
         this.price = price;
     }
+
     public void setFuelType(String fuelType) {
         this.fuelType = fuelType;
     }
+
     public void setLicencePlate(String licencePlate) {
         this.licencePlate = licencePlate;
     }
+
     public void setBrand(String brand) {
         this.brand = brand;
     }
-    public void setModel(String model){this.model = model;}
 
-
-
-
+    public void setModel(String model) {
+        this.model = model;
+    }
 
 
 }

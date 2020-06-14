@@ -67,29 +67,36 @@ De gebruikers drukken op het tabje bericht en dan worden ze gevraagd om hun emai
 •	8. De gebruiker kan auto’s in zijn/haar favorieten-lijst zetten. 
 De gebruiker drukt op de button voeg toe als favoriet, dan wordt er een lijst gemaakt met favoriete auto’s die de gebruiker altijd kan bekijken.
 
-•	9. De gebruiker kan notificaties ontvangen van nieuwe auto’s in zijn email inbox. 
-De gebruiker kan er voor kiezen om mail te ontvangen in zijn of haar inbox, met daarin auto’s die net binnen zijn gekomen. 
+•	9. Zowel voor de admins als de gebruikers moet er ook gefiltert kunnen worden op de verschillende aspecten die benoemt worden in use case 1. 
 
-•	10. Zowel voor de admins als de gebruikers moet er ook gefiltert kunnen worden op de verschillende aspecten die benoemt worden in use case 1. 
-
-•	11 Registratie gebruikers. 
+•	10 Registratie gebruikers. 
 De gebruikers kunnen een account aanmaken met hun emailadres en zelfgekozen wachtwoord. 
 
-•	12. Registratie admins(optioneel)  
+•	11. Registratie admins(optioneel)  
 Met een button registreren voor admins, kan alleen een admin een andere admin maken. 
 
-•	13. Admins berichten naar gebruikers
+•	12. Admins berichten naar gebruikers
 De admins kunnen ook berichten sturen naar gebruikers die een account hebben aangemaakt op de website. 
 
 
 
 ## §1 Actoren
-|  Use Case : Auto toevoegen |   uitwerking  |
+|Use Case : Auto toevoegen |   uitwerking  |
 |----------|--------------|
 | Rolnaam:        | eigenaar(admin)     |
 |  Functienaam:        | De functienamen van de eigenaar zijn auto's toevoegen   |
 | Omschrijving van de rol: | De rol van de eigenaar(admin) is om auto's toe te voegen aan het scherm.De auto's kunnen dan gezien worden door zowel gebruikers met account en gebruikers zonder account.       |
 |  Uitoefenaren:  |  In de organisatie mogen alleen eigenaren auto's toevoegen aan de lijst met auto's.        |
+
+
+|  Use Case : Auto bewerken |   uitwerking  |
+|----------|--------------|
+| Rolnaam:        | eigenaar(admin)     |
+|  Functienaam:        | De functienamen van de eigenaar zijn auto's wijzigen   |
+| Omschrijving van de rol: | De rol van de eigenaar(admin) is om een auto te wijzigen doormiddel van het kenteken. Het kenteken is de id voor een auto, daarop wordt gezocht en daarmee kunnen alle andere waardes van de auto veranderd worden.        |
+|  Uitoefenaren:  |  In de organisatie mogen alleen eigenaren auto attributen wijzigen.       |
+
+
 
 
 
@@ -99,7 +106,7 @@ De admins kunnen ook berichten sturen naar gebruikers die een account hebben aan
 
 |  Use Case : Auto toevoegen |   uitwerking  |
 |----------|--------------|
-| id:        | UC01 v0.1   |
+| id:        | OW01 v0.1   |
 |naam:        |Auto toevoegen    |
 |actoren:        | eigenaar   |
 
@@ -113,7 +120,7 @@ De eigenaar kan een auto toevoegen bestaande uit merk(i), model(i), kenteken(i),
 |----------|--------------|
 |  1      |  Systeem vraagt om de volgende gegevens: merk(i), model(i), kenteken(i), kentekenplaat(i), bouwjaar(i),prijs(i), kilometerstand(i),brandstof type(i) en een afbeelding Url van de auto(i).|
 |   2     | Eigenaar verstrekt deze gegevens.  |
-|    3    | Systeem valideert de ingevoerde klantcode  |
+|    3    | Systeem valideert de ingevoerde gegevens  |
 |    4    | Als auto  bestaat in de list)  | 
 |   5     | Systeem geeft foutmelding     |
 |  6   |Systeem gaat verder met stap 1     |
@@ -121,11 +128,31 @@ De eigenaar kan een auto toevoegen bestaande uit merk(i), model(i), kenteken(i),
 |  8   |  als de auto nog niet bestaat wordt die toegevoegd aan de lijst met autos op aanbod occasions  |
 |     |    |
 |     |    |
-|     |    |
-|     |    |
-|     |    |
 
 
+|  Use Case : Auto bewerken |   uitwerking  |
+|----------|--------------|
+| id:        | OW01 v0.2   |
+|naam:        |Auto bewerken   |
+|actoren:        | eigenaar   |
+
+#####beschrijving
+De eigenaar kan een auto bewerken doormiddel van het (i)kenteken. De attributen die te wijzigen zijn bestaan uit merk(i), model(i), kenteken(i), kentekenplaat(i), bouwjaar(i),prijs(i), kilometerstand(i)
+,brandstof type(i) en een afbeelding Url van de auto(i). Het systeem controleert of de auto al in het systeem staat door het controleren van de kentekenplaat. Als de auto nog niet in het systeem staat worden de gegevens opgeslagen en staat de auto gewijzigd in de lijst. 
+
+#####Scenario
+|  nummer |   uitwerking  |
+|----------|--------------|
+|  1      |  Systeem vraagt om de volgende gegevens: bestaande kenteken(i), merk(i), model(i), kentekenNieuw(i), kentekenplaat(i), bouwjaar(i),prijs(i), kilometerstand(i),brandstof type(i) en een afbeelding Url van de auto(i).|
+|   2     | Eigenaar verstrekt deze gegevens.  |
+|    3    | Systeem valideert de ingevoerde gegevens  |
+|    4    | Als auto  bestaat in de list)  | 
+|   5     | Systeem geeft foutmelding     |
+|  6   |Systeem gaat verder met stap 1     |
+|  7   |  Doe zolang er een auto toegevoegd wordt dat nog niet bestaat   |
+|  8   |  als de auto nog niet bestaat wordt die toegevoegd aan de lijst met autos op aanbod occasions  |
+|     |    |
+|     |    |
 
 
 

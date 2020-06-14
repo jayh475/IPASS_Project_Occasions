@@ -79,10 +79,6 @@ public class Account implements Serializable, Principal {
     }
 
 
-    public static Account getLoggedInAccount() {
-        return loggedInAccount;
-    }
-
 
     // bericht verstuurd door bezoeker zonder account naar alle admins
     public static void messageToAllAdmins(String topic, String question, String name, String email) {
