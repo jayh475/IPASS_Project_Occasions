@@ -231,4 +231,7 @@ https://codereview.stackexchange.com/questions/140420/filter-options-of-select-b
 popup login 
 https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_popup_form
 
+junit throw argument test
+https://www.baeldung.com/junit-assert-exception
+
 

@@ -1,80 +1,31 @@
 package cuba.de.jayh.everything.model;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class AccountTest {
+    public Account a1;
 
-    @Test
-    void getUsername() {
-    }
-
-    @Test
-    void getFullname() {
-    }
-
-    @Test
-    void getAddress() {
-    }
-
-    @Test
-    void getAvatarBase64() {
-    }
-
-    @Test
-    void getAvatarUploadId() {
-    }
-
-    @Test
-    void getAccountType() {
-    }
-
-    @Test
-    void setUsername() {
-    }
-
-    @Test
-    void setFullname() {
-    }
-
-    @Test
-    void setAddress() {
-    }
-
-    @Test
-    void setAvatarBase64() {
-    }
-
-    @Test
-    void setAvatarUploadId() {
-    }
-
-    @Test
-    void setType() {
-    }
-
-    @Test
-    void getMyMessages() {
-    }
-    @Test
-    void getType(){
+    @BeforeEach
+    void test() {
+        a1 = new Account("jayh475", "123");
 
     }
 
     @Test
-    void addMessage() {
+    void ifAccountExistThrowIllegalArgumentException() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+                    new Account("jayh475", "123");
+                });
+        String expectedMessage = "Account bestaat al";
+        String actualMessage = exception.getMessage();
+        assertTrue(actualMessage.contains(expectedMessage));
     }
 
-    @Test
-    void getLoggedInAccount() {
-    }
 
-    @Test
-    void messageToAllAdmins() {
-    }
 
-    @Test
-    void logInAs() {
-    }
+
 }
