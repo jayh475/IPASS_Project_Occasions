@@ -44,8 +44,7 @@
 <!--voor het aanmaken van een nieuwe auto popup scherm-->
 <div class="form-popup" id="createCar">
     <form class="homepage" id="POSTcar">
-        <h2>POST</h2>
-        <h3>Create new Car:</h3>
+        <h4>Create new Car:</h4>
         <label for="name">naam:</label> <br>
         <input type="text" id="name" name="name" required/> <br>
 
@@ -82,8 +81,8 @@
 
 <!--het verwijderen van een auto-->
 <div class="form-popup" id="deleteCar">
-    <form class="homepage">
-        <h3>Delete Car:</h3>
+    <form class="homepage" id="deleteCarFormData">
+        <h4>Delete Car:</h4>
         <label for="kenteken">kenteken:</label> <br>
         <input type="text" id="kenteken" name="licencePlate" required/> <br><br>
         <input type="button" id="verwerk" onclick="deleteCar()" value="verwijder"/>
@@ -94,7 +93,7 @@
 <!-- editten van een auto-->
 <div class="form-popup" id="editCar">
 <form  class="homepage" id="PATCHCars">
-    <h3>edit Car:</h3>
+    <h4>edit Car:</h4>
     <label for="licencePlateFound">Bestaand kenteken:</label> <br>
     <input type="text" id="licencePlateFound"  name="licencePlate"/> <br><br>
 

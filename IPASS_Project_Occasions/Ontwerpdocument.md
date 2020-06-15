@@ -41,7 +41,7 @@ Korte beschrijving wat het systeem geacht wordt te doen. Eventueel indeling in s
 ---
 
 # 3 Use Cases
-![use case diagram](https://raw.githubusercontent.com/jayh475/IPASS_Project_Occasions/master/IPASS_Project_Occasions/Images/UseCase-diagram.jpg?token=ANT36TW4YGMUYOSAIY5SILS62VBHQ)
+![use case diagram](Images/Ocassions-diagram.jpg)
 
 •	1. De admin kan een auto toevoegen. 
 De admin voert een naam in, een afbeelding, km-stand, bouwjaar, prijs, en brandstof type. 
@@ -145,13 +145,13 @@ De eigenaar kan een auto bewerken doormiddel van het (i)kenteken. De attributen 
 |----------|--------------|
 |  1      |  Systeem vraagt om de volgende gegevens: bestaande kenteken(i), merk(i), model(i), kentekenNieuw(i), kentekenplaat(i), bouwjaar(i),prijs(i), kilometerstand(i),brandstof type(i) en een afbeelding Url van de auto(i).|
 |   2     | Eigenaar verstrekt deze gegevens.  |
-|    3    | Systeem valideert de ingevoerde gegevens  |
-|    4    | Als auto  bestaat in de list)  | 
-|   5     | Systeem geeft foutmelding     |
-|  6   |Systeem gaat verder met stap 1     |
-|  7   |  Doe zolang er een auto toegevoegd wordt dat nog niet bestaat   |
-|  8   |  als de auto nog niet bestaat wordt die toegevoegd aan de lijst met autos op aanbod occasions  |
-|     |    |
+|    3    | Systeem valideert de ingevoerde gegevens.  |
+|    4    | Als de kenteken niet past bij een auto uit de lijst.| 
+|   5     | Systeem geeft foutmelding.    |
+|  6   |Systeem gaat verder met stap 1.    |
+|  7   |  Doe zolang er een kenteken ingevoerd wordt bij bestaande kenteken.  |
+|  8   |  als het kenteken klopt.  |
+|   9  |  auto wordt bewerkt aan de hand van de gegevens die veranderd zijn.        |
 |     |    |
 
 
@@ -164,9 +164,30 @@ De eigenaar kan een auto bewerken doormiddel van het (i)kenteken. De attributen 
 
 ## §3 Wireframes
 use case: Auto toevoegen:
-![aanmaken auto](https://raw.githubusercontent.com/jayh475/IPASS_Project_Occasions/master/IPASS_Project_Occasions/Images/moqupAanmakenCar.png?token=ANT36TRVGVPWUWL6G3ECNCK62VBBU)
+![aanmaken auto](Images/moqupAanmakenCar.png)
 
-![toegevoegde auto](https://raw.githubusercontent.com/jayh475/IPASS_Project_Occasions/master/IPASS_Project_Occasions/Images/aanbodOcassionsmoqup.png?token=ANT36TUDCSTEC4CH5B63NA262VA6K)
+![toegevoegde auto](Images/aanbodOcassionsmoqup.png)
+
+use case: Auto bewerken: 
+![auto bewerken](Images/editCarForum.png)
+
+use case: Auto verwijderen: 
+![auto verwijderen](Images/deleteCarForum.jpg)
+
+use case: Inloggen /Uitloggen: 
+![inloggen](Images/inlogforum.jpg)
+
+use case: Registreren: 
+![registreren](Images/registrerenForm.jpg)
+
+
+
+
+
+
+
+
+
 
 
 
@@ -174,7 +195,9 @@ use case: Auto toevoegen:
 
 # 4 Domeinmodel
 Hieronder wordt er een afbeelding en een beschrijving gegeven van het klassediagram.
-![klasse diagram](https://raw.githubusercontent.com/jayh475/IPASS_Project_Occasions/master/IPASS_Project_Occasions/Images/Class%20Diagram%20Ocassions.jpg?token=ANT36TVFLCXBM5ANCSIV4HC62VBMC)
+![klasse diagram](Images/Class%20Diagram%20Ocassions.jpg)
+
+
 
 
 | Entiteit | Beschrijving |
@@ -200,6 +223,8 @@ Hier wordt een installatiehandleiding en een sumiere gebruikershandleiding besch
 
 # 7 Verwijzingen
 Geef hier de bronnenlijst. Gebruik de APA stijl om de bronnen te vermelden.
+
+
 
 getting json and putting it in html. 
 https://www.youtube.com/watch?v=DG4obitDvUA

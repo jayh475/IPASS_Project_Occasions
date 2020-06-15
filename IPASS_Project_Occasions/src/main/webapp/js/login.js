@@ -9,6 +9,7 @@ function login() {
         .then(function (response) {
             if (response.ok) {
                 alert("U bent succesvol ingelogd.");
+
                 return response.json();
 
 
@@ -17,19 +18,25 @@ function login() {
                 console.log(response.status);
             }
         }).then(myJson => {
-            // inlognaam();
-        window.sessionStorage.setItem("myJWT", myJson.token)
+        window.sessionStorage.setItem("myJWT", myJson.token);
+        window.sessionStorage.setItem("myUsername", myJson.message);
+        // document.getElementById("login-form").reset();
+
+        showInlognaam();
     })
         .catch(error => console.log(error));
 
 }
 
-// function inlognaam() {
-//     let token = window.sessionStorage.getItem("myJWT");
-//     let username = token.message;
-//     console.log(username);
-//     document.querySelector("#username").textContent = username;
-// }
+
+function showInlognaam() {
+    let username = window.sessionStorage.getItem("myUsername");
+    let cloneUsername = username.valueOf();
+
+  // document.getElementById("showUsername").innerHTML = `Welkom ${cloneUsername} !`;
+    document.getElementById("showUsername").innerHTML = `welkom ${cloneUsername}`;
+
+}
 
 
 
@@ -39,6 +46,7 @@ function openForm() {
 
 function closeForm() {
     document.getElementById("myForm").style.display = "none";
+    document.getElementById("login-form").reset();
 }
 
 // function resetFormAfterLogin(){

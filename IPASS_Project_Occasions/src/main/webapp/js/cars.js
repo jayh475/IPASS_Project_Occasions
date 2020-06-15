@@ -135,13 +135,18 @@ function openFormEditCar(){
 //close forms
 function closeCreateCar() {
     document.getElementById("createCar").style.display = "none";
+    document.getElementById("POSTcar").reset();
 }
 
 function closeDeleteCar() {
     document.getElementById("deleteCar").style.display = "none";
+    document.getElementById("deleteCarFormData").reset();
 }
 function closeEditCar(){
     document.getElementById("editCar").style.display = "none";
+    document.getElementById("PATCHCars").reset();
+
+
 }
 
 
