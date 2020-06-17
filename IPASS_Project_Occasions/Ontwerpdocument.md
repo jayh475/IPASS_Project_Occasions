@@ -146,12 +146,10 @@ De eigenaar kan een auto bewerken doormiddel van het (i)kenteken. De attributen 
 |  1      |  Systeem vraagt om de volgende gegevens: bestaande kenteken(i), merk(i), model(i), kentekenNieuw(i), kentekenplaat(i), bouwjaar(i),prijs(i), kilometerstand(i),brandstof type(i) en een afbeelding Url van de auto(i).|
 |   2     | Eigenaar verstrekt deze gegevens.  |
 |    3    | Systeem valideert de ingevoerde gegevens.  |
-|    4    | Als de kenteken niet past bij een auto uit de lijst.| 
+|    4    | Als de kenteken niet past bij een auto uit de lijst en of gegevens zijn niet aangepast. 
 |   5     | Systeem geeft foutmelding.    |
 |  6   |Systeem gaat verder met stap 1.    |
-|  7   |  Doe zolang er een kenteken ingevoerd wordt bij bestaande kenteken.  |
-|  8   |  als het kenteken klopt.  |
-|   9  |  auto wordt bewerkt aan de hand van de gegevens die veranderd zijn.        |
+|   8  |  auto wordt bewerkt aan de hand van de gegevens die veranderd zijn.        |
 |     |    |
 
 
@@ -258,5 +256,8 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_popup_form
 
 junit throw argument test
 https://www.baeldung.com/junit-assert-exception
+
+converting markdown to pdf
+https://superuser.com/questions/689056/how-can-i-convert-github-flavored-markdown-to-a-pdf
 
 

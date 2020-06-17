@@ -51,9 +51,11 @@ function createCar() {
                 console.log(response);
             } else if (response.status === 404) {
                 alert("auto bestaat al/ voer alle velden in");
-            } else
+            }else if(response.status === 403){
                 alert("Niet ingelogd als admin");
-            console.log("er is iets anders miss gegaan");
+            } else {
+                console.log("er is iets anders miss gegaan");
+            }
 
         })
 }
@@ -77,16 +79,20 @@ function deleteCar() {
                 return response.json();
             } else if (response.status === 404) {
                 alert("auto niet gevonden!");
-            } else
-                console.log(response.json());
+            } else if( response.status ===403){
                 alert("Niet ingelogd als admin");
-            console.log("er is iets anders miss gegaan");
+            }
+             else {
+                console.log(response.json());
+
+                console.log("er is iets anders miss gegaan");
+            }
 
         })
 
 }
 function updateCar() {
-    let carLicencePlate = document.querySelector("licencePlateFound").value;
+    let carLicencePlate = document.querySelector("#licencePlateFound").value;
     let formData = new FormData(document.querySelector("#PATCHCars"));
     let encData = new URLSearchParams(formData.entries());
     let fetchOptions = {
@@ -99,16 +105,18 @@ function updateCar() {
 
     fetch("restservices/cars/editCar/" + carLicencePlate, fetchOptions)
         .then(function (response) {
+            console.log(response.json());
             if (response.ok) {
                 alert("auto is geupdate!");
                 window.location.reload();
                 return response.json();
             } else if (response.status === 404) {
                 alert("auto niet gevonden of je hebt niet alles in gevuld!");
-            } else
-                console.log(response.json());
-            alert("Niet ingelogd als admin");
-            console.log("er is iets anders miss gegaan");
+            } else if(response.status === 403){
+                alert("Niet ingelogd als admin");
+            }else{
+                console.log("er is iets anders miss gegaan");
+            }
 
 
         })

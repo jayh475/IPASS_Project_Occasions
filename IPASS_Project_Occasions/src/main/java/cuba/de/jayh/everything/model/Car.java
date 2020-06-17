@@ -45,10 +45,7 @@ public class Car implements Serializable {
         for (Car cars : allCars) {
             if (cars.name.equals(name) && cars.imageUrl.equals(imageUrl) && cars.kilometre == kilometre && cars.yearOfManufacture == yearOfManufacture && cars.price == price && cars.fuelType.equals(fuelType) && cars.licencePlate.equals(licencePlate) && cars.brand.equals(brand) && cars.model.equals(model)) {
                 System.out.println("auto bestaat al (geheel object)");
-
                 return null;
-
-
             }
             if (cars.licencePlate.equals(licencePlate) || cars.imageUrl.equals(imageUrl)) {
                 System.out.println("licencePlate already exist in list or image Url already exist in list");
@@ -106,7 +103,7 @@ public class Car implements Serializable {
             }
         }
         this.imageUrl = imageUrl;
-        this.licencePlate = licencePlatechange;   // eventueel ?
+        this.licencePlate = licencePlatechange;
         this.name = name;
         this.kilometre = kilometre;
         this.yearOfManufacture = yearOfManufacture;

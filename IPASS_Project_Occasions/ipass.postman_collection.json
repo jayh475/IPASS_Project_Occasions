@@ -1,0 +1,361 @@
+{
+	"info": {
+		"_postman_id": "720fa204-9c74-4ee5-9bc0-8fc8d85b12ae",
+		"name": "ipass",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "jayh475",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/restservices/authentication/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"restservices",
+						"authentication",
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "jayh475",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registreren",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "iemand",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/restservices/authentication/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"restservices",
+						"authentication",
+						"register"
+					],
+					"query": [
+						{
+							"key": "eigenaarNaam",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "eigenaarAchternaam",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "username",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create car",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYXloNDc1IiwiZXhwIjoxNTkyMzk3MTczLCJyb2xlIjoiYWRtaW4ifQ.8iplnvlNvpr8Q_gO6slrXc7d9NIHfSewJZ7HeGYrIzKMiQu19aghQ-JNhAPYODX2QR3WeafIRojdgzLd9eOz1g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Fiat punto",
+							"type": "text"
+						},
+						{
+							"key": "imageUrl",
+							"value": "https://cdn.autowereld.nl/I392904122/1280x0/fiat-punto-evo-1-3-m-jet-street-airco-cruise-lm-velgen-pdc-plaatje.jpg\n",
+							"type": "text"
+						},
+						{
+							"key": "kilometre",
+							"value": "30000",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "8000",
+							"type": "text"
+						},
+						{
+							"key": "licencePlate",
+							"value": "18-ZH-JP",
+							"type": "text"
+						},
+						{
+							"key": "model",
+							"value": "Punto",
+							"type": "text"
+						},
+						{
+							"key": "yearOfManufacture",
+							"value": "2010",
+							"type": "text"
+						},
+						{
+							"key": "fuelType",
+							"value": "diesel",
+							"type": "text"
+						},
+						{
+							"key": "brand",
+							"value": "Fiat",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/restservices/cars/createCar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"restservices",
+						"cars",
+						"createCar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteCar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYXloNDc1IiwiZXhwIjoxNTkyMzkzNDEwLCJyb2xlIjoiYWRtaW4ifQ.ORfppocZZKA82E8JP-AIhie2wI_XXPQae1sZiYv5_nd1EM12mq4TVhm2GRk21AdxZMWrMXhyvzyH2atoxdDT-g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "licencePlate",
+							"value": "18-ZH-JP",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/restservices/cars/18-ZH-JP",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"restservices",
+						"cars",
+						"18-ZH-JP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update car",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYXloNDc1IiwiZXhwIjoxNTkyMzkzMjI4LCJyb2xlIjoiYWRtaW4ifQ.miQ_HLB-aiffY2jf4Y5CaeCknO0pd5u3CZqiTL9syRTYIpYltSH8D67tW_3frtRTkMmDXV-C1Yk40cs9u5hpxw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "licencePlateChange",
+							"value": "15-RZ-PJ",
+							"type": "text"
+						},
+						{
+							"key": "kilometreEdit",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "priceEdit",
+							"value": "8000",
+							"type": "text"
+						},
+						{
+							"key": "modelEdit",
+							"value": "vision s",
+							"type": "text"
+						},
+						{
+							"key": "yearOfManufactureEdit",
+							"value": "2020",
+							"type": "text"
+						},
+						{
+							"key": "fuelTypeEdit",
+							"value": "Elektriciteit",
+							"type": "text"
+						},
+						{
+							"key": "imageUrlEdit",
+							"value": "https://www.rtlnieuws.nl/sites/default/files/styles/liggend/public/content/images/2020/01/07/sony.jpg?h=01e4e9db&itok=KJnrF27O",
+							"type": "text"
+						},
+						{
+							"key": "brandEdit",
+							"value": "Sony",
+							"type": "text"
+						},
+						{
+							"key": "nameEdit",
+							"value": "Sony vision s",
+							"type": "text"
+						},
+						{
+							"key": "licencePlatefound",
+							"value": "15-RZ-PJ",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/restservices/cars/editCar/15-RZ-PJ",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"restservices",
+						"cars",
+						"editCar",
+						"15-RZ-PJ"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
