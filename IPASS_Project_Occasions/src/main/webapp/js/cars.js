@@ -43,7 +43,7 @@ function createCar() {
         body: encData
     };
 
-    fetch("restservices/cars/createCar", fetchOptions)
+    fetch("restservices/car/createCar", fetchOptions)
         .then(function (response) {
             if (response.ok) {
                 alert("Auto is aangemaakt!");
@@ -71,7 +71,7 @@ function deleteCar() {
         },
     };
 
-    fetch("restservices/cars/" + licencePlate, fetchOptions)
+    fetch("restservices/car/" + licencePlate, fetchOptions)
         .then(function (response) {
             if (response.ok) {
                 alert("auto is verwijderd!");
@@ -103,7 +103,7 @@ function updateCar() {
         body: encData
     };
 
-    fetch("restservices/cars/editCar/" + carLicencePlate, fetchOptions)
+    fetch("restservices/car/editCar/" + carLicencePlate, fetchOptions)
         .then(function (response) {
             console.log(response.json());
             if (response.ok) {

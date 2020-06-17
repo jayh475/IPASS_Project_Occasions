@@ -201,13 +201,10 @@
 							"value": "Fiat",
 							"type": "text"
 						}
-					],
-					"options": {
-						"urlencoded": {}
-					}
+					]
 				},
 				"url": {
-					"raw": "http://localhost:8080/restservices/cars/createCar",
+					"raw": "http://localhost:8080/restservices/car/createCar",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -215,7 +212,7 @@
 					"port": "8080",
 					"path": [
 						"restservices",
-						"cars",
+						"car",
 						"createCar"
 					]
 				}
@@ -251,7 +248,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/restservices/cars/18-ZH-JP",
+					"raw": "http://localhost:8080/restservices/car/18-ZH-JP",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -259,7 +256,7 @@
 					"port": "8080",
 					"path": [
 						"restservices",
-						"cars",
+						"car",
 						"18-ZH-JP"
 					]
 				}
@@ -340,7 +337,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/restservices/cars/editCar/15-RZ-PJ",
+					"raw": "http://localhost:8080/restservices/car/editCar/15-RZ-PJ",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -348,7 +345,7 @@
 					"port": "8080",
 					"path": [
 						"restservices",
-						"cars",
+						"car",
 						"editCar",
 						"15-RZ-PJ"
 					]
