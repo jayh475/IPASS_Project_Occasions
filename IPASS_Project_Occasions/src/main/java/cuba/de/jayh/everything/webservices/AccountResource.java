@@ -3,12 +3,9 @@ package cuba.de.jayh.everything.webservices;//package cuba.de.jayh.everything.we
 //import cuba.de.jayh.everything.model.Account;
 //import cuba.de.jayh.everything.model.Company;
 
+
 import cuba.de.jayh.everything.model.Account;
 
-
-import javax.annotation.security.PermitAll;
-import javax.annotation.security.RolesAllowed;
-import javax.print.attribute.standard.Media;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;

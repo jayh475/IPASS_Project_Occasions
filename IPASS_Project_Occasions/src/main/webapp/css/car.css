@@ -1,10 +1,10 @@
 
 body{
     font-family: sans-serif;
-    background-color: #DDEEDD;
+    background-color: lightblue;
     color:#333;
-    padding: 20px 0 28px 0;
-    margin: 0;
+    /*padding: 20px 0 28px 0;*/
+    /*margin: 0;*/
 }
 
 
@@ -26,7 +26,22 @@ img{
     background-color: #fff;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    position: relative;
 }
+
+/*.car-favorite-button{*/
+/*    position: absolute;*/
+/*    right: 5px; !*plaatje staat rechts in de hoek omdat position absolute is*!*/
+/*    background-color: dodgerblue;*/
+/*    color: white;*/
+/*    border-radius: 50%; !* zorgt ervoor dat mijn button rond wordt*!*/
+/*    width: 55px;*/
+/*    height:55px;*/
+
+/*}*/
+
+
+
 
 
 .footer{
@@ -49,15 +64,20 @@ img{
 
 }
 
-.homepage{
+.car-forms{
     max-width: 650px;
-    padding: 20px;
-    margin: 30px auto;
+    padding: 15px;
+    margin: 0 auto;
     background-color: #fff;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 
 }
+
+
+
+
+
 
 
 

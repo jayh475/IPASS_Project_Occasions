@@ -10,6 +10,7 @@ public class Message implements Serializable {
     private String question;
     private String name;
     private String email;
+    private String lastname;
     private  LocalDateTime dateOfSend;
 
     private enum Status {
@@ -21,27 +22,17 @@ public class Message implements Serializable {
 
 
 
-    //naar een direct persoon (is voor admins)
-    public Message(String tp, String qn, String name, String em, Account to){
-        this.topic =tp;
-        this.question =qn;
-        this.name = name;
-        this.email = em;
-        this.dateOfSend =  LocalDateTime.now();
-        this.status = Status.UNREAD;
-        to.addMessage(this);
-
-    }
-
-
     // als de persoon geen account heeft (wordt verzonden naar alle super-users)
-    public Message(String topic,String question, String name, String email){
+    public Message(String topic,String question, String name,String lastname, String email){
         this.topic =topic;
         this.question =question;
         this.name = name;
+        this.lastname = lastname;
         this.email = email;
         this.dateOfSend = LocalDateTime.now();
         this.status = Status.UNREAD;
+
+
     }
 
     public String getTopic() {
@@ -55,6 +46,40 @@ public class Message implements Serializable {
     public LocalDateTime getDate() {
         return dateOfSend;
     }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+
 
 }
 

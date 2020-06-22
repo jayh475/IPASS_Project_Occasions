@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/index.css" type="text/css"/>
     <link rel="stylesheet" href="css/registreren.css" type="text/css"/>
 
-    <script src="js/registreren.js" type="text/javascript"></script>
+    <script src="js/register.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -22,9 +22,11 @@
         <label for="password"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="password" id="password" required>
 
+        <label for="checkbox"></label>registreer als admin<input type="checkbox" id="checkbox" name="checkbox">
+
         <p>Door het aanmaken van een account accepteert u de <a href="#">Algemene voorwaarden & Privacy</a>.</p>
 
-        <button id="register-form-submit" type="submit" class="registerbtn">Registreer</button>
+        <button onclick="registreren()" type="button" class="registerbtn">Registreer</button>
     </form>
 
 
@@ -32,6 +34,9 @@
 
 <div class="container-signUp signin">
     <p>Heeft u al een account ? <a href="index.html">Home</a>.</p>
+
+
+
 </div>
 
 

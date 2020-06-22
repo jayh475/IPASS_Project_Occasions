@@ -13,7 +13,6 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 import java.io.*;
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -52,7 +51,7 @@ public class PersistenceManager implements ServletContextListener {
 
     }
 
-    public static void loadCarsFromAzure() throws IOException, ClassNotFoundException {
+    public static boolean loadCarsFromAzure() throws IOException, ClassNotFoundException {
         if (blobContainer.exists()) {
             BlobClient blob = blobContainer.getBlobClient("Cars");
 
@@ -74,9 +73,10 @@ public class PersistenceManager implements ServletContextListener {
 //                }
                 baos.close();
                 ois.close();
+                return true;
             }
         }
-
+        return false;
     }
 
     public static void saveAccountsToAzure() throws IOException {
@@ -137,13 +137,18 @@ public class PersistenceManager implements ServletContextListener {
               Account a1=   new Account("jayh475", "123");
               a1.setAdmin();
             }
-            PersistenceManager.loadCarsFromAzure();
+
+
+            if (!PersistenceManager.loadCarsFromAzure()){
+                System.out.println("er zijn geen auto's gevonden, standaard auto's worden geplaatst");
+                Car.createCar("Volkswagen Polo 1.6", "https://media.autoweek.nl/m/pyryc27bzexp_800.jpg", 2000, 2016, 1800, "diesel", "73-MG-HJ", "Volkswagen", "Polo 1.6");
+                Car.createCar("Fiat punto", "https://cdn.autowereld.nl/I392904122/1280x0/fiat-punto-evo-1-3-m-jet-street-airco-cruise-lm-velgen-pdc-plaatje.jpg", 30000, 2010,8000,  "diesel","18-ZH-JP","Fiat", "punto" );
+            }
 
 
 
         } catch (IOException | ClassNotFoundException ioe) {
             System.out.println("cannot load cars");
-//            Car.createCar("Volkswagen Polo 1.6", "https://media.autoweek.nl/m/pyryc27bzexp_800.jpg", 2000, 2016, 1800, "diesel", "73-MG-HJ", "Volkswagen", "Polo 1.6");
             System.out.println("cannot load accounts");
             ioe.printStackTrace();
         }

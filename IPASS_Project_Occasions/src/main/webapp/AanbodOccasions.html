@@ -8,7 +8,7 @@
     <script src="js/cars.js" type="text/javascript"></script>
 
     <link rel="stylesheet" href="css/index.css" type="text/css"/>
-    <script src="js/login.js" type="text/javascript"></script>
+
 
 </head>
 
@@ -43,33 +43,33 @@
 
 <!--voor het aanmaken van een nieuwe auto popup scherm-->
 <div class="form-popup" id="createCar">
-    <form class="homepage" id="POSTcar">
+    <form class="car-forms" id="POSTcar">
         <h4>Create new Car:</h4>
-        <label for="name">naam:</label> <br>
-        <input type="text" id="name" name="name" required/> <br>
+        <label for="name">naam:</label>
+        <input type="text" id="name" name="name" required/>
 
-        <label for="brand">merk:</label> <br>
-        <input type="text" id="brand" name="brand" required/> <br>
+        <label for="brand">merk:</label>
+        <input type="text" id="brand" name="brand" required/>
 
-        <label for="model">model:</label> <br>
-        <input type="text" id="model" name="model" required/> <br>
+        <label for="model">model:</label>
+        <input type="text" id="model" name="model" required/>
 
-        <label for="kilometre">km-stand:</label><br>
-        <input type="number" id="kilometre" name="kilometre" required/> <br>
+        <label for="kilometre">km-stand:</label>
+        <input type="number" id="kilometre" name="kilometre" required/>
 
-        <label for="yearOfManufacture">bouwjaar:</label> <br>
-        <input type="number" id="yearOfManufacture" name="yearOfManufacture" required/> <br>
+        <label for="yearOfManufacture">bouwjaar:</label>
+        <input type="number" id="yearOfManufacture" name="yearOfManufacture" required/>
 
-        <label for="price">prijs:</label> <br>
-        <input class="input" type="number" id="price" name="price" required/> <br>
+        <label for="price">prijs:</label>
+        <input class="input" type="number" id="price" name="price" required/>
 
-        <label for="fuelType">brandstof:</label> <br>
-        <input type="text" id="fuelType" name="fuelType" required/> <br>
+        <label for="fuelType">brandstof:</label>
+        <input type="text" id="fuelType" name="fuelType" required/>
 
-        <label for="licencePlate">kenteken:</label> <br>
-        <input type="text" id="licencePlate" name="licencePlate" required/> <br>
+        <label for="licencePlate">kenteken:</label>
+        <input type="text" id="licencePlate" name="licencePlate" required/>
 
-        <label for="imageUrl">foto:</label> <br>
+        <label for="imageUrl">foto:</label>
         <input type="text" id="imageUrl" name="imageUrl" required/> <br><br>
 
         <input type="submit" onclick="createCar()" value="maak aan"/>
@@ -81,7 +81,7 @@
 
 <!--het verwijderen van een auto-->
 <div class="form-popup" id="deleteCar">
-    <form class="homepage" id="deleteCarFormData">
+    <form class="car-forms" id="deleteCarFormData">
         <h4>Delete Car:</h4>
         <label for="kenteken">kenteken:</label> <br>
         <input type="text" id="kenteken" name="licencePlate" required/> <br><br>
@@ -92,36 +92,36 @@
 
 <!-- editten van een auto-->
 <div class="form-popup" id="editCar">
-<form  class="homepage" id="PATCHCars">
+<form  class="car-forms" id="PATCHCars">
     <h4>edit Car:</h4>
-    <label for="licencePlateFound">Bestaand kenteken:</label> <br>
-    <input type="text" id="licencePlateFound"  name="licencePlateFound"/> <br><br>
+    <label for="licencePlateFound">Bestaand kenteken:</label>
+    <input type="text" id="licencePlateFound"  name="licencePlateFound"/>
 
-    <label for="licencePlateChange">Bewerk kenteken:</label> <br>
-    <input type="text" id="licencePlateChange"  name="licencePlateChange"/> <br>
+    <label for="licencePlateChange">Bewerk kenteken:</label>
+    <input type="text" id="licencePlateChange"  name="licencePlateChange"/>
 
-    <label  for="nameEdit">naam:</label> <br>
-    <input type="text" id="nameEdit" name="nameEdit"/> <br>
+    <label  for="nameEdit">naam:</label>
+    <input type="text" id="nameEdit" name="nameEdit"/>
 
-    <label for="brandEdit">merk:</label> <br>
-    <input type="text" id="brandEdit" name="brandEdit"/> <br>
+    <label for="brandEdit">merk:</label>
+    <input type="text" id="brandEdit" name="brandEdit"/>
 
-    <label for="modelEdit">model:</label> <br>
-    <input type="text" id="modelEdit" name="modelEdit"/> <br>
+    <label for="modelEdit">model:</label>
+    <input type="text" id="modelEdit" name="modelEdit"/>
 
-    <label for="kilometreEdit">km-stand:</label><br>
-    <input type="number" id="kilometreEdit" name="kilometreEdit"/> <br>
+    <label for="kilometreEdit">km-stand:</label>
+    <input type="number" id="kilometreEdit" name="kilometreEdit"/>
 
-    <label for="yearOfManufactureEdit">bouwjaar:</label> <br>
-    <input type="number" id="yearOfManufactureEdit" name="yearOfManufactureEdit"/> <br>
+    <label for="yearOfManufactureEdit">bouwjaar:</label>
+    <input type="number" id="yearOfManufactureEdit" name="yearOfManufactureEdit"/>
 
-    <label for="priceEdit">prijs:</label> <br>
-    <input class="input" type="number" id="priceEdit" name="priceEdit"/> <br>
+    <label for="priceEdit">prijs:</label>
+    <input class="input" type="number" id="priceEdit" name="priceEdit"/>
 
-    <label for="fuelTypeEdit">brandstof:</label> <br>
-    <input type="text" id="fuelTypeEdit" name="fuelTypeEdit"/> <br>
+    <label for="fuelTypeEdit">brandstof:</label>
+    <input type="text" id="fuelTypeEdit" name="fuelTypeEdit"/>
 
-    <label for="imageUrlEdit">foto:</label> <br>
+    <label for="imageUrlEdit">foto:</label>
     <input type="text" id="imageUrlEdit" name="imageUrlEdit"/> <br><br>
 
     <input type="button" onclick="updateCar()" value="edit"/>

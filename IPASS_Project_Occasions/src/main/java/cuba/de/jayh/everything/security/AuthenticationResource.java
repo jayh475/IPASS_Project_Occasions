@@ -9,8 +9,10 @@ import io.jsonwebtoken.impl.crypto.MacProvider;
 
 import javax.annotation.security.PermitAll;
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.SecurityContext;
 import java.security.Key;
 import java.util.Calendar;
 
@@ -52,27 +54,74 @@ public class AuthenticationResource {
     @PermitAll
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    public Response registerUser(@FormParam("password") String password,
+    public Response registerUser(@Context SecurityContext securityContext, @FormParam("checkbox") String checkbox, @FormParam("password") String password,
                                  @FormParam("username") String username) {
+        System.out.println("registeren");
+
+        String role = "user";
+
         try {
-            new Account(username, password);
-            String token = createToken(username, "user");
+            Account account= new Account(username, password);
+
+            System.out.println(securityContext.toString());
+            try {
+                if (securityContext.isUserInRole("admin") && checkbox.equals("on")) {
+                    account.setAdmin();
+                    role = "admin";
+                    System.out.println("account wordt gemaakt als admin");
+                }
+            }catch( Exception e){
+                System.out.println("normale user wordt aangemaakt");
+
+
+            }
+
+            String token = createToken(username, role);
             TokenResponse tr = new TokenResponse();
             tr.setToken(token);
             System.out.println("account is aangemaakt");
+
+
             return Response.ok(tr).build();
 
 
         } catch (Exception e) {
-            e.printStackTrace();
             TokenResponse tr = new TokenResponse();
             tr.setMessage("Account bestaat al");
+            e.printStackTrace();
             return Response.status(Response.Status.CONFLICT).entity(tr).build();
 
         }
 
 
     }
+
+
+//    @POST
+//    @Path("/register")
+//    @PermitAll
+//    @Produces(MediaType.APPLICATION_JSON)
+//    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+//    public Response registerUser(@Context SecurityContext securityContext, @FormParam("checkbox") String checkbox, @FormParam("password") String password,
+//                                 @FormParam("username") String username) {
+//
+//
+
+
+////            met checkbox kan een admin een andere admin maken
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     private String createToken(String username, String role) throws JwtException {
         Calendar expiration = Calendar.getInstance();

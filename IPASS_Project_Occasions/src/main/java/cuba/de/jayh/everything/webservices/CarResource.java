@@ -1,10 +1,8 @@
 package cuba.de.jayh.everything.webservices;
 
 
-import cuba.de.jayh.everything.model.Account;
 import cuba.de.jayh.everything.model.Car;
 
-import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.*;
 
@@ -13,7 +11,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
-import java.util.AbstractMap;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -52,7 +49,7 @@ public class CarResource {
                 kilometre, yearOfManufacture,
                 price, fuelType, licencePlate, brand, model);
         if (c == null) {
-            System.out.println("auto is null");
+            System.out.println("auto is null of bestaat al");
             return Response.status(404).build();
 
         }

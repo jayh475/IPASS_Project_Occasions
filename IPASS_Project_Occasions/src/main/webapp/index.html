@@ -22,6 +22,8 @@
         <ul class="boxing">
             <li><a href="index.html">Home</a></li>
             <li><a href="AanbodOccasions.html"> Aanbod occasions</a></li>
+            <li><a href="contact.html"> Contact</a></li>
+            <li><a href="Berichten.html">Berichten</a></li>
             <li><a href="registreren.html"> Registreren</a></li>
             <li> <button class="inlogbuttonVerplaatsen" type="button" onclick="openForm()">Inloggen</button></li>
             <li> <button onclick="LogOut()" class="inlogbuttonVerplaatsen" type="button">Log uit</button></li>
@@ -33,24 +35,138 @@
 
 
 
-
-
-
-
 <!--filter form-->
-        <div class="grandchild">
-            <label for="brand">Filter op merk:</label>
-            <select id="brand" name="merk">
-                <option value="Volvo">Volvo</option>
-                <option value="Saab">Saab</option>
-                <option value="Fiat">Fiat</option>
-                <option value="Audi">Audi</option>
-                <option value="Peugeot">Peugeot</option>
-                <option value="Volkswagen">Volkswagen</option>
-                <option value="Mercedes">Mercedes</option>
-            </select>
-            <button onclick="getCarsByValue()" id="searchCarsButton">Zoek</button>
+<div class="row">
+    <div class="col-75">
+        <div class="containerFilter">
+            <form>
+                <div class="row">
+                    <div class="col-50">
+                        <h3>Vind hier uw perfecte occasion!</h3>
+
+                        <label for="brand">Merk</label>
+                        <select id="brand" name="brand">
+                            <option value="" disabled selected>Selecteer Merk</option>
+                            <option value="Volvo">Volvo</option>
+                            <option value="Saab">Saab</option>
+                            <option value="Fiat">Fiat</option>
+                            <option value="Audi">Audi</option>
+                            <option value="Peugeot">Peugeot</option>
+                            <option value="Volkswagen">Volkswagen</option>
+                            <option value="Mercedes">Mercedes</option>
+                            <option value="Nissan">Nissan</option>
+                            <option value="Toyota">Toyota</option>
+                            <option value="Jaguar">Jaguar</option>
+                            <option value="Ford">Ford</option>
+                            <option value="BMW">BMW</option>
+                        </select>
+
+
+
+                        <label for="yearOfManufacture">Bouwjaar</label>
+                        <select  id="yearOfManufacture" name="yearOfManufacture">
+                            <option value="" disabled selected>Bouwjaar</option>
+                            <option value="1995">199</option>
+                            <option value="x">x</option>
+                            <option value="x">x</option>
+                            <option value="x">x</option>
+
+                        </select>
+
+
+                        <div class="row">
+                            <div class="col-50">
+                                <label for="priceFrom">prijs van</label>
+                                <select  id="priceFrom" name="price">
+                                    <option value="" disabled selected>prijs van</option>
+                                    <option value="100">100</option>
+                                    <option value="500">500</option>
+                                    <option value="1000">1000</option>
+                                    <option value="1000">1000</option>
+                                    <option value="1500">1500</option>
+                                    <option value="2000">2000</option>
+                                </select>
+
+
+
+
+                            </div>
+                            <div class="col-50">
+                                <label for="priceTill">t/m</label>
+                                <select  id="priceTill" name="price">
+                                    <option value="" disabled selected>t/m</option>
+                                    <option value="100">100</option>
+                                    <option value="500">500</option>
+                                    <option value="1000">1000</option>
+                                    <option value="1500">1500</option>
+                                    <option value="2000">2000</option>
+                                    <option value="2500">2500</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-50">
+                        <h3>In alle soorten en maten</h3>
+
+
+                        <label for="model">Model</label>
+                        <select  id="model" name="model">
+                            <option value="" disabled selected>Model</option>
+                            <option value="x">x</option>
+                            <option value="x">x</option>
+                            <option value="x">x</option>
+                            <option value="x">x</option>
+
+                        </select>
+
+                        <label for="fuelForm">Brandstof</label>
+                        <select   id="fuelForm" name="price">
+                            <option value="" disabled selected>Brandstof</option>
+                            <option value="Benzine">Benzine</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="Elektriciteit">Elektriciteit</option>
+                            <option value="Hybride">Hybride</option>
+                            <option value="Gas">Gas</option>
+                        </select>
+                        <div class="row">
+                            <div class="col-50">
+                                <label for="kmFrom">km.stand van</label>
+                                <select id="kmFrom" name="kmFrom">
+                                    <option value="" disabled selected>km.stand van</option>
+                                    <option value="100">100</option>
+                                    <option value="500">500</option>
+                                    <option value="1000">1000</option>
+                                    <option value="1000">1000</option>
+                                    <option value="1500">1500</option>
+                                    <option value="2000">2000</option>
+                                </select>
+                            </div>
+                            <div class="col-50">
+                                <label for="kmTill">t/m</label>
+                                <select  id="kmTill" name="kmTill">
+                                    <option value="" disabled selected>t/m</option>
+                                    <option value="100">100</option>
+                                    <option value="500">500</option>
+                                    <option value="1000">1000</option>
+                                    <option value="1500">1500</option>
+                                    <option value="2000">2000</option>
+                                    <option value="2500">2500</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <input type="button" onclick="getCarsByValue()" value="Zoek" class="btnFilter">
+
+            </form>
         </div>
+    </div>
+
+</div>
+
 
 <!--inlogform-->
 <div class="form-popup" id="myForm">

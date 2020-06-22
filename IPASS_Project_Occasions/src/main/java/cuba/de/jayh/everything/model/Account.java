@@ -81,10 +81,10 @@ public class Account implements Serializable, Principal {
 
 
     // bericht verstuurd door bezoeker zonder account naar alle admins
-    public static void messageToAllAdmins(String topic, String question, String name, String email) {
+    public static void messageToAllAdmins(String topic, String question, String name, String lastname, String email) {
         for (Account acc : allAccounts) {
             if (acc.getRole().equals("admin")) {
-                new Message(topic, question, name, email);
+                new Message(topic, question, name,lastname, email);
             }
         }
     }

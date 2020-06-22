@@ -66,6 +66,11 @@ public class Car implements Serializable {
         return theBrandList;
     }
 
+//    public static ArrayList<Car> getCarsByAttributes(String brand, String pr){
+//
+//
+//    }
+
     public String getName() {
         return name;
     }

@@ -1,6 +1,4 @@
 package cuba.de.jayh.everything.security;
-
-
 import cuba.de.jayh.everything.model.Account;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtParser;

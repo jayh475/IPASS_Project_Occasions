@@ -1,24 +1,150 @@
 body{
     font-family: sans-serif;
-    background-color: #DDEEDD;
+    background-color: lightblue;
     color:#333;
-    padding: 20px 0 28px 0;
-    margin: 0;
+    /*padding: 20px 0 28px 0;*/
+    /*margin: 0;*/
 }
 
 
 
 
 /*voor het filteren*/
-.grandchild {
-    background: lightcoral;
-    border: black 5px solid;
+/*.grandchild {*/
+/*    !*width: 60%;*!*/
+/*    background: white;*/
+/*    border: black 5px solid;*/
+/*    padding: 50px;*/
+/*    margin: 60px 300px;*/
+/*}*/
+
+/*.grandchild select{*/
+/*    font-size: 2em;*/
+/*}*/
+
+/*.rechterKolomSelection{*/
+/*    margin-left: 80px;*/
+/*}*/
+
+/*.grandchild:after {*/
+/*    content: "";*/
+/*    display: block;*/
+/*    padding-bottom: 100%;*/
+/*}*/
+
+
+* {
+    box-sizing: border-box;
 }
 
-.grandchild{
-    padding: 50px;
-    margin: 50px;
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 -16px;
 }
+
+.col-25 {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+}
+
+.col-50 {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+}
+
+.col-75 {
+    -ms-flex: 75%; /* IE10 */
+    flex: 75%;
+    margin: 50px 70px;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+    padding: 0 16px;
+}
+
+.containerFilter {
+    background-color: #f2f2f2;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+}
+
+
+select{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+
+}
+
+label {
+    margin-top: 10px;
+    display: block;
+}
+
+
+
+.btnFilter {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.btnFilter:hover {
+    background-color: #45a049;
+}
+
+a {
+    color: #2196F3;
+}
+
+hr {
+    border: 1px solid lightgrey;
+}
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+    .row {
+        flex-direction: column-reverse;
+    }
+    .col-25 {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
 
 li button:hover, dropdown.hover .dropbtn{
     background-color: firebrick;
@@ -34,7 +160,7 @@ li.dropdown {
     display: none;
     position: absolute;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 1;
     background-color: black;
 }
@@ -57,10 +183,6 @@ li.dropdown {
     float: right;
 
 }
-
-
-
-
 
 
 ul {
@@ -102,6 +224,7 @@ li button {
     border: 3px solid #f1f1f1;
     z-index: 9;
     background-color: white;
+    /*max-height: 600px; */
 }
 /*add styles to the login form container*/
 .form-container {
@@ -125,7 +248,7 @@ li button {
 
 /* Full-width input fields */
 .form-container input[type=text], .form-container input[type=password] {
-    width: 100%;
+    width: 90%;
     padding: 15px;
     margin: 5px 0 22px 0;
     border: none;
