@@ -1,0 +1,107 @@
+
+body{
+    font-family: sans-serif;
+    background-color: lightblue;
+    color:#333;
+    /*padding: 20px 0 28px 0;*/
+    /*margin: 0;*/
+}
+
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+.app-title{
+    text-align: center;
+    font-weight: normal;
+    font-size: 2.0rem;
+}
+
+.car{
+    max-width: 650px;
+    padding: 20px;
+    margin: 30px auto;
+    background-color: #fff;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+/*.car-favorite-button{*/
+/*    position: absolute;*/
+/*    right: 5px; !*plaatje staat rechts in de hoek omdat position absolute is*!*/
+/*    background-color: dodgerblue;*/
+/*    color: white;*/
+/*    border-radius: 50%; !* zorgt ervoor dat mijn button rond wordt*!*/
+/*    width: 55px;*/
+/*    height:55px;*/
+
+/*}*/
+
+
+
+
+
+.footer{
+    font-size: 0.7rem;
+    color: #888;
+    text-align: center;
+    margin: 0;
+}
+
+.car-photo {
+    float: left;
+    width: 40%;
+    margin-right: 15px;
+}
+
+.car-name{
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 0 0 1rem 0;
+
+}
+
+.car-forms{
+    max-width: 650px;
+    padding: 15px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.main {
+
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    background: aquamarine;
+    padding: 30px;
+
+}
+
+#main label {
+    float: left;
+    width: 150px;
+}
+
+
+
+
+
+
