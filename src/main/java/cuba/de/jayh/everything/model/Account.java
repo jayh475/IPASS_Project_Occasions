@@ -8,7 +8,7 @@ public class Account implements Serializable, Principal {
     private String username, password, role;
 
 
-    private ArrayList<Message> myMessages = new ArrayList<Message>();
+    private  List<Message> myMessages = new ArrayList<Message>();
     private static Account loggedInAccount = null;
     private static List<Account> allAccounts = new ArrayList<>();
 
@@ -81,18 +81,18 @@ public class Account implements Serializable, Principal {
 
 
     // bericht verstuurd door bezoeker zonder account naar alle admins
-    public static void messageToAllAdmins(String topic, String question, String name, String lastname, String email) {
+    public static void messageToAllAdmins(Message message) {
         for (Account acc : allAccounts) {
-            if (acc.getRole().equals("admin")) {
-                new Message(topic, question, name,lastname, email);
+            if (acc.getRole().equals("admin") && !acc.myMessages.contains(message)) {
+               acc.myMessages.add(message);
             }
         }
     }
 
 
-    public ArrayList<Message> getMyMessages() {
-        return myMessages;
-    }
+
+
+
 
     public static boolean deleteUser(Account user) {
         return allAccounts.remove(user);

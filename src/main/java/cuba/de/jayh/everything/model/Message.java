@@ -2,8 +2,8 @@ package cuba.de.jayh.everything.model;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.Objects;
+import java.util.*;
+import java.util.stream.Stream;
 
 public class Message implements Serializable {
     private String topic;
@@ -12,6 +12,9 @@ public class Message implements Serializable {
     private String email;
     private String lastname;
     private  LocalDateTime dateOfSend;
+
+    private static List<Message> allMessages = new ArrayList<Message>();
+
 
     private enum Status {
         READ,
@@ -32,8 +35,23 @@ public class Message implements Serializable {
         this.dateOfSend = LocalDateTime.now();
         this.status = Status.UNREAD;
 
-
+        for(Message message: allMessages){
+            if(message.equals(this)){
+                throw new IllegalArgumentException("Account bestaat al");
+            }
+        }
+        allMessages.add(this);
     }
+
+    public static List<Message> getAllMessages() {
+        return Collections.unmodifiableList(allMessages);
+    }
+
+    public static void setAllMessages(List<Message> loadedMessages) {
+        allMessages.addAll(loadedMessages);
+    }
+
+
 
     public String getTopic() {
         return topic;
@@ -78,6 +96,14 @@ public class Message implements Serializable {
     public void setStatus(Status status) {
         this.status = status;
     }
+
+//    public static boolean areAllNull(Object objects) {
+//        return Stream.of(objects).allMatch(Objects::isNull);
+//    }
+//
+//    public static boolean areAllNotNull(Object objects) {
+//        return Stream.of(objects).allMatch(Objects::nonNull);
+//    }
 
 
 
