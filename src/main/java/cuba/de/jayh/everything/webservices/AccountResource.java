@@ -16,7 +16,6 @@ import java.util.Map;
 public class AccountResource {
 
 
-
     @GET
     @Path("{username}")
     @Produces(MediaType.APPLICATION_JSON)
