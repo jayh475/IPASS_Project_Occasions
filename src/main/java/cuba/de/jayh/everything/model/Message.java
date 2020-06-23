@@ -2,6 +2,8 @@ package cuba.de.jayh.everything.model;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -11,7 +13,7 @@ public class Message implements Serializable {
     private String name;
     private String email;
     private String lastname;
-    private  LocalDateTime dateOfSend;
+    private  String dateOfSend;
 
     private static List<Message> allMessages = new ArrayList<Message>();
 
@@ -32,7 +34,7 @@ public class Message implements Serializable {
         this.name = name;
         this.lastname = lastname;
         this.email = email;
-        this.dateOfSend = LocalDateTime.now();
+        this.dateOfSend =  LocalDateTime.now().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL)).toString();
         this.status = Status.UNREAD;
 
         for(Message message: allMessages){
@@ -42,6 +44,22 @@ public class Message implements Serializable {
         }
         allMessages.add(this);
     }
+
+    public static Message createMessage(String topic, String question, String name, String lastname, String email) {
+        System.out.println(topic +" "+ question +" "+  name +" "+  lastname +" "+  email);
+        for (Message message: allMessages) {
+            if (message.topic.equals(topic) && message.question.equals(question)
+                    && message.name.equals(name) && message.lastname.equals(lastname) && message.email.equals(email)) {
+                System.out.println("kopie van het vorige bericht (object bestaat al)");
+                return null;
+            }
+            if(topic.equals("") || question.equals("")|| name.equals("") || lastname.equals("") || email.equals("") ){
+                return null;
+            }
+        }
+        return new Message(topic,question,name,lastname,email);
+    }
+
 
     public static List<Message> getAllMessages() {
         return Collections.unmodifiableList(allMessages);
@@ -61,7 +79,7 @@ public class Message implements Serializable {
         return question;
     }
 
-    public LocalDateTime getDate() {
+    public String getDate() {
         return dateOfSend;
     }
 

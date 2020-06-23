@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Contact</title>
@@ -51,22 +51,22 @@
 
 <div class="container">
     <form id="contactForm">
-        <label for="voornaam">Voornaam</label>
-        <input type="text" id="voornaam" name="voornaam" placeholder="uw voornaam..">
+        <label for="name">Voornaam</label>
+        <input type="text" id="name" name="name" placeholder="uw voornaam.." required>
 
-        <label for="achternaam">Achternaam</label>
-        <input type="text" id="achternaam" name="achternaam" placeholder="uw achternaam..">
+        <label for="lastname">Achternaam</label>
+        <input type="text" id="lastname" name="lastname" placeholder="uw achternaam.." required>
 
         <label for="email">Email </label>
-        <input type="text" id="email" name="email" placeholder="uw email..">
+        <input type="text" id="email" name="email" placeholder="uw email.." required/>
 
-        <label for="onderwerp">Onderwerp </label>
-        <input type="text" id="onderwerp" name="onderwerp" placeholder="plaats onderwerp..">
+        <label for="topic">Onderwerp </label>
+        <input type="text" id="topic" name="topic" placeholder="plaats onderwerp.." required/>
 
-        <label for="bericht">Bericht</label>
-        <textarea id="bericht" name="bericht" placeholder="schrijf iets.." style="height:200px"></textarea>
+        <label for="question">Bericht</label>
+        <textarea id="question" name="question" placeholder="schrijf iets.." style="height:200px"></textarea>
 
-        <input type="submit" value="Verzend">
+        <button onclick="sendMessage()" class="btnFilter" >verzenden</button>
     </form>
 </div>
 

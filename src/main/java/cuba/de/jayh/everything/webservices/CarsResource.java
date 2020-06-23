@@ -3,6 +3,7 @@ package cuba.de.jayh.everything.webservices;
 import cuba.de.jayh.everything.model.Car;
 
 import javax.annotation.security.PermitAll;
+import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;

@@ -208,7 +208,7 @@ public class PersistenceManager implements ServletContextListener {
 
             if(!PersistenceManager.loadMessagesFromAzure()){
                 System.out.println("er zijn geen berichten gevonden, standaard standaard berichten worden geplaatst");
-                Message m1= new Message("auto","waarom is deze auto er niet meer?",
+                Message.createMessage("auto","waarom is deze auto er niet meer?",
                         "jayh","de cuba","jayh.decuba@gmail.com" );
 
 

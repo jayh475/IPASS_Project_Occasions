@@ -14,7 +14,7 @@ import javax.ws.rs.core.Response;
 public class MessagesResource {
 
     @GET
-    @PermitAll
+    @RolesAllowed("admin")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllMessages() {
         return Response.ok(Message.getAllMessages()).status(Response.Status.OK).build();
@@ -25,27 +25,25 @@ public class MessagesResource {
     @PermitAll
     @Path("create")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response createMessage(@FormParam("voornaam") String voornaam,
-                                  @FormParam("achternaam") String achternaam,
+    public Response createMessage(@FormParam("name") String voornaam,
+                                  @FormParam("lastname") String achternaam,
                                   @FormParam("email") String email,
-                                  @FormParam("onderwerp") String onderwerp,
-                                  @FormParam("bericht") String bericht){
-        try {
-            Message message = new Message(onderwerp, bericht, voornaam, achternaam, email);
-            Account.messageToAllAdmins(message);
-            System.out.println("bericht is verzonden");
-            return Response.ok(message).build();
-
-        }catch(Exception e){
-            System.out.println("bericht is niet verzonden");
-            return Response.status(404).build();
+                                  @FormParam("topic") String onderwerp,
+                                  @FormParam("question") String bericht){
+        System.out.println("bij create message" + " "+ onderwerp + " "+bericht + " "+voornaam + " "+achternaam + " "+email);
+            Message m = Message.createMessage(onderwerp,bericht,voornaam,achternaam,email);
+            if( m == null) {
+                System.out.println("bericht is niet verzonden");
+                return Response.status(404).build();
             }
+             System.out.println("bericht is verzonden");
+            return Response.ok(m).build();
+
+
+
+
+
     }
-
-
-
-
-
 
 
 
