@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Berichten</title>
+    <link rel="stylesheet" href="css/message.css" type="text/css"/>
+    <script src="js/message.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/navigationBar.css" type="text/css"/>
+
+
+
+</head>
+<body>
+
+<header>
+
+    <h1>Huibers Auto's  <label title="Toon gebruikersnaam" class="inlognaamLabel" id="showUsername" > </label> </h1>
+
+    <nav>
+
+        <ul class="boxing">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="AanbodOccasions.html"> Aanbod occasions</a></li>
+            <li><a href="contact.html"> Contact</a></li>
+            <li><a href="Berichten.html">Berichten</a></li>
+            <li><a href="registreren.html"> Registreren</a></li>
+
+        </ul>
+    </nav>
+</header>
+
+
+
+<div id="placeholderMessage"></div>
+
+
+
+
+<script>
+    let messageData;
+    let fetchOptions = {
+        method: "GET",
+        headers: {"Authorization": "Bearer " + window.sessionStorage.getItem("myJWT")}
+    };
+    fetch("restservices/messages",fetchOptions)
+        .then(response => response.json())
+        .then(function (myJson) {
+            messageData = myJson;
+            console.log(myJson);
+
+            document.getElementById("placeholderMessage").innerHTML = `
+<H2 class="app-title"> berichten (${messageData.length} resultaten) </H2>
+${messageData.map(getMessages).join('')}
+<p class="footer">Deze ${messageData.length} berichten zijn recent toegevoegd. Check later voor updates  </p>
+
+`
+        });
+</script>
+
+
+</body>
+</html>
