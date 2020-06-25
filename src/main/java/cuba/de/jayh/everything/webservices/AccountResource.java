@@ -56,7 +56,7 @@ public class AccountResource {
 
 
     @DELETE
-    @RolesAllowed("admin")
+    @RolesAllowed({"admin","user"})
     @Produces(MediaType.APPLICATION_JSON)
     @Path("deleteFavoriteCar/{licencePlate}")
     public Response deleteFavoriteCar(@Context SecurityContext securityContext, @PathParam("licencePlate") String licencePlate) {
