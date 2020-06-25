@@ -94,7 +94,9 @@ public class Car implements Serializable {
         for (Car car : allCars) {
             if (car.getLicencePlate().equals(licencePlate)) {
                 System.out.println("in klasse Car is de auto verwijderd");
+                Account.deleteFavoriteCar(licencePlate);
                 return allCars.remove(car);
+
             }
         }
         System.out.println("auto in klasse Car kon niet verwijderd worden");
