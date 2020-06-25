@@ -1,0 +1,52 @@
+/*voor de navigatie bar*/
+.boxing {
+    box-sizing: border-box;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+li a {
+    float: left;
+    display: block;
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    border: none;
+}
+
+li button {
+    display: block;
+    color: white;
+    background-color: black;
+    padding: 16px;
+    border:none;
+}
+
+li a:hover{
+    background-color: firebrick;
+}
+
+.inlogbuttonVerplaatsen{
+    float: right;
+}
+
+/* inlognaam label plaatsen*/
+.inlognaamLabel {
+    margin: 0 auto 0 auto;
+    float: right;
+    font-size: 0.7em;
+}
+
+
+
+
+

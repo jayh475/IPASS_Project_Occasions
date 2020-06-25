@@ -15,6 +15,10 @@ public class Message implements Serializable {
     private String lastname;
     private  String dateOfSend;
 
+    //Format a date
+    LocalDateTime myDateObj = LocalDateTime.now();
+    DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+
     private static List<Message> allMessages = new ArrayList<Message>();
 
 
@@ -26,27 +30,27 @@ public class Message implements Serializable {
     private Status status;
 
 
+    public Message(){}
 
-    // als de persoon geen account heeft (wordt verzonden naar alle super-users)
+    // wordt verzonden naar alle admins
     public Message(String topic,String question, String name,String lastname, String email){
         this.topic =topic;
         this.question =question;
         this.name = name;
         this.lastname = lastname;
         this.email = email;
-        this.dateOfSend =  LocalDateTime.now().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL)).toString();
+        this.dateOfSend = myDateObj.format(myFormatObj) ;
         this.status = Status.UNREAD;
 
         for(Message message: allMessages){
             if(message.equals(this)){
-                throw new IllegalArgumentException("Account bestaat al");
+                throw new IllegalArgumentException("Kopies van berichten zijn niet toegestaan");
             }
         }
         allMessages.add(this);
     }
 
     public static Message createMessage(String topic, String question, String name, String lastname, String email) {
-        System.out.println(topic +" "+ question +" "+  name +" "+  lastname +" "+  email);
         for (Message message: allMessages) {
             if (message.topic.equals(topic) && message.question.equals(question)
                     && message.name.equals(name) && message.lastname.equals(lastname) && message.email.equals(email)) {
@@ -115,13 +119,6 @@ public class Message implements Serializable {
         this.status = status;
     }
 
-//    public static boolean areAllNull(Object objects) {
-//        return Stream.of(objects).allMatch(Objects::isNull);
-//    }
-//
-//    public static boolean areAllNotNull(Object objects) {
-//        return Stream.of(objects).allMatch(Objects::nonNull);
-//    }
 
 
 

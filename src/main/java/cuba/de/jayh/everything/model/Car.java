@@ -2,7 +2,6 @@ package cuba.de.jayh.everything.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.glassfish.json.JsonUtil;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -43,12 +42,19 @@ public class Car implements Serializable {
 
     public static Car createCar(String name, String imageUrl, double kilometre, int yearOfManufacture, double price, String fuelType, String licencePlate, String brand, String model) {
         for (Car cars : allCars) {
-            if (cars.name.equals(name) && cars.imageUrl.equals(imageUrl) && cars.kilometre == kilometre && cars.yearOfManufacture == yearOfManufacture && cars.price == price && cars.fuelType.equals(fuelType) && cars.licencePlate.equals(licencePlate) && cars.brand.equals(brand) && cars.model.equals(model)) {
-                System.out.println("auto bestaat al (geheel object)");
+
+            if (cars.name.equals(name) && cars.imageUrl.equals(imageUrl) && cars.kilometre == kilometre && cars.yearOfManufacture == yearOfManufacture && cars.price == price
+                    && cars.fuelType.equals(fuelType) && cars.licencePlate.equals(licencePlate) && cars.brand.equals(brand) && cars.model.equals(model)) {
+                System.out.println("Car already exist");
                 return null;
             }
             if (cars.licencePlate.equals(licencePlate) || cars.imageUrl.equals(imageUrl)) {
                 System.out.println("licencePlate already exist in list or image Url already exist in list");
+                return null;
+            }
+            if(cars.name.equals("") || cars.imageUrl.equals("") || cars.kilometre < 0
+                    || cars.yearOfManufacture < 0 || cars.price < 0 || cars.fuelType.equals("") && cars.licencePlate.equals("") && cars.brand.equals("") && cars.model.equals("")) {
+                System.out.println("parameters can't be null or below zero");
                 return null;
             }
         }
@@ -66,10 +72,10 @@ public class Car implements Serializable {
         return theBrandList;
     }
 
-//    public static ArrayList<Car> getCarsByAttributes(String brand, String pr){
-//
-//
-//    }
+    @Override
+    public String toString() {
+        return this.name;
+    }
 
     public String getName() {
         return name;
@@ -79,8 +85,8 @@ public class Car implements Serializable {
         return Collections.unmodifiableList(allCars);
     }
 
-    public static boolean setAllCars(List<Car> loadedCars) {
-        return allCars.addAll(loadedCars);
+    public static void setAllCars(List<Car> loadedCars) {
+        allCars.addAll(loadedCars);
     }
 
 

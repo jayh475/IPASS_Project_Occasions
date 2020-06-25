@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/car.css" type="text/css"/>
     <script src="js/cars.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/navigationBar.css" type="text/css"/>
+<!--    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>-->
 
     <link rel="stylesheet" href="css/index.css" type="text/css"/>
 
@@ -41,6 +43,30 @@
 <div id="placeholder"></div>
 
 
+
+<!--function carTemplate(car) {-->
+<!--console.log("auto's worden weergegeven");-->
+<!--console.log(car);-->
+<!--return `-->
+<!--<div class="car">-->
+<!--    <label for="favoriteCheckbox"</label>-->
+<!--    <input type="checkbox"  id="favoriteCheckbox"   onclick="if(this.checked){favoriteCheckedInAanbodOcassions()}" name="licencePlate" value=${car.licencePlate} class="car-favorite-button" </input>-->
+<!--    <img class="car-photo" src="${car.imageUrl}" alt="Auto foto's">-->
+<!--    <h4 class="car-name">${car.name}  </h4>-->
+<!--    <p><strong>merk:</strong>${car.brand} <strong> , model:</strong>${car.model}</p>-->
+<!--    <p><strong>prijs:€</strong>${car.price}  <strong> , bouwjaar:</strong>${car.yearOfManufacture}</p>-->
+<!--    <p><strong>km-stand:</strong> ${car.kilometre} <strong> , kenteken:</strong>${car.licencePlate}</p>-->
+<!--    <p><strong>brandstof:</strong>${car.fuelType}</p>-->
+
+
+<!--</div> `-->
+<!--}-->
+
+
+
+
+
+
 <!--voor het aanmaken van een nieuwe auto popup scherm-->
 <div class="form-popup" id="createCar">
     <form class="car-forms" id="POSTcar">
@@ -58,7 +84,7 @@
         <input type="number" id="kilometre" name="kilometre" required/>
 
         <label for="yearOfManufacture">bouwjaar:</label>
-        <input type="number" id="yearOfManufacture" name="yearOfManufacture" required/>
+        <input type="number" id="yearOfManufacture" name="yearOfManufacture"  min="1"required/>
 
         <label for="price">prijs:</label>
         <input class="input" type="number" id="price" name="price" required/>
@@ -145,6 +171,9 @@
         .then(function (myJson) {
             carData = myJson;
             console.log(myJson);
+
+
+
 
             document.getElementById("placeholder").innerHTML = `
 

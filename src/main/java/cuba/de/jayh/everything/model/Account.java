@@ -10,8 +10,10 @@ public class Account implements Serializable, Principal {
 
     private static Account loggedInAccount = null;
     private static List<Account> allAccounts = new ArrayList<>();
+    private static List<Car> myFavoriteCars = new ArrayList<>();
 
-    public Account(){}
+    public Account() {
+    }
 
 
     public Account(String username, String password) {
@@ -65,6 +67,7 @@ public class Account implements Serializable, Principal {
         if (found != null) return pwd.equals(found.password) ? found.getRole() : null;
         return null;
     }
+
     public static void setAllAccounts(List<Account> loadedAccounts) {
         allAccounts.addAll(loadedAccounts);
     }
@@ -75,10 +78,31 @@ public class Account implements Serializable, Principal {
     }
 
 
-    public static boolean deleteUser(Account user) {
-        return allAccounts.remove(user);
+    public void addFavoriteCar(Car car) {
+            if (car == null || myFavoriteCars.contains(car)) {
+                System.out.println("auto kan niet toegevoegd worden aan favorieten");
+
+            }else{
+                myFavoriteCars.add(car);
+            }
+            }
+
+
+    public List<Car> getFavoriteCars(){
+        return Collections.unmodifiableList(myFavoriteCars);
     }
 
+
+    public static boolean deleteFavoriteCar(String licencePlate) {
+        for (Car car : myFavoriteCars) {
+            if (car.getLicencePlate().equals(licencePlate)) {
+                System.out.println("in klasse Car is de auto verwijderd");
+                return myFavoriteCars.remove(car);
+            }
+        }
+        System.out.println("auto in favorieten kan niet verwijderd worden");
+        return false;
+    }
 
 }
 

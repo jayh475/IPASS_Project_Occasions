@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/car.css" type="text/css"/>
     <link rel="stylesheet" href="css/index.css" type="text/css"/>
+    <link rel="stylesheet" href="css/navigationBar.css" type="text/css"/>
     <script src="js/login.js" type="text/javascript"></script>
     <script src="js/logout.js" type="text/javascript"></script>
 
@@ -23,10 +24,11 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="AanbodOccasions.html"> Aanbod occasions</a></li>
             <li><a href="contact.html"> Contact</a></li>
-            <li><a href="Berichten.html">Berichten</a></li>
+            <li class="verbergAlsNietIngelogdAlsAdmin"><a href="Berichten.html">Berichten</a></li>
+            <li class="verbergAlsNietIngelogd"><a href="MijnFavorieteAutos.html">Mijn favoriete auto's</a></li>
             <li><a href="registreren.html"> Registreren</a></li>
             <li> <button class="inlogbuttonVerplaatsen" type="button" onclick="openForm()">Inloggen</button></li>
-            <li> <button onclick="LogOut()" class="inlogbuttonVerplaatsen" type="button">Log uit</button></li>
+            <li class="verbergAlsNietIngelogd"> <button onclick="LogOut()" class="inlogbuttonVerplaatsen" type="button">Log uit</button></li>
 
         </ul>
     </nav>
@@ -58,7 +60,8 @@
                             <option value="Toyota">Toyota</option>
                             <option value="Jaguar">Jaguar</option>
                             <option value="Ford">Ford</option>
-                            <option value="BMW">BMW</option>
+                            <option value="Alfa Romeo">Alfa Romeo</option>
+                            <option value="Ferrari">Ferrari</option>
                         </select>
 
 

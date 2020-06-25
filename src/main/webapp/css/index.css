@@ -7,6 +7,8 @@ body{
 
 
 
+
+/*voor de filterscherm*/
 * {
     box-sizing: border-box;
 }
@@ -105,14 +107,11 @@ hr {
 
 
 
-
-
-
-
 /*hide the items when the select box is closed:*/
 .select-hide {
     display: none;
 }
+
 
 .select-items div:hover, .same-as-selected {
     background-color: rgba(0, 0, 0, 0.1);
@@ -162,32 +161,6 @@ li.dropdown {
 }
 
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: black;
-}
-
-li a {
-    float: left;
-    display: block;
-    color: white;
-    background-color: black;
-    text-align: center;
-    padding: 16px;
-    text-decoration: none;
-    border: none;
-}
-
-li button {
-   display: block;
-    color: white;
-    background-color: black;
-    padding: 16px;
-    border:none;
-}
 
 
 /*voor het inloggen*/

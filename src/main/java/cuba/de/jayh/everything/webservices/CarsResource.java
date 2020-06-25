@@ -1,9 +1,10 @@
 package cuba.de.jayh.everything.webservices;
 
+
 import cuba.de.jayh.everything.model.Car;
 
 import javax.annotation.security.PermitAll;
-import javax.annotation.security.RolesAllowed;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -12,7 +13,10 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
+import java.lang.reflect.Array;
 import java.util.AbstractMap;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Path("/cars")
@@ -22,7 +26,10 @@ public class CarsResource {
     @PermitAll
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllCars() {
-        return Response.ok(Car.getAllCars()).status(Response.Status.OK).build();
+        List<Car> cars = Car.getAllCars();
+//        System.out.println(cars);
+
+        return Response.ok(cars).status(Response.Status.OK).build();
     }
 
 
@@ -36,6 +43,9 @@ public class CarsResource {
         }
         return Response.ok(Car.getCarsByBrand(brand)).build();
     }
+
+
+
 
 
 }

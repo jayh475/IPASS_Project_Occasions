@@ -1,7 +1,10 @@
 function carTemplate(car) {
     console.log("auto's worden weergegeven");
+    console.log(car);
     return `
 <div class="car">
+  <label for="favoriteCheckbox"</label>
+   <input type="button"  id="favoriteCheckbox"   onclick="favoriteCheckedInAanbodOcassions(event)"  value=${car.licencePlate} class="car-favorite-button" </input>
     <img class="car-photo" src="${car.imageUrl}" alt="Auto foto's">
     <h4 class="car-name">${car.name}  </h4>
     <p><strong>merk:</strong>${car.brand} <strong> , model:</strong>${car.model}</p>
@@ -121,6 +124,42 @@ function updateCar() {
 
         })
 }
+
+
+function favoriteCheckedInAanbodOcassions(event){
+    console.log(event.target.value);
+   let licencePlate=  event.target.value;
+
+
+    let fetchOptions = {
+        method: "POST",
+        headers: {"Authorization": "Bearer " + window.sessionStorage.getItem("myJWT")}
+    };
+
+
+    fetch("restservices/account/addFavoriteCar/"+ licencePlate, fetchOptions)
+        .then(function (response) {
+            if (response.ok) {
+                alert("aan favorieten toegevoegd");
+
+            } else if (response.status === 404) {
+                alert("kan niet toegevoegd worden aan favorieten");
+            }else if(response.status === 403){
+                alert("Niet ingelogd als gebruiker");
+            } else {
+                console.log("er is iets anders miss gegaan");
+            }
+
+        })
+
+
+
+
+
+}
+
+
+
 
 
 

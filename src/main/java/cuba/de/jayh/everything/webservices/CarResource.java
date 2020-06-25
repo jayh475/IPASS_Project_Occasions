@@ -1,6 +1,7 @@
 package cuba.de.jayh.everything.webservices;
 
 
+import cuba.de.jayh.everything.model.Account;
 import cuba.de.jayh.everything.model.Car;
 
 import javax.annotation.security.RolesAllowed;
@@ -11,14 +12,13 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
+import java.util.AbstractMap;
 import java.util.HashMap;
 import java.util.Map;
 
 
 @Path("/car")
 public class CarResource {
-
-
 
 
 //    @GET
@@ -62,7 +62,7 @@ public class CarResource {
     @RolesAllowed("admin")
     @Produces(MediaType.APPLICATION_JSON)
     @Path("{licencePlate}")
-    public Response deleteCar(@Context SecurityContext securityContext,@PathParam("licencePlate") String licencePlate) {
+    public Response deleteCar(@Context SecurityContext securityContext, @PathParam("licencePlate") String licencePlate) {
         securityContext.isSecure();
         if (Car.deleteCar(licencePlate)) {
             System.out.println("auto is verwijderd");
@@ -77,30 +77,29 @@ public class CarResource {
     @RolesAllowed("admin")
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/editCar/{licencePlatefound}")
-    public Response updateCar(@PathParam("licencePlatefound") String licencePlate,@FormParam("nameEdit") String name, @FormParam("kilometreEdit") Double kilometre,
-                               @FormParam("yearOfManufactureEdit") int yearOfManufacture,
-                               @FormParam("priceEdit") double price, @FormParam("fuelTypeEdit") String fuelType,
-                                 @FormParam("brandEdit") String brand,
-                               @FormParam("modelEdit") String model,
-                               @FormParam("imageUrlEdit") String imageUrl, @FormParam("licencePlateChange") String licencePlateChange){
-        Map<String,String> messages = new HashMap<>();
+    public Response updateCar(@PathParam("licencePlatefound") String licencePlate, @FormParam("nameEdit") String name, @FormParam("kilometreEdit") Double kilometre,
+                              @FormParam("yearOfManufactureEdit") int yearOfManufacture,
+                              @FormParam("priceEdit") double price, @FormParam("fuelTypeEdit") String fuelType,
+                              @FormParam("brandEdit") String brand,
+                              @FormParam("modelEdit") String model,
+                              @FormParam("imageUrlEdit") String imageUrl, @FormParam("licencePlateChange") String licencePlateChange) {
+        Map<String, String> messages = new HashMap<>();
         Car car1 = Car.getCarByLicencePlate(licencePlate);
         if (car1 != null) {
-            Car c1 = car1.updateCar( name,imageUrl, kilometre, yearOfManufacture,  price, fuelType,  licencePlateChange,  brand,  model);
+            Car c1 = car1.updateCar(name, imageUrl, kilometre, yearOfManufacture, price, fuelType, licencePlateChange, brand, model);
             if (c1 != null) {
                 return Response.ok(car1).build();
             }
         }
-        messages.put("error","Car not found or you didnt fill in every blank");
+        messages.put("error", "Car not found or you didnt fill in every blank");
         return Response.status(404).entity(messages).build();
     }
 
 
 
-
-
-
 }
+
+
 
 
 
