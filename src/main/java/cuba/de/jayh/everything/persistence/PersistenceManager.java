@@ -231,6 +231,7 @@ public class PersistenceManager implements ServletContextListener {
             System.out.println("Messages saved");
 
         } catch (IOException ioe) {
+            ioe.printStackTrace();
             System.out.println("Failed to save something");
 
         }

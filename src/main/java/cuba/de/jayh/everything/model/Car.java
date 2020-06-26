@@ -80,11 +80,9 @@ public class Car implements Serializable {
     public String getName() {
         return name;
     }
-
     public static List<Car> getAllCars() {
         return Collections.unmodifiableList(allCars);
     }
-
     public static void setAllCars(List<Car> loadedCars) {
         allCars.addAll(loadedCars);
     }

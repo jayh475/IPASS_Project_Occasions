@@ -3,9 +3,8 @@ package cuba.de.jayh.everything.model;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 import java.util.*;
-import java.util.stream.Stream;
+
 
 public class Message implements Serializable {
     private String topic;
@@ -15,11 +14,15 @@ public class Message implements Serializable {
     private String lastname;
     private  String dateOfSend;
 
-    //Format a date
-    LocalDateTime myDateObj = LocalDateTime.now();
-    DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+    //Format a date ( alleen als die static is het mogelijk om geen serializble exception te krijgen
+    private static LocalDateTime myDateObj = LocalDateTime.now();
+    private static DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+
 
     private static List<Message> allMessages = new ArrayList<Message>();
+
+
+
 
 
     private enum Status {
@@ -50,6 +53,9 @@ public class Message implements Serializable {
         allMessages.add(this);
     }
 
+
+
+
     public static Message createMessage(String topic, String question, String name, String lastname, String email) {
         for (Message message: allMessages) {
             if (message.topic.equals(topic) && message.question.equals(question)
@@ -57,7 +63,7 @@ public class Message implements Serializable {
                 System.out.println("kopie van het vorige bericht (object bestaat al)");
                 return null;
             }
-            if(topic.equals("") || question.equals("")|| name.equals("") || lastname.equals("") || email.equals("") ){
+            if(topic.equals("") || question.equals("") || name.equals("") || lastname.equals("") || email.equals("") ){
                 return null;
             }
         }
@@ -72,6 +78,9 @@ public class Message implements Serializable {
     public static void setAllMessages(List<Message> loadedMessages) {
         allMessages.addAll(loadedMessages);
     }
+
+
+
 
 
 
