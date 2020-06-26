@@ -263,4 +263,7 @@ https://superuser.com/questions/689056/how-can-i-convert-github-flavored-markdow
 dateTimeFormatter
 https://howtodoinjava.com/java-date-and-time-apis/
 
+verander alle getelementsbyClassname displays
+https://stackoverflow.com/questions/45012378/cant-change-style-display-using-getelementbyclassname
+
 

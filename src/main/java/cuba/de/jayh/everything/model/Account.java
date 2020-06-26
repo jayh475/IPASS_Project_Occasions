@@ -79,16 +79,16 @@ public class Account implements Serializable, Principal {
 
 
     public void addFavoriteCar(Car car) {
-            if (car == null || myFavoriteCars.contains(car)) {
-                System.out.println("auto kan niet toegevoegd worden aan favorieten");
+        if (car == null || myFavoriteCars.contains(car)) {
+            System.out.println("auto kan niet toegevoegd worden aan favorieten");
 
-            }else{
-                myFavoriteCars.add(car);
-            }
-            }
+        } else {
+            myFavoriteCars.add(car);
+        }
+    }
 
 
-    public List<Car> getFavoriteCars(){
+    public List<Car> getFavoriteCars() {
         return Collections.unmodifiableList(myFavoriteCars);
     }
 
@@ -104,7 +104,10 @@ public class Account implements Serializable, Principal {
         return false;
     }
 
+
 }
+
+
 
 
 

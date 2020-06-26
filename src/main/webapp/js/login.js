@@ -9,6 +9,7 @@ function login() {
         .then(function (response) {
             if (response.ok) {
                 alert("U bent succesvol ingelogd.");
+                window.location.reload();
 
                 return response.json();
 
@@ -20,23 +21,33 @@ function login() {
         }).then(myJson => {
         window.sessionStorage.setItem("myJWT", myJson.token);
         window.sessionStorage.setItem("myUsername", myJson.message);
-        // document.getElementById("login-form").reset();
-
-        showInlognaam();
+        console.log(myJson);
     })
         .catch(error => console.log(error));
 
+
+    setLoginData();
 }
 
 
-function showInlognaam() {
-    let username = window.sessionStorage.getItem("myUsername");
-    let cloneUsername = username.valueOf();
 
-  // document.getElementById("showUsername").innerHTML = `Welkom ${cloneUsername} !`;
-    document.getElementById("showUsername").innerHTML = `welkom ${cloneUsername}`;
+function setLoginData() {
+    console.log("voert uit");
+    let isIngelogd = window.sessionStorage.getItem("myUsername");
+    if(isIngelogd !== null) {
+        
+        document.getElementById("showUsername").innerHTML = `welkom ${isIngelogd}`;
+        //alle elementen in de arraylist laten zien bij het inloggen.
+        let x = document.getElementsByClassName("verberg");
+        let i;
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "block";
+        }
+
+    }
 
 }
+
 
 
 
@@ -49,10 +60,6 @@ function closeForm() {
     document.getElementById("login-form").reset();
 }
 
-// function resetFormAfterLogin(){
-//     formData.
-//
-// }
 
 
 

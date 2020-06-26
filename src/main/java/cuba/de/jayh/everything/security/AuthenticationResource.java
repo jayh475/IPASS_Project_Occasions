@@ -30,8 +30,9 @@ public class AuthenticationResource {
             String role = Account.validateLogin(username, password);
 
 
-            if (role == null)
+            if (role == null) {
                 return Response.status(Response.Status.CONFLICT).entity("user not found").build();
+            }
 
             String token = createToken(username, role);
 //            SimpleEntry<String,String> JWT = new SimpleEntry<>("JWT",token);
@@ -95,20 +96,6 @@ public class AuthenticationResource {
 
 
     }
-
-
-//    @POST
-//    @Path("/register")
-//    @PermitAll
-//    @Produces(MediaType.APPLICATION_JSON)
-//    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-//    public Response registerUser(@Context SecurityContext securityContext, @FormParam("checkbox") String checkbox, @FormParam("password") String password,
-//                                 @FormParam("username") String username) {
-//
-//
-
-
-////            met checkbox kan een admin een andere admin maken
 
 
 

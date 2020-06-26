@@ -17,6 +17,8 @@ function carTemplate(car) {
 }
 
 function getCarsByValue() {
+    // let formdata = new FormData()
+
     let carData;
     console.log("getcarsbyvalue");
     fetch("restservices/cars/" + document.getElementById("brand").value)

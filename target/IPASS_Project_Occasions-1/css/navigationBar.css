@@ -37,6 +37,10 @@ li a:hover{
 
 .inlogbuttonVerplaatsen{
     float: right;
+
+}
+#inlogButton{
+    display: block;
 }
 
 /* inlognaam label plaatsen*/
@@ -45,6 +49,14 @@ li a:hover{
     float: right;
     font-size: 0.7em;
 }
+
+
+/*hide or show when logged in */
+
+.verberg{
+    display:none;
+}
+
 
 
 

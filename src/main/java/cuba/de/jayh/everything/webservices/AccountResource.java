@@ -22,6 +22,28 @@ public class AccountResource {
 
 
     @GET
+    @Path("username")
+    @RolesAllowed({"user","admin"})
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getUsername(@Context SecurityContext securityContext) {
+        System.out.println("komt die hier wel ? ");
+
+        Account account = Account.getAccountByname(securityContext.getUserPrincipal().getName());
+        if (account == null) {
+            return Response.status(Response.Status.NOT_FOUND).entity(new AbstractMap.SimpleEntry<>("Account", "niet gevonden")).build();
+
+        }
+         String username = account.getName();
+        System.out.println(username);
+
+        return Response.ok(username).build();
+    }
+
+
+
+
+
+    @GET
     @Path("myFavoriteCars")
     @RolesAllowed({"admin", "user"})
     @Produces(MediaType.APPLICATION_JSON)
@@ -80,46 +102,6 @@ public class AccountResource {
 
 
 
-//    @GET
-//    @Path("{username}")
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public Response getAccount(@Context SecurityContext securityContext, @PathParam("username") String name) {
-//        Account account = Account.getAccountByname(name);
-//        if (account == null) {
-//            Map<String, String> message = new HashMap<>();
-//            message.put("error", "Account does not exist");
-//            message.put("requestedUsername", name);
-//            return Response.status(409).entity(message).build();
-//        }
-//        return Response.ok(account).build();
-//    }
-
-//
-//    @GET
-//    @Path("username")
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public Response getUsername(){
-//
-//    }
-
-
-
-//}
-
-
-
-//        @GET
-//        @Produces(MediaType.APPLICATION_JSON)
-//        public Response getAccount(@PathParam("accountId") String accountId) {
-//            Account account = Company.getCompany().getAccount(accountId);
-//
-//            if (account != null) {
-//                return Response.ok(account).build();
-//            } else {
-//                return Response.status(Response.Status.NOT_FOUND).build();
-//            }
-//        }
-//    }
 
 
 
