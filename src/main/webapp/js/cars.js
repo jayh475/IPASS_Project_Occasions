@@ -1,5 +1,4 @@
 function carTemplate(car) {
-    console.log("auto's worden weergegeven");
     console.log(car);
     return `
 <div class="car">
@@ -17,11 +16,18 @@ function carTemplate(car) {
 }
 
 function getCarsByValue() {
-    // let formdata = new FormData()
+    let formData = new FormData(document.querySelector("#filterForm"));
+    let  encData = new URLSearchParams(formData.entries());
+    console.log(encData.toString());
+
+    let fetchOptions = {
+        method: "POST",
+        body: encData
+    };
 
     let carData;
     console.log("getcarsbyvalue");
-    fetch("restservices/cars/" + document.getElementById("brand").value)
+    fetch("restservices/cars/byValue",fetchOptions)
         .then(response => Promise.all([response.status, response.json()]))
         .then(function ([status, myJson]) {
             if (status > 400) {

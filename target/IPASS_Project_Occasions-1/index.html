@@ -45,14 +45,14 @@
 <div class="row">
     <div class="col-75">
         <div class="containerFilter">
-            <form>
+            <form id="filterForm">
                 <div class="row">
                     <div class="col-50">
                         <h3>Vind hier uw perfecte occasion!</h3>
 
                         <label for="brand">Merk</label>
                         <select id="brand" name="brand">
-                            <option value="" disabled selected>Selecteer Merk</option>
+                            <option value="0"></option>
                             <option value="Volvo">Volvo</option>
                             <option value="Saab">Saab</option>
                             <option value="Fiat">Fiat</option>
@@ -69,29 +69,57 @@
                         </select>
 
 
-
-                        <label for="yearOfManufacture">Bouwjaar</label>
-                        <select  id="yearOfManufacture" name="yearOfManufacture">
-                            <option value="" disabled selected>Bouwjaar</option>
-                            <option value="1995">199</option>
-                            <option value="x">x</option>
-                            <option value="x">x</option>
-                            <option value="x">x</option>
-
+                        <div class="row">
+                            <div class="col-50">
+                        <label for="yearOfManufactureFrom">Bouwjaar</label>
+                        <select  id="yearOfManufactureFrom" name="yearOfManufactureFrom">
+                            <option value=0></option>
+                            <option value="1970">1970</option>
+                            <option value="1975">1975</option>
+                            <option value="1980">1980</option>
+                            <option value="1985">1985</option>
+                            <option value="1990">1990</option>
+                            <option value="1995">1995</option>
+                            <option value="2000">2000</option>
+                            <option value="2005">2005</option>
+                            <option value="2010">2010</option>
+                            <option value="2015">2015</option>
                         </select>
+
+                            </div>
+                            <div class="col-50">
+                                <label for="yearOfManufactureTill">t/m</label>
+                                <select  id="yearOfManufactureTill" name="yearOfManufactureTill">
+                                    <option value=0></option>
+                                    <option value="1970">1970</option>
+                                    <option value="1975">1975</option>
+                                    <option value="1980">1980</option>
+                                    <option value="1985">1985</option>
+                                    <option value="1990">1990</option>
+                                    <option value="1995">1995</option>
+                                    <option value="2000">2000</option>
+                                    <option value="2005">2005</option>
+                                    <option value="2010">2010</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2020">2020</option>
+                                </select>
+                            </div>
+                        </div>
+
 
 
                         <div class="row">
                             <div class="col-50">
                                 <label for="priceFrom">prijs van</label>
-                                <select  id="priceFrom" name="price">
-                                    <option value="" disabled selected>prijs van</option>
+                                <select  id="priceFrom" name="priceFrom">
+                                    <option value=0 ></option>
                                     <option value="100">100</option>
                                     <option value="500">500</option>
                                     <option value="1000">1000</option>
                                     <option value="1000">1000</option>
                                     <option value="1500">1500</option>
                                     <option value="2000">2000</option>
+
                                 </select>
 
 
@@ -100,14 +128,17 @@
                             </div>
                             <div class="col-50">
                                 <label for="priceTill">t/m</label>
-                                <select  id="priceTill" name="price">
-                                    <option value="" disabled selected>t/m</option>
+                                <select  id="priceTill" name="priceTill">
+                                    <option value= 0 ></option>
                                     <option value="100">100</option>
                                     <option value="500">500</option>
                                     <option value="1000">1000</option>
                                     <option value="1500">1500</option>
                                     <option value="2000">2000</option>
                                     <option value="2500">2500</option>
+                                    <option value="4000">4000</option>
+                                    <option value="8000">8000</option>
+                                    <option value="12000">12000</option>
                                 </select>
                             </div>
                         </div>
@@ -119,7 +150,7 @@
 
                         <label for="model">Model</label>
                         <select  id="model" name="model">
-                            <option value="" disabled selected>Model</option>
+                            <option value="0" disabled selected>Model</option>
                             <option value="x">x</option>
                             <option value="x">x</option>
                             <option value="x">x</option>
@@ -127,9 +158,9 @@
 
                         </select>
 
-                        <label for="fuelForm">Brandstof</label>
-                        <select   id="fuelForm" name="price">
-                            <option value="" disabled selected>Brandstof</option>
+                        <label for="fuelType">Brandstof</label>
+                        <select   id="fuelType" name="fuelType">
+                            <option value= "0" ></option>
                             <option value="Benzine">Benzine</option>
                             <option value="Diesel">Diesel</option>
                             <option value="Elektriciteit">Elektriciteit</option>
@@ -140,28 +171,46 @@
                             <div class="col-50">
                                 <label for="kmFrom">km.stand van</label>
                                 <select id="kmFrom" name="kmFrom">
-                                    <option value="" disabled selected>km.stand van</option>
-                                    <option value="100">100</option>
-                                    <option value="500">500</option>
-                                    <option value="1000">1000</option>
-                                    <option value="1000">1000</option>
-                                    <option value="1500">1500</option>
-                                    <option value="2000">2000</option>
-                                </select>
-                            </div>
-                            <div class="col-50">
-                                <label for="kmTill">t/m</label>
-                                <select  id="kmTill" name="kmTill">
-                                    <option value="" disabled selected>t/m</option>
+                                    <option value= 0 ></option>
                                     <option value="100">100</option>
                                     <option value="500">500</option>
                                     <option value="1000">1000</option>
                                     <option value="1500">1500</option>
                                     <option value="2000">2000</option>
                                     <option value="2500">2500</option>
+                                    <option value="5000">5000</option>
+                                    <option value="7500">7500</option>
+                                    <option value="10000">10000</option>
+                                    <option value="50000">50000</option>
+                                    <option value="100000">100000</option>
+                                    <option value="200000">200000</option>
                                 </select>
                             </div>
+                            <div class="col-50">
+                                <label for="kmTill">t/m</label>
+                                <select  id="kmTill" name="kmTill">
+                                    <option value= 0 ></option>
+                                    <option value="100">100</option>
+                                    <option value="500">500</option>
+                                    <option value="1000">1000</option>
+                                    <option value="1500">1500</option>
+                                    <option value="2000">2000</option>
+                                    <option value="2500">2500</option>
+                                    <option value="5000">5000</option>
+                                    <option value="7500">7500</option>
+                                    <option value="10000">10000</option>
+                                    <option value="50000">50000</option>
+                                    <option value="100000">100000</option>
+                                    <option value="200000">200000</option>
+                                    <option value="300000">300000</option>
+
+
+                                </select>
+
+                            </div>
+
                         </div>
+
                     </div>
 
                 </div>

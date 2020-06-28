@@ -38,9 +38,9 @@ public class CarResource {
     @RolesAllowed("admin")
     @Path("createCar")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response createCar(@FormParam("name") String name, @FormParam("kilometre") Double kilometre,
+    public Response createCar(@FormParam("name") String name, @FormParam("kilometre") int kilometre,
                               @FormParam("yearOfManufacture") int yearOfManufacture,
-                              @FormParam("price") double price, @FormParam("fuelType") String fuelType,
+                              @FormParam("price") int price, @FormParam("fuelType") String fuelType,
                               @FormParam("licencePlate") String licencePlate, @FormParam("brand") String brand,
                               @FormParam("model") String model,
                               @FormParam("imageUrl") String imageUrl) {
@@ -77,9 +77,9 @@ public class CarResource {
     @RolesAllowed("admin")
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/editCar/{licencePlatefound}")
-    public Response updateCar(@PathParam("licencePlatefound") String licencePlate, @FormParam("nameEdit") String name, @FormParam("kilometreEdit") Double kilometre,
+    public Response updateCar(@PathParam("licencePlatefound") String licencePlate, @FormParam("nameEdit") String name, @FormParam("kilometreEdit") int kilometre,
                               @FormParam("yearOfManufactureEdit") int yearOfManufacture,
-                              @FormParam("priceEdit") double price, @FormParam("fuelTypeEdit") String fuelType,
+                              @FormParam("priceEdit") int price, @FormParam("fuelTypeEdit") String fuelType,
                               @FormParam("brandEdit") String brand,
                               @FormParam("modelEdit") String model,
                               @FormParam("imageUrlEdit") String imageUrl, @FormParam("licencePlateChange") String licencePlateChange) {

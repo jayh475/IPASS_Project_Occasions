@@ -2,18 +2,17 @@ package cuba.de.jayh.everything.webservices;
 
 
 import cuba.de.jayh.everything.model.Car;
+import cuba.de.jayh.everything.model.CarFilter;
 
 import javax.annotation.security.PermitAll;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import java.lang.reflect.Array;
+import java.lang.reflect.Type;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,15 +32,29 @@ public class CarsResource {
     }
 
 
-    @GET
+    @POST
     @PermitAll
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("{carsByBrand}")
-    public Response getCarsByBrand(@Context SecurityContext securityContex, @PathParam("carsByBrand") String brand) {
-        if (Car.getCarsByBrand(brand).isEmpty()) {
+    @Path("byValue")
+    public Response getCarsByValue(@FormParam("brand") String brand,
+                                   @FormParam("yearOfManufactureFrom") int yearOfManufactureFrom,
+                                   @FormParam("yearOfManufactureTill") int yearOfManufactureTill,
+                                   @FormParam("fuelType") String fuelType,
+                                   @FormParam("priceFrom") int priceFrom,@FormParam("priceTill") int priceTill,
+                                   @FormParam("kmFrom") int kmFrom, @FormParam("kmTill") int kmTill) {
+        System.out.println(brand + " "+ yearOfManufactureFrom + " "+ yearOfManufactureTill +  " "+ fuelType+  " "
+                + priceFrom + " " + priceTill +" "+ kmFrom +  " "+ kmTill );
+
+        CarFilter carFilter = new CarFilter(brand,fuelType,yearOfManufactureFrom,
+                yearOfManufactureTill,kmFrom,kmTill,priceFrom,priceTill);
+        Car.filterCars(carFilter);
+
+
+        if (Car.filterCars(carFilter).isEmpty()) {
             return Response.status(Response.Status.CONFLICT).entity(new AbstractMap.SimpleEntry<>("result", "auto bestaat nog niet")).build();
         }
-        return Response.ok(Car.getCarsByBrand(brand)).build();
+        return Response.ok(Car.filterCars(carFilter)).build();
+
     }
 
 
@@ -49,3 +62,19 @@ public class CarsResource {
 
 
 }
+
+
+//        if(brand !=null){
+//
+//        }
+//        if(yearOfManufactureFrom == 0){
+//            System.out.println("year of manufacture is null");
+//
+//
+//        }
+//               if(yearOfManufactureTill != 0){
+//
+//               }
+//                       if(fuelType != null){
+//
+//                       }

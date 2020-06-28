@@ -2,6 +2,7 @@ package cuba.de.jayh.everything.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreType;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -11,9 +12,9 @@ import java.util.List;
 public class Car implements Serializable {
     private String name;
     private String imageUrl;
-    private double kilometre;
+    private int kilometre;
     private int yearOfManufacture;
-    private double price;
+    private int price;
     private String fuelType;
     private String licencePlate;
     private String brand;
@@ -23,11 +24,8 @@ public class Car implements Serializable {
     private static ArrayList<Car> allCars = new ArrayList<Car>();
 
 
-    private Car() {
-    }
-
     //constructor
-    private Car(String name, String imageUrl, double kilometre, int yearOfManufacture, double price, String fuelType, String licencePlate, String brand, String model) {
+    private Car(String name, String imageUrl, int kilometre, int yearOfManufacture, int price, String fuelType, String licencePlate, String brand, String model) {
         this.name = name;
         this.imageUrl = imageUrl;
         this.kilometre = kilometre;
@@ -40,7 +38,7 @@ public class Car implements Serializable {
         allCars.add(this);
     }
 
-    public static Car createCar(String name, String imageUrl, double kilometre, int yearOfManufacture, double price, String fuelType, String licencePlate, String brand, String model) {
+    public static Car createCar(String name, String imageUrl, int kilometre, int yearOfManufacture, int price, String fuelType, String licencePlate, String brand, String model) {
         for (Car cars : allCars) {
 
             if (cars.name.equals(name) && cars.imageUrl.equals(imageUrl) && cars.kilometre == kilometre && cars.yearOfManufacture == yearOfManufacture && cars.price == price
@@ -61,16 +59,91 @@ public class Car implements Serializable {
         return new Car(name, imageUrl, kilometre, yearOfManufacture, price, fuelType, licencePlate, brand, model);
     }
 
-    @JsonIgnore
-    public static ArrayList<Car> getCarsByBrand(String brand) {
-        ArrayList<Car> theBrandList = new ArrayList<>();
-        for (Car car : allCars) {
-            if (car.brand.equals(brand)) {
-                theBrandList.add(car);
+//    @JsonIgnore
+
+//    public static ArrayList<Car> getCarsByValue(String brand, int yearOfManufactureFrom, int yearOfManufactureTill, String fuelType) {
+//        ArrayList<Car> theValueList = new ArrayList<>();
+//        System.out.println("komt die hier wel ");
+//        for (Car car : allCars) {
+//            if (car.brand.equals(brand) && yearOfManufactureFrom <= car.yearOfManufacture  && car.yearOfManufacture <=yearOfManufactureTill && car.fuelType.equals(fuelType)) {
+//                theValueList.add(car);
+//                System.out.println("merk,fueltype en de waardes voor bouwjaar zijnn gevonden  ");
+//            } else if (car.brand.equals(brand) && car.fuelType.equals(fuelType)){
+//                theValueList.add(car);
+//                System.out.println("alleen het merk en de fueltype zijn gevonden");
+//            }
+//            else if(( car.brand.equals(brand) && yearOfManufactureFrom == 0) && yearOfManufactureTill ==0 ) {
+//                System.out.println("alleen het merk is gevonden");
+//                theValueList.add(car);
+//            }
+//        }
+//        System.out.println(theValueList);
+//        return theValueList;
+//    }
+
+    public static ArrayList<Car> filterCars(CarFilter filter){
+        ArrayList<Car> fullList = new ArrayList<>(allCars);
+
+        System.out.println("filterCars");
+        System.out.println(fullList);
+        System.out.println(allCars.size());
+        for(Car car : allCars){
+
+            if(!filter.getBrand().equals("0")){
+                if(!filter.getBrand().equals(car.brand)){
+                    fullList.remove(car);
+                    System.out.println("removed all the other brands");
+                }
             }
+            if(!filter.getFuelType().equals( "0" )){
+                if(!filter.getFuelType().equals(car.fuelType)){
+                    fullList.remove(car);
+                    System.out.println("removed all the other fueltypes");
+                }
+            }
+            if(filter.getYearOfManufactureFrom() != 0){
+                if( !(filter.getYearOfManufactureFrom() <= car.yearOfManufacture) ){
+                    System.out.println("removed all the other yearofmanufacturefrom ");
+                    fullList.remove(car);
+                }
+            }
+            if(filter.getYearOfManufacturetill() != 0){
+                if(!(filter.getYearOfManufacturetill() >= car.yearOfManufacture )){
+                    fullList.remove(car);
+                    System.out.println("removed all the other yearofmanufacturetill");
+                }
+            }
+            if(filter.getKmFrom() != 0){
+                if(!(filter.getKmFrom() <= car.kilometre)){
+                    fullList.remove(car);
+                    System.out.println("removed all the kmfrom");
+                }
+            }
+            if(filter.getKmTill() != 0){
+                if(!(filter.getKmTill() >= car.kilometre)){
+                    fullList.remove(car);
+                    System.out.println("removed all the kmtill");
+                }
+            }
+            if(filter.getPriceFrom() != 0){
+                if(!(filter.getPriceFrom() <= car.price)){
+                    fullList.remove(car);
+                    System.out.println("removed all the price till");
+                }
+            }
+            if(filter.getPriceTill() != 0){
+                if(!(filter.getPriceTill() >= car.price)){
+                    fullList.remove(car);
+                    System.out.println("removed all the price till");
+                }
+            }
+            System.out.println(allCars.size());
         }
-        return theBrandList;
+
+        return fullList;
     }
+
+
 
     @Override
     public String toString() {
@@ -106,7 +179,7 @@ public class Car implements Serializable {
     }
 
 
-    public Car updateCar(String name, String imageUrl, double kilometre, int yearOfManufacture, double price, String fuelType, String licencePlatechange, String brand, String model) {
+    public Car updateCar(String name, String imageUrl, int kilometre, int yearOfManufacture, int price, String fuelType, String licencePlatechange, String brand, String model) {
         for (Car cars : allCars) {
             if (cars.name.equals(name) && cars.imageUrl.equals(imageUrl) && cars.kilometre == kilometre && cars.yearOfManufacture == yearOfManufacture && cars.price == price && cars.fuelType.equals(fuelType) && cars.licencePlate.equals(licencePlatechange) && cars.brand.equals(brand) && cars.model.equals(model)) {
                 System.out.println("object still the same nothing has changed");
@@ -169,7 +242,7 @@ public class Car implements Serializable {
         this.imageUrl = image;
     }
 
-    public void setKilometre(double kilometre) {
+    public void setKilometre(int kilometre) {
         this.kilometre = kilometre;
     }
 
@@ -177,7 +250,7 @@ public class Car implements Serializable {
         this.yearOfManufacture = yearOfManufacture;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

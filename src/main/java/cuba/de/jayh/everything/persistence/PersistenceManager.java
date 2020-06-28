@@ -186,15 +186,17 @@ public class PersistenceManager implements ServletContextListener {
             if (!PersistenceManager.loadCarsFromAzure()){
                 System.out.println("er zijn geen auto's gevonden, standaard auto's worden geplaatst");
                 Car.createCar("Volkswagen Polo 1.6", "https://media.autoweek.nl/m/pyryc27bzexp_800.jpg", 2000, 2016,
-                        1800, "diesel", "73-MG-HJ", "Volkswagen", "Polo 1.6");
+                        1800, "Diesel", "73-MG-HJ", "Volkswagen", "Polo 1.6");
                 Car.createCar("Fiat Punto", "https://cdn.autowereld.nl/I392904122/1280x0/fiat-punto-evo-1-3-m-jet-street-airco-cruise-lm-velgen-pdc-plaatje.jpg",
-                        30000, 2010,8000,  "diesel","18-ZH-JP","Fiat", "punto" );
+                        30000, 2010,8000,  "Diesel","18-ZH-JP","Fiat", "punto" );
                 Car.createCar("Fiat Panda","https://www.fiat.nl/content/dam/fiat/cross/new_family_page/panda/trim/fiat-Panda-pop-white-citycar-08-desktop-606x340.jpg",
                         34000,2008,2500,"Diesel","HK-ZN-23","Fiat","Panda");
                 Car.createCar("Alfa Romeo Giulietta","https://topgear.nl/thumbs/hd/image/FullImg/alfa-romeo-giulietta-opgefrist-f-25022016182527-6922-scaled.jpg",
                         9000,2008,123457,"Benzine","67-FGB-86", "Alfa Romeo","Giullietta");
                 Car.createCar("Ferrari F8 Tributo","https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2020-ferrari-f8-tributo-120-1568805901.jpg?crop=0.816xw:1.00xh;0.0833xw,0&resize=640:*",
                         1000,2020,280000,"Benzine","12-yho-87","Ferrari","F8 Tributo");
+                Car.createCar("Fiat 500", "https://cdn.autotrack.nl/48824121/0-ddd80d5f-096a-4ded-959c-5875f16688c3.jpg",73885,
+                        2018,5900,"Benzine","6-STF-11","Fiat","500");
             }
 
             if(!PersistenceManager.loadAccountFromAzure()){
@@ -202,6 +204,8 @@ public class PersistenceManager implements ServletContextListener {
               Account a1=   new Account("jayh475", "123");
               a1.setAdmin();
               a1.addFavoriteCar(Car.getCarByLicencePlate("18-ZH-JP"));
+              Account a2 = new Account("gast","123");
+              a2.addFavoriteCar(Car.getCarByLicencePlate("6-STF-11"));
             }
 
             if(!PersistenceManager.loadMessagesFromAzure()){
