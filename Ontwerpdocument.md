@@ -3,7 +3,7 @@ IPASS – Ontwerpdocument
 
 ***Ipass occasions project***
 
-| Datum      | 05-05-2020 |
+| Datum      | 28-06-2020 |
 |------------|------------|
 | __Versie__ | _0_.2     |
 | __Auteur__ | __Jayh de Cuba__   |
@@ -41,7 +41,7 @@ Korte beschrijving wat het systeem geacht wordt te doen. Eventueel indeling in s
 ---
 
 # 3 Use Cases
-![use case diagram](Images/Ocassions-diagram.jpg)
+![use case diagram](Images/Ocassions-diagram1.jpg)
 
 •	1. De admin kan een auto toevoegen. 
 De admin voert een naam in, een afbeelding, km-stand, bouwjaar, prijs, en brandstof type. 
@@ -219,7 +219,7 @@ De admin kan een auto bewerken doormiddel van het (i)kenteken. De attributen die
 |    4    | Als het kenteken niet past bij een auto uit de lijst en of gegevens zijn niet aangepast. 
 |   5     | Systeem geeft foutmelding.    |
 |  6   |Systeem gaat verder met stap 1.    |
-|   8  |  auto wordt bewerkt aan de hand van de gegevens die veranderd zijn.        |
+|   7  |  auto wordt bewerkt aan de hand van de gegevens die veranderd zijn.        |
 |     |    |
 
 
@@ -242,8 +242,7 @@ De eigenaar kan een auto verwijderen doormiddel van het (i)kenteken. Het systeem
 |    4    | Als het kenteken niet past bij een auto uit de lijst. 
 |   5     | Systeem geeft foutmelding.    |
 |  6   |Systeem gaat verder met stap 1.    |
-|   8  |  auto wordt verwijderd       |
-|     |    |
+|   7  |  auto wordt verwijderd       |
 
 
   Use Case : Inloggen |   uitwerking  |
@@ -265,8 +264,8 @@ Admins en gebuikers kunnen inloggen met het (i)wachtwoord en (i)gebruikersnaam. 
 |    4    | Als de gegevens niet kloppen of er geen account is met deze gegevens |
 |   5     | Systeem geeft foutmelding doormiddel van popup.    |
 |  6   |Systeem gaat verder met stap 1.    |
-|   8  |  Ingelogd als gebruiker of admin      |
-|     |    |
+|   7 |  Ingelogd als gebruiker of admin      |
+
 
   Use Case : Uitloggen |   uitwerking  |
 |----------|--------------|
@@ -282,13 +281,138 @@ Admins en gebuikers kunnen uitloggen doormiddel van een uitlog button. Bij het u
 |  nummer |   uitwerking  |
 |----------|--------------|
 |  1      |  gebruiker drukt op loguit) |
-|   2     |   |
+|   2     |   systeem checkt of button is ingedrukt en opent functie|
 |    3    | Systeem valideert de functie |
 |    4    | als er geen account is ingelogd 
 |   5     | Systeem geeft foutmelding doormiddel van popup.    |
 |  6   |Systeem gaat verder met stap 1.    |
-|   8  |  gebruiker/admin is uitgelogd   |
+|   7 |  gebruiker/admin is uitgelogd   |
 |     |    |
+
+
+ Use Case : Auto's filteren |   uitwerking  |
+|----------|--------------|
+| id:        | OW01 v0.6   |
+|naam:        |Auto's filteren  |
+|actoren:        | Addmin /gebruiker  |
+
+#####beschrijving
+Iedereen die de pagina bezoekt kan auto's filteren op (i)kilometerstand van, (i)kilometerstand tot, (i)prijs van, (i)prijs tot, (i)bouwjaar van, (i) bouwjaar tot, (i)type brandstof, (i)merk
+
+#####Scenario
+|  nummer |   uitwerking  |
+|----------|--------------|
+|  1      |  Systeem vraagt om de volgende gegevens:  (i)kilometerstand van, (i)kilometerstand tot, (i)prijs van, (i)prijs tot, (i)bouwjaar van, (i) bouwjaar tot, (i)type brandstof, (i)merk|
+|   2     |  persoon drukt op de zoek button |
+|    3    |    systeem valideert gegevens            |
+|    4    | als er geen match van auto's is |
+|   5     | Systeem geeft foutmelding doormiddel van popup.    |
+|  6   |Systeem gaat verder met stap 1.    |
+|   7 |  auto's worden getoond   |
+|     |    |
+
+
+
+ Use Case : Auto Toevoegen aan lijst met favorieten |   uitwerking  |
+|----------|--------------|
+| id:        | OW01 v0.7  |
+|naam:        | Auto toevoegen aan lijst met favorieten 
+|actoren:        | Addmin /gebruiker  |
+
+#####beschrijving
+Admins en gebruikers kunnen auto's toevoegen door op het sterretje te drukken in de hoek van een auto. Zij kunnen de lijst dan zien bij het tabje mijn favoriete auto's.
+
+#####Scenario
+|  nummer |   uitwerking  |
+|----------|--------------|
+|  1      |  gebruiker/admin drukt op de favoriet button|
+|   2     |  als de auto niet al in favorieten staat wordt deze toegevoegd aan de lijst met favorieten |
+
+
+ Use Case : Bericht verzenden |   uitwerking  |
+|----------|--------------|
+| id:        | OW01 v0.8   |
+|naam:        |Bericht verzenden  |
+|actoren:        | iedereen  |
+
+#####beschrijving
+Iedereen die de pagina bezoekt kan berichten verzenden ze kunnen met deze gegevens: (i)email, (i)onderwerp, (i)bericht, (i)naam een bericht sturen naar alle admins.
+#####Scenario
+|  nummer |   uitwerking  |
+|----------|--------------|
+|  1      |  Systeem vraagt om de volgende gegevens:  (i)email, (i)onderwerp, (i)bericht, (i)naam |
+|    2    |    systeem valideert gegevens            |
+|    3   | als de gegevens allemaal overeenkomen met berichten uit de lijst of als niet alle gegevens zijn ingevoerd |
+|   4     | Systeem geeft foutmelding doormiddel van popup.    |
+|  5 |Systeem gaat verder met stap 1.    |
+|   6 |  bericht wordt verzonden naar alle gebruikers   |
+|     |    |
+
+
+ Use Case : registreer als gebruiker |   uitwerking  |
+|----------|--------------|
+| id:        | OW01 v0.9   |
+|naam:        |registreer gebruikers  |
+|actoren:        | iedereen  |
+
+#####beschrijving
+Iedereen die de pagina bezoekt kan zich registreren met deze gegevens: (i)gebruikersnaam, (i)wachtwoord.
+#####Scenario
+|  nummer |   uitwerking  |
+|----------|--------------|
+|  1      |  Systeem vraagt om de volgende gegevens:  (i)gebruikersnaam, (i)wachtwoord|
+|    2    |    systeem valideert gegevens            |
+|    3    | als de gegevens allemaal overeenkomen met  uit de lijst of als niet alle gegevens zijn ingevoerd |
+|   4     | Systeem geeft foutmelding doormiddel van popup.    |
+|  5   |Systeem gaat verder met stap 1.    |
+|   6| normmale gebruiker account wordt aangemaakt.   |
+|     |    |
+
+
+ Use Case : registreer admins |   uitwerking  |
+|----------|--------------|
+| id:        | OW01 v0.10   |
+|naam:        |registreer admins  |
+|actoren:        | admins  |
+
+#####beschrijving
+Alleen admins kunnen andere admins registeren met deze gegevens: (i)gebruikersnaam, (i)wachtwoord en (i)checkbox
+#####Scenario
+|  nummer |   uitwerking  |
+|----------|--------------|
+|  1      |  Systeem vraagt om de volgende gegevens:  (i)gebruikersnaam, (i)wachtwoord (i)checkbox|
+|    2   |    systeem valideert gegevens            |
+|    3   | als het account al bestaat en of als er niet ingelogd is als admin  |
+|   4     | Systeem geeft foutmelding doormiddel van popup.    |
+|  5  |Systeem gaat verder met stap 1.    |
+|   6 |  admin account wordt aangemaakt.   |
+|     |    |
+
+
+
+ Use Case : Berichten ontvangen |   uitwerking  |
+|----------|--------------|
+| id:        | OW01 v0.11   |
+|naam:        |Berichten ontvangen  |
+|actoren:        | admins  |
+
+#####beschrijving
+Iedereen die de pagina bezoekt kan berichten verzenden ze kunnen met deze gegevens: (i)email, (i)onderwerp, (i)bericht, (i)naam een bericht sturen naar alle admins.
+#####Scenario
+|  nummer |   uitwerking  |
+|----------|--------------|
+|  1      |  admin drukt op berichten knop |
+|    2   |    systeem valideert gegevens            |
+|    3   | berichten worden getoond |
+
+
+
+
+
+
+
+
+
 
 
 
@@ -308,25 +432,33 @@ use case: Auto verwijderen:
 use case: Inloggen /Uitloggen: 
 ![inloggen](Images/inlogforum.jpg)
 
-use case: Registreren: 
-![registreren](Images/registrerenForm.jpg)
+
+use case: auto's filteren:
+![registreren](Images/filterenAutos.jpg)
+
+use case: auto's toevoegen aan favorieten lijst:
+![registreren](Images/favorietenToevoegen.jpg)
+![registreren](Images/mijnFavorietenLijst.jpg)
 
 
+use case: bericht verzenden
+![registreren](Images/BerichtVerzenden.jpg)
+
+use case: Registreer gebruiker: 
+![registreren](Images/RegistreerGebruiker.jpg)
+
+use case:registreer admin: 
+![registreren](Images/RegistreerAdmin.jpg)
 
 
-
-
-
-
-
-
-
+use case:berichten ontvangen als admin:
+![registreren](Images/BerichtenAdmin.jpg)
 
 ---
 
 # 4 Domeinmodel
 Hieronder wordt er een afbeelding en een beschrijving gegeven van het klassediagram.
-![klasse diagram](Images/Class%20Diagram%20Ocassions.jpg)
+![klasse diagram](Images/Class%20Diagram%20Ocassions1.jpg)
 
 
 
@@ -334,30 +466,41 @@ Hieronder wordt er een afbeelding en een beschrijving gegeven van het klassediag
 | Entiteit | Beschrijving |
 |----------|--------------|
 |  Car    |    De entiteit Car heeft de attributen: name, image, kilometre,yearOfManufacture, price en fuelType. |
-| Account  |     De entiteit Account heeft de attributen: email, password, accountId,birthday, accounttype en een refferentie naar Car door de arraylist favorite cars. Ook heeft Account een referentie met Message door de arraylist myMessages.     |
+| Account  |     De entiteit Account heeft de attributen: , password, username,role     |
 |  Message  |    De eniteit Message heeft de attributen: topic, question, name, email, dateOfSend (daarin wordt de lokale tijd in opgeslagen).      |
-|           |         |
+|   CarFilter        |  De eniteit Carfilter heeft de attributen: (i)kilometerstand van, (i)kilometerstand tot, (i)prijs van, (i)prijs tot, (i)bouwjaar van, (i) bouwjaar tot, (i)type brandstof, (i)merk|        |
 
 
 ---
 
 # 5 Technologieën
-Voor het realiseren van de applicatie wordt gebruik van de volgende methodieken en technieken: UML, Java, SQL, HTML, CSS, J2EE (Servlets), Rest (Jax-RS), Applicatieserver 
-& HTTP-protocol en een datastore. Beschrijf ook welke frameworks je gebruikt, hiervan neem je ook de versie en het licentiemodel op.
+Voor het realiseren van de applicatie wordt gebruik van de volgende methodieken en technieken: UML, Java, HTML, CSS, J2EE (Servlets), Rest (Jax-RS), Applicatieserver 
+& HTTP-protocol en een datastore. Frameworks zijn niet gebruikt. 
 
 ---
 
 # 6 Overdracht
-Hier wordt een installatiehandleiding en een sumiere gebruikershandleiding beschreven. Ook eventuele gebruikersnamen en wachtwoorden moet bekend worden om de werking van het programma aan te tonen.
+
+inloggen als admin: admin account met de gebruikersnaam jayh475 (zonder hoofdletter) met het wachtwoord 123. Dan kan er een Auto bewerkt worden door op het tabje Aanbod ocassions te drukken en dan staan er functies voor de CRUD van auto. 
+Alle waardes dienen met een hoofdletter te beginnen (anders kan er niet gefiltert worden op auto's op de hoofdpagina als er een auto in de lijst staat).
+Als er een auto toegevoegd moet worden dan kan er op de grijze ster gedrukt worden(er zit nog een bug in de 1e ster wordt geel als er op andere sterren wordt gedrukt). 
+Om De favoriete auto's te bekijken kan er eerst weer op home gedrukt worden en dan op mijn favorieten. Dan is het weer mogelijk om favorieten uit de lijst te halen. 
+
+
+Inloggen als gebruiker: gebruiker account met de gebruikersnaam gast met het wachtwoord 123. Als er is ingelogd is te zien dat het account geen berichten heeft en  geen crud functies bevat voor het manipuleren van de auto's.
+
+
+
+
 
 ---
 
 # 7 Verwijzingen
-Geef hier de bronnenlijst. Gebruik de APA stijl om de bronnen te vermelden.
+Er is gebruik gemaakt van al het materiaal van de hogeschool Utrecht 
 
 
-
-getting json and putting it in html. 
+titel = getting json and putting it in html. 
+youtube account: LearnWebCode 
 https://www.youtube.com/watch?v=DG4obitDvUA
 
 how to center an object 
