@@ -50,10 +50,10 @@ De admin voert een naam in, een afbeelding, km-stand, bouwjaar, prijs, en brands
 De admin kan bij de auto’s in het hoofdscherm op wijzigen klikken, dan kan ze alle gegevens wijzingen die genoemd worden in use case 1. 
 
 •	3. De admin kan auto’s verwijderen.
-De admin kan auto’s verwijderen door naast het knopje wijzigen op het knopje verwijderen te klikken, hierna komt er een pop-upvenster met de tekst: “weet u het zeker?”. 
+De admin kan auto's verwijderen doormiddel van het invoeren van de kenteken van de auto.   
 
 •	4. De admin kan berichten ontvangen van gebruikers  met en zonder account.
-Er bestaat een tab met bericht sturen en die is ook aanwezig voor gebruikers die geen account hebben. 
+Er bestaat een tab met berichten en die is aanwezig alleen voor admins.
 
 •	5. Zowel de admins als gebruikers kunnen inloggen. 
 Het inloggen wordt gedaan met een emailadres en de daarbij horende wachtwoord. Als één van beiden niet werken dan zal er in het scherm een zin staan met: “wachtwoord en of emailadres kloppen niet. 
@@ -62,7 +62,7 @@ Het inloggen wordt gedaan met een emailadres en de daarbij horende wachtwoord. A
 Om uit te loggen kunnen zowel de gebruiker als de admin bovenin het hoofdscherm een knop vinden met uitloggen en daarop klikken. Daarna worden ze uitgelogd. 
 
 •	7. De gebruiker kan zowel ingelogd als niet ingelogd  een bericht sturen naar een admin. 
-De gebruikers drukken op het tabje bericht en dan worden ze gevraagd om hun email adres (optioneel), naam, vraag/opmerking, onderwerp. 
+De gebruikers drukken op het tabje contact en dan worden ze gevraagd om hun email adres (optioneel), naam, vraag/opmerking, onderwerp. 
 
 •	8. De gebruiker kan auto’s in zijn/haar favorieten-lijst zetten. 
 De gebruiker drukt op de button voeg toe als favoriet, dan wordt er een lijst gemaakt met favoriete auto’s die de gebruiker altijd kan bekijken.
@@ -72,29 +72,36 @@ De gebruiker drukt op de button voeg toe als favoriet, dan wordt er een lijst ge
 •	10 Registratie gebruikers. 
 De gebruikers kunnen een account aanmaken met hun emailadres en zelfgekozen wachtwoord. 
 
-•	11. Registratie admins(optioneel)  
+•	11. Registratie door admins voor admins. 
 Met een button registreren voor admins, kan alleen een admin een andere admin maken. 
 
-•	12. Admins berichten naar gebruikers
-De admins kunnen ook berichten sturen naar gebruikers die een account hebben aangemaakt op de website. 
+
 
 
 
 ## §1 Actoren
 |Use Case : Auto toevoegen |   uitwerking  |
 |----------|--------------|
-| Rolnaam:        | eigenaar(admin)     |
+| Rolnaam:        | admin     |
 |  Functienaam:        | De functienamen van de eigenaar zijn auto's toevoegen   |
-| Omschrijving van de rol: | De rol van de eigenaar(admin) is om auto's toe te voegen aan het scherm.De auto's kunnen dan gezien worden door zowel gebruikers met account en gebruikers zonder account.       |
-|  Uitoefenaren:  |  In de organisatie mogen alleen eigenaren auto's toevoegen aan de lijst met auto's.        |
+| Omschrijving van de rol: | De rol van de admin is om auto's toe te voegen aan het scherm.De auto's kunnen dan gezien worden door zowel gebruikers met account en gebruikers zonder account.       |
+|  Uitoefenaren:  |  In de organisatie mogen alleen admins auto's toevoegen aan de lijst met auto's.        |
 
 
 |  Use Case : Auto bewerken |   uitwerking  |
 |----------|--------------|
-| Rolnaam:        | eigenaar(admin)     |
-|  Functienaam:        | De functienamen van de eigenaar zijn auto's wijzigen   |
+| Rolnaam:        | admin     |
+|  Functienaam:        | De functienamen van de admins zijn auto's wijzigen   |
 | Omschrijving van de rol: | De rol van de eigenaar(admin) is om een auto te wijzigen doormiddel van het kenteken. Het kenteken is de id voor een auto, daarop wordt gezocht en daarmee kunnen alle andere waardes van de auto veranderd worden.        |
-|  Uitoefenaren:  |  In de organisatie mogen alleen eigenaren auto attributen wijzigen.       |
+|  Uitoefenaren:  |  In de organisatie mogen alleen admins auto attributen wijzigen.       |
+
+
+|  Use Case : Auto verwijderen |   uitwerking  |
+|----------|--------------|
+| Rolnaam:        | admin   |
+|  Functienaam:        | De functienamen van de admin zijn auto's verwijderen   |
+| Omschrijving van de rol: | De rol van de admin is om een auto te verwijderen doormiddel van het kenteken.       |
+|  Uitoefenaren:  |  In de organisatie mogen alleen admins auto's verwijderen. | 
 
 
 

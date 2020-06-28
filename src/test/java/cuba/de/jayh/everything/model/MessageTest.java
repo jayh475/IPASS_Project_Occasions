@@ -13,10 +13,6 @@ class MessageTest {
     void test() {
         Message message = new Message("auto","waarom is deze auto er niet meer?",
                 "jayh","de cuba","jayh.decuba@gmail.com" );
-
-
-
-
     }
 
 
@@ -26,16 +22,11 @@ class MessageTest {
             new Message("auto","waarom is deze auto er niet meer?",
                     "jayh","de cuba","jayh.decuba@gmail.com" );
         });
-        String expectedMessage = "Account bestaat al";
+        String expectedMessage = "Kopies van berichten zijn niet toegestaanl";
         String actualMessage = exception.getMessage();
         assertTrue(actualMessage.contains(expectedMessage));
     }
 
-    @Test
-    void messageVariabelCantBeNull() {
-
-
-    }
 
 
 }
