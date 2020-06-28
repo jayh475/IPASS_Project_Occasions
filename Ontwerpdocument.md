@@ -105,6 +105,69 @@ Met een button registreren voor admins, kan alleen een admin een andere admin ma
 
 
 
+|  Use Case : Inloggen |   uitwerking  |
+|----------|--------------|
+| Rolnaam:        | admin en gebruiker   |
+|  Functienaam:        | De functienamen van de gebruikers en admins zijn inloggen.  |
+| Omschrijving van de rol: | De rol van de gebruikers en admins is om het account op te starten en weer af te sluiten. De functies zoals faviete auto's komen bij de gebruikers. Bij de admins komen er twee tabs bij auto functies en berichten en een checkbox om een andere admin aan te maken.     |
+|  Uitoefenaren:  |  alleen gebruikers/admins met een account. | 
+
+
+|  Use Case : Uitloggen |   uitwerking  |
+|----------|--------------|
+| Rolnaam:        | Admin en gebruiker   |
+|  Functienaam:        | De functienamen van de gebruikers en admins zijn uitloggen.  |
+| Omschrijving van de rol: | De rol van de gebruikers is voor gebruikers/admins met een account door op een knop te drukken niet meer ingelogd te zijn.      |
+|  Uitoefenaren:  |  Alleen gebruikers/admins met een account. | 
+
+
+|  Use Case : Auto's filteren |   uitwerking  |
+|----------|--------------|
+| Rolnaam:        |  Iedereen   |
+|  Functienaam:        | De functienamen van alle gebruiker zijn filteren op attributen |
+| Omschrijving van de rol: | De rol van het filteren is voor alle gebruikers met en zonder een account. Iedereen kan filteren op de attributen die in het Klasse-diagram in de klasse  CarFilter staan    |
+|  Uitoefenaren:  |  Iedereen | 
+
+
+
+|  Use Case : Auto toevoegen aan lijst met favorieten |   uitwerking  |
+|----------|--------------|
+| Rolnaam:        |   gebruikers  /admins |
+|  Functienaam:        | De functienamen van alle gebruikers zijn   favoriete auto's |
+| Omschrijving van de rol: | De rol van het toevoegen aan favorieten is voor alle gebruikers met en zonder een account.      |
+|  Uitoefenaren:  |  gebruikers | 
+
+
+|  Use Case : Bericht verzenden |   uitwerking  |
+|----------|--------------|
+| Rolnaam:        |   gebruikers  /admins |
+|  Functienaam:        | De functienaam van iedereen die het gebruikt is contact.  |
+| Omschrijving van de rol: | Er kan een bericht verzonden worden doormiddel van het contact formulier de berichten komen bij alle admins terecht. Admins kunnen geen berichten sturen naar gebruikers.      |
+|  Uitoefenaren:  |  gebruikers en admins | 
+
+|  Use Case : Registreer gebruikers |   uitwerking  |
+|----------|--------------|
+| Rolnaam:        |  iedereen |
+|  Functienaam:        | De functienaam voor iedereen die mag registreren is registreren.  |
+| Omschrijving van de rol: | iedereen kan registeren  als gebruiker  |
+|  Uitoefenaren:  |  gebruikers en admins | 
+
+|  Use Case : Registreer admins |   uitwerking  |
+|----------|--------------|
+| Rolnaam:        |  iedereen |
+|  Functienaam:        | De functienaam voor admins   is registreren admins.  |
+| Omschrijving van de rol: | Alleen admins kunnen doormiddel van een checkbox als ingelogd andere admins aanmaken.  |
+|  Uitoefenaren:  |  admins | 
+
+
+|  Use Case : Registreer admins |   uitwerking  |
+|----------|--------------|
+| Rolnaam:        |  iedereen |
+|  Functienaam:        | De functienaam voor admins   is "berichten"  |
+| Omschrijving van de rol: | Alleen admins kunnen berichten ontvangen.  |
+|  Uitoefenaren:  |  admins | 
+
+
 
 
 
@@ -128,7 +191,7 @@ De eigenaar kan een auto toevoegen bestaande uit merk(i), model(i), kenteken(i),
 |  1      |  Systeem vraagt om de volgende gegevens: merk(i), model(i), kenteken(i), kentekenplaat(i), bouwjaar(i),prijs(i), kilometerstand(i),brandstof type(i) en een afbeelding Url van de auto(i).|
 |   2     | Eigenaar verstrekt deze gegevens.  |
 |    3    | Systeem valideert de ingevoerde gegevens  |
-|    4    | Als auto  bestaat in de list)  | 
+|    4    | Als de auto bestaat in de list)  | 
 |   5     | Systeem geeft foutmelding     |
 |  6   |Systeem gaat verder met stap 1     |
 |  7   |  Doe zolang er een auto toegevoegd wordt dat nog niet bestaat   |
@@ -141,28 +204,91 @@ De eigenaar kan een auto toevoegen bestaande uit merk(i), model(i), kenteken(i),
 |----------|--------------|
 | id:        | OW01 v0.2   |
 |naam:        |Auto bewerken   |
-|actoren:        | eigenaar   |
+|actoren:        | Admin   |
 
 #####beschrijving
-De eigenaar kan een auto bewerken doormiddel van het (i)kenteken. De attributen die te wijzigen zijn bestaan uit merk(i), model(i), kenteken(i), kentekenplaat(i), bouwjaar(i),prijs(i), kilometerstand(i)
+De admin kan een auto bewerken doormiddel van het (i)kenteken. De attributen die te wijzigen zijn bestaan uit merk(i), model(i), kenteken(i), kentekenplaat(i), bouwjaar(i),prijs(i), kilometerstand(i)
 ,brandstof type(i) en een afbeelding Url van de auto(i). Het systeem controleert of de auto al in het systeem staat door het controleren van de kentekenplaat. Als de auto nog niet in het systeem staat worden de gegevens opgeslagen en staat de auto gewijzigd in de lijst. 
 
 #####Scenario
 |  nummer |   uitwerking  |
 |----------|--------------|
 |  1      |  Systeem vraagt om de volgende gegevens: bestaande kenteken(i), merk(i), model(i), kentekenNieuw(i), kentekenplaat(i), bouwjaar(i),prijs(i), kilometerstand(i),brandstof type(i) en een afbeelding Url van de auto(i).|
-|   2     | Eigenaar verstrekt deze gegevens.  |
+|   2     | admin verstrekt deze gegevens.  |
 |    3    | Systeem valideert de ingevoerde gegevens.  |
-|    4    | Als de kenteken niet past bij een auto uit de lijst en of gegevens zijn niet aangepast. 
+|    4    | Als het kenteken niet past bij een auto uit de lijst en of gegevens zijn niet aangepast. 
 |   5     | Systeem geeft foutmelding.    |
 |  6   |Systeem gaat verder met stap 1.    |
 |   8  |  auto wordt bewerkt aan de hand van de gegevens die veranderd zijn.        |
 |     |    |
 
 
+  Use Case : Auto verwijderen |   uitwerking  |
+|----------|--------------|
+| id:        | OW01 v0.3   |
+|naam:        |Auto verwijderen   |
+|actoren:        | Addmin   |
+
+#####beschrijving
+De eigenaar kan een auto verwijderen doormiddel van het (i)kenteken. Het systeem checkt of er een auto in het systeem staat met dat kenteken en als dat zo is wordt de auto verwijderd. 
 
 
+#####Scenario
+|  nummer |   uitwerking  |
+|----------|--------------|
+|  1      |  Systeem vraagt om de volgende gegevens:  kenteken(i), |
+|   2     | admin verstrekt deze gegevens.  |
+|    3    | Systeem valideert de ingevoerde gegevens.  |
+|    4    | Als het kenteken niet past bij een auto uit de lijst. 
+|   5     | Systeem geeft foutmelding.    |
+|  6   |Systeem gaat verder met stap 1.    |
+|   8  |  auto wordt verwijderd       |
+|     |    |
 
+
+  Use Case : Inloggen |   uitwerking  |
+|----------|--------------|
+| id:        | OW01 v0.4   |
+|naam:        | Inloggen   |
+|actoren:        | admin/gebruikers   |
+
+#####beschrijving
+Admins en gebuikers kunnen inloggen met het (i)wachtwoord en (i)gebruikersnaam. Het systeem checkt of er een gebruiker in het systeem staat met die gegevens en als er een account gevonden is komt er een popup met inloggen is gelukt. Ook zal de gebruiker meer tabs krijgen , de admin krijgt iets meer tabs dan de gerbuiker. Namelijk berichten en de CRUD-functies van auto's extra.
+
+
+#####Scenario
+|  nummer |   uitwerking  |
+|----------|--------------|
+|  1      |  Systeem vraagt om de volgende gegevens:  gebruikersnaam(i) en wachtwoord(i) |
+|   2     | gebruiker/admin verstrekt deze gegevens.  |
+|    3    | Systeem valideert de ingevoerde gegevens.  |
+|    4    | Als de gegevens niet kloppen of er geen account is met deze gegevens |
+|   5     | Systeem geeft foutmelding doormiddel van popup.    |
+|  6   |Systeem gaat verder met stap 1.    |
+|   8  |  Ingelogd als gebruiker of admin      |
+|     |    |
+
+  Use Case : Uitloggen |   uitwerking  |
+|----------|--------------|
+| id:        | OW01 v0.5   |
+|naam:        |Uitloggen  |
+|actoren:        | Addmin /gebruiker  |
+
+#####beschrijving
+Admins en gebuikers kunnen uitloggen doormiddel van een uitlog button. Bij het uitloggen wordt de lokale sleutel verwijderd waarmee is ingelogd. 
+
+
+#####Scenario
+|  nummer |   uitwerking  |
+|----------|--------------|
+|  1      |  gebruiker drukt op loguit) |
+|   2     |   |
+|    3    | Systeem valideert de functie |
+|    4    | als er geen account is ingelogd 
+|   5     | Systeem geeft foutmelding doormiddel van popup.    |
+|  6   |Systeem gaat verder met stap 1.    |
+|   8  |  gebruiker/admin is uitgelogd   |
+|     |    |
 
 
 
