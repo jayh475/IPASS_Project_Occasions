@@ -191,6 +191,15 @@ li.dropdown {
     }
 }
 
+/*voor de popup schermen */
+.selectCRUD {
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+
+}
 
 
 

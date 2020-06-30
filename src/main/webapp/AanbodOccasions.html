@@ -94,8 +94,17 @@
         <label for="price">prijs:</label>
         <input class="input" type="number" id="price" name="price" required/>
 
-        <label for="fuelType">brandstof:</label>
-        <input type="text" id="fuelType" name="fuelType" required/>
+<!--        <label for="fuelType">brandstof:</label>-->
+<!--        <input type="text" id="fuelType" name="fuelType" required/>-->
+        <label for="fuelType">Brandstof</label>
+        <select  class="selectCRUD" id="fuelType" name="fuelType">
+            <option value= "0" ></option>
+            <option value="Benzine">Benzine</option>
+            <option value="Diesel">Diesel</option>
+            <option value="Elektriciteit">Elektriciteit</option>
+            <option value="Hybride">Hybride</option>
+            <option value="Gas">Gas</option>
+        </select>
 
         <label for="licencePlate">kenteken:</label>
         <input type="text" id="licencePlate" name="licencePlate" required/>
@@ -134,8 +143,26 @@
     <label  for="nameEdit">naam:</label>
     <input type="text" id="nameEdit" name="nameEdit"/>
 
-    <label for="brandEdit">merk:</label>
-    <input type="text" id="brandEdit" name="brandEdit"/>
+<!--    <label for="brandEdit">merk:</label>-->
+<!--    <input type="text" id="brandEdit" name="brandEdit"/>-->
+
+    <label for="brandEdit">Merk</label>
+    <select class="selectCRUD" id="brandEdit" name="brandEdit">
+        <option value="0"></option>
+        <option value="Volvo">Volvo</option>
+        <option value="Saab">Saab</option>
+        <option value="Fiat">Fiat</option>
+        <option value="Audi">Audi</option>
+        <option value="Peugeot">Peugeot</option>
+        <option value="Volkswagen">Volkswagen</option>
+        <option value="Mercedes">Mercedes</option>
+        <option value="Nissan">Nissan</option>
+        <option value="Toyota">Toyota</option>
+        <option value="Jaguar">Jaguar</option>
+        <option value="Ford">Ford</option>
+        <option value="Alfa Romeo">Alfa Romeo</option>
+        <option value="Ferrari">Ferrari</option>
+    </select>
 
     <label for="modelEdit">model:</label>
     <input type="text" id="modelEdit" name="modelEdit"/>
@@ -149,8 +176,17 @@
     <label for="priceEdit">prijs:</label>
     <input class="input" type="number" id="priceEdit" name="priceEdit"/>
 
-    <label for="fuelTypeEdit">brandstof:</label>
-    <input type="text" id="fuelTypeEdit" name="fuelTypeEdit"/>
+<!--    <label for="fuelTypeEdit">brandstof:</label>-->
+<!--    <input type="text" id="fuelTypeEdit" name="fuelTypeEdit"/>-->
+    <label for="fuelTypeEdit">Brandstof</label>
+    <select  class="selectCRUD" id="fuelTypeEdit" name="fuelTypeEdit">
+        <option value= "0" ></option>
+        <option value="Benzine">Benzine</option>
+        <option value="Diesel">Diesel</option>
+        <option value="Elektriciteit">Elektriciteit</option>
+        <option value="Hybride">Hybride</option>
+        <option value="Gas">Gas</option>
+    </select>
 
     <label for="imageUrlEdit">foto:</label>
     <input type="text" id="imageUrlEdit" name="imageUrlEdit"/> <br><br>
