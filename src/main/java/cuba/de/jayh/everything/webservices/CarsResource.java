@@ -26,7 +26,7 @@ public class CarsResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllCars() {
         List<Car> cars = Car.getAllCars();
-//        System.out.println(cars);
+
 
         return Response.ok(cars).status(Response.Status.OK).build();
     }
@@ -42,8 +42,7 @@ public class CarsResource {
                                    @FormParam("fuelType") String fuelType,
                                    @FormParam("priceFrom") int priceFrom,@FormParam("priceTill") int priceTill,
                                    @FormParam("kmFrom") int kmFrom, @FormParam("kmTill") int kmTill) {
-        System.out.println(brand + " "+ yearOfManufactureFrom + " "+ yearOfManufactureTill +  " "+ fuelType+  " "
-                + priceFrom + " " + priceTill +" "+ kmFrom +  " "+ kmTill );
+
 
         CarFilter carFilter = new CarFilter(brand,fuelType,yearOfManufactureFrom,
                 yearOfManufactureTill,kmFrom,kmTill,priceFrom,priceTill);
@@ -56,25 +55,6 @@ public class CarsResource {
         return Response.ok(Car.filterCars(carFilter)).build();
 
     }
-
-
-
-
-
 }
 
 
-//        if(brand !=null){
-//
-//        }
-//        if(yearOfManufactureFrom == 0){
-//            System.out.println("year of manufacture is null");
-//
-//
-//        }
-//               if(yearOfManufactureTill != 0){
-//
-//               }
-//                       if(fuelType != null){
-//
-//                       }

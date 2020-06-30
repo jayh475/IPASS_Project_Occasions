@@ -21,17 +21,6 @@ import java.util.Map;
 public class CarResource {
 
 
-//    @GET
-//    @Path("carByModel")
-//    public Response getCarByModel(@PathParam("carsBymodel") String model){
-//        Car m= Car.getCarsByModel(model);
-//        if(m ==null) {
-//            return Response.status(404).build();
-//        }
-//        return Response
-//
-//
-//    }
 
 
     @POST

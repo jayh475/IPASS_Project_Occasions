@@ -92,49 +92,43 @@ public class Car implements Serializable {
             if(!filter.getBrand().equals("0")){
                 if(!filter.getBrand().equals(car.brand)){
                     fullList.remove(car);
-                    System.out.println("removed all the other brands");
+
                 }
             }
             if(!filter.getFuelType().equals( "0" )){
                 if(!filter.getFuelType().equals(car.fuelType)){
                     fullList.remove(car);
-                    System.out.println("removed all the other fueltypes");
+
                 }
             }
             if(filter.getYearOfManufactureFrom() != 0){
                 if( !(filter.getYearOfManufactureFrom() <= car.yearOfManufacture) ){
-                    System.out.println("removed all the other yearofmanufacturefrom ");
                     fullList.remove(car);
                 }
             }
             if(filter.getYearOfManufacturetill() != 0){
                 if(!(filter.getYearOfManufacturetill() >= car.yearOfManufacture )){
                     fullList.remove(car);
-                    System.out.println("removed all the other yearofmanufacturetill");
                 }
             }
             if(filter.getKmFrom() != 0){
                 if(!(filter.getKmFrom() <= car.kilometre)){
                     fullList.remove(car);
-                    System.out.println("removed all the kmfrom");
                 }
             }
             if(filter.getKmTill() != 0){
                 if(!(filter.getKmTill() >= car.kilometre)){
                     fullList.remove(car);
-                    System.out.println("removed all the kmtill");
                 }
             }
             if(filter.getPriceFrom() != 0){
                 if(!(filter.getPriceFrom() <= car.price)){
                     fullList.remove(car);
-                    System.out.println("removed all the price till");
                 }
             }
             if(filter.getPriceTill() != 0){
                 if(!(filter.getPriceTill() >= car.price)){
                     fullList.remove(car);
-                    System.out.println("removed all the price till");
                 }
             }
             System.out.println(allCars.size());

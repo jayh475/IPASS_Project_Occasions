@@ -22,21 +22,19 @@ public class AccountResource {
 
 
     @GET
-    @Path("username")
+    @Path("/role")
     @RolesAllowed({"user","admin"})
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getUsername(@Context SecurityContext securityContext) {
-        System.out.println("komt die hier wel ? ");
+    public Response getRole(@Context SecurityContext securityContext) {
 
         Account account = Account.getAccountByname(securityContext.getUserPrincipal().getName());
         if (account == null) {
             return Response.status(Response.Status.NOT_FOUND).entity(new AbstractMap.SimpleEntry<>("Account", "niet gevonden")).build();
 
         }
-         String username = account.getName();
-        System.out.println(username);
+       String role = account.getRole();
 
-        return Response.ok(username).build();
+        return Response.ok(role).build();
     }
 
 

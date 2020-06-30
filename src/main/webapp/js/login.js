@@ -27,20 +27,46 @@ function login() {
 
 
     setLoginData();
+
 }
 
+
+function getRole(){
+    let fetchOptions = {
+        method: "GET",
+        headers: {"Authorization": "Bearer " + window.sessionStorage.getItem("myJWT")},
+    };
+
+    fetch("restservices/account/role",fetchOptions)
+        .then(response => response)
+        .then(data => data.text())
+            .then(function (text) {
+                if(text === "admin"){
+                    let x = document.getElementsByClassName("verberg1");
+                    let i;
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "block";
+                    }
+                }else{
+                    console.log("ingelogd als user")
+                }
+
+            });
+
+}
 
 
 function setLoginData() {
     console.log("voert uit");
     let isIngelogd = window.sessionStorage.getItem("myUsername");
     if(isIngelogd !== null) {
-        
+        getRole();
         document.getElementById("showUsername").innerHTML = `welkom ${isIngelogd}`;
         //alle elementen in de arraylist laten zien bij het inloggen.
         let x = document.getElementsByClassName("verberg");
         let i;
         for (i = 0; i < x.length; i++) {
+
             x[i].style.display = "block";
         }
 

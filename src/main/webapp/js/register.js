@@ -1,7 +1,6 @@
 function registreren(){
     let  formData = new FormData(document.querySelector("#register-form"));
     let encData = new URLSearchParams(formData.entries());
-    console.log(encData.toString());
 
 
     let fetchOptions = {
