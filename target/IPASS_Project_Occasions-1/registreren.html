@@ -5,13 +5,14 @@
     <title>registreren</title>
     <link rel="stylesheet" href="css/index.css" type="text/css"/>
     <link rel="stylesheet" href="css/registreren.css" type="text/css"/>
+    <script src="js/login.js" type="text/javascript"></script>
 
     <script src="js/register.js" type="text/javascript"></script>
 </head>
 <body>
 
 <div class="container">
-    <h1>Registreer</h1>
+    <h1>Registreer <label title="Toon gebruikersnaam" class="inlognaamLabel" id="showUsername" > </label></h1>
     <p>Vul alles in om een account te maken.</p>
     <hr>
 
@@ -22,7 +23,7 @@
         <label for="password"><b>Wachtwoord</b></label>
         <input type="password" placeholder="voer wachtwoord in" name="password" id="password" required>
 
-        <label for="checkbox"></label>registreer als admin<input type="checkbox" id="checkbox" name="checkbox">
+        <label  for="checkbox" class="verberg1">registreer als admin</label> <input class="verberg1" type="checkbox" id="checkbox" name="checkbox">
 
         <p>Door het aanmaken van een account accepteert u de <a href="#">Algemene voorwaarden & Privacy</a>.</p>
 
@@ -38,6 +39,11 @@
 
 
 </div>
+
+
+<script>
+setLoginData();
+</script>
 
 
 

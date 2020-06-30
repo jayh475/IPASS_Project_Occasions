@@ -93,3 +93,18 @@ a {
 #error-msg-second-line {
     display: block;
 }
+
+.verberg{
+    display:none;
+}
+
+.verberg1{
+    display: none;
+}
+
+
+.inlognaamLabel {
+    margin: 0 auto 0 auto;
+    float: right;
+    font-size: 0.7em;
+}
