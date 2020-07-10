@@ -4,7 +4,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>cuba.de.jayh</groupId>
-    <artifactId>IPASS_Project_Occasions</artifactId>
+    <artifactId>IPASS</artifactId>
     <packaging>war</packaging>
     <version>1</version>
     <!-- TODO project name  -->
