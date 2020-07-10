@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="IPASS_Project_Occasions:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>IPASS_Project_Occasions</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="IPASS_Project_Occasions-1.war">
+      <element id="artifact" artifact-name="IPASS_Project_Occasions:war exploded" />
+    </root>
+  </artifact>
+</component>
